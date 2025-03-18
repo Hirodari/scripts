@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudsql-debug
+  namespace: odi-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloudsql-debug
+  template:
+    metadata:
+      labels:
+        app: cloudsql-debug
+    spec:
+      containers:
+        - name: cloud-sql-proxy
+          # restartPolicy: Always
+          image: gcr.io/cloudsql-docker/gce-proxy:1.28.0
+          args:
+          - "/cloud_sql_proxy"
+          - "--dir=/cloudsql"
+          - "-instances=techplain-hub:us-central1:odi-dev-mysql-terra=tcp:0.0.0.0:3307"
+          - "-credential_file=/secrets/credentials.json"
+          ports: 
+            - name: "debug-port"
+              containerPort: 3307
+              protocol: "TCP"
+          securityContext:
+            runAsNonRoot: true
+
+          volumeMounts:
+          - name: cloudsql-instance-credentials
+            mountPath: /secrets/
+            readOnly: true
+          securityContext:
+            runAsNonRoot: true
+
+      volumes:
+      - name: cloudsql-instance-credentials
+        secret:
+          secretName: odi-dev-cloudsql-creds

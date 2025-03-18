@@ -1,0 +1,2681 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIELDCCApSgAwIBAgIQImYEcZq0Yl3q9QOlXcTOgTANBgkqhkiG9w0BAQsFADAv
+      MS0wKwYDVQQDEyRlNjliZDVkMS1lOWJmLTRlYWQtOTkyYi04ZWNlMmQyYTkwMDAw
+      IBcNMjQxMTI5MDQxMDM1WhgPMjA1NDExMjIwNTEwMzVaMC8xLTArBgNVBAMTJGU2
+      OWJkNWQxLWU5YmYtNGVhZC05OTJiLThlY2UyZDJhOTAwMDCCAaIwDQYJKoZIhvcN
+      AQEBBQADggGPADCCAYoCggGBAMpvt1vxY7ABe0i73tJ/GCTIMAxBItJ3Ftg2A3Dp
+      nlSS3EHDPp6uqXiRJBYj9Jb9gAdjT8iZn/Pe8RYnKeEOsng8EPd4NVAOSU/jxzbU
+      KZeOghEs9HE0C46lZXt5L1hb4Yv44dK6fnmq4Hru5AOmeMiVv8YdSMx1Wi4jt5rS
+      hoi7fFfHmC1rihz1xMJLq/ErxsCfTsSnLfAErrYkK/fFx6o5doykkxOF3IxDVsTE
+      dNf4UcvK9Dkfr/qs3ocQc9W5rEdSTDCvBLOnPTjcQs76xlbBz2ggKLwvhLDGGhsa
+      r8+Rxhe2hCfpIe2XkPAzEnIbMxmb6oN5QXGRh4TJTuchxpoHnV4Liwhlsx6XwqTH
+      UMY6E4iUAt1cc2VfsqaWjXUDklEEPPU+RpGWk1uS8b4k5UNyXSL4oc0+aFpw+ZYm
+      tJvBb++vD4Wqinjz4+APm2kXsStxO1WcZ6aWcBWxxAAfUM8IpYPUx95wR118l14K
+      +tdwkT71Smb1ekFcB5rkCay1kQIDAQABo0IwQDAOBgNVHQ8BAf8EBAMCAgQwDwYD
+      VR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUzK8PYwVs7RhkGmXpylNnVuswdkQwDQYJ
+      KoZIhvcNAQELBQADggGBAITDhG0mSJcgzm+FM2Wr+A0IzHEPj4k3B+6vW9IEp2hu
+      t4n8RKyDqtr9zYAbbWUKnqSaIpBM5254DjqgaAZ51oqgMFNZHfcN/lQx7g+SlRF6
+      liklNIAkVsQAbzZ749zYFMLHyjEDCZb8sj0nALm33m/qbAlfPgHwzXmpKVZctN7D
+      6lv58DVTiKr/M43dD0TEbb0X2gIrElgEltWxZPTqnuCgvep+W0osn8f+4fsHff4R
+      gwIMe2BowMO93KH3dIAPeKUwaIbs11Yb+3ccuR8wMO9G63HkvV4y2BcJvA3SLsju
+      SRp5dlXy403+kpBUh2vLWlGGdZuKNK7jgTLeE4wvkpi8BJYsJY1uSi0kTOGd2jgy
+      RB6jrK6NzxzlTi3/S8wWY+3tQ14LsvIMokw36lRIyRg9K+dkrbU3ED7clDZHRESu
+      crrmOxbQNDMGl8Au3DAbm4JJlNFDQA2xhfA8zblyQ53hqlY504zpuVMUguGE9lwF
+      8Cde7ttTiPt0LX518ZKcgw==
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2024-11-29T05:21:16Z"
+    name: kube-root-ca.crt
+    namespace: cert-manager
+    resourceVersion: "5972"
+    uid: c9604d3f-ac76-4f3e-b4c5-21e2dab1d5eb
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIELDCCApSgAwIBAgIQImYEcZq0Yl3q9QOlXcTOgTANBgkqhkiG9w0BAQsFADAv
+      MS0wKwYDVQQDEyRlNjliZDVkMS1lOWJmLTRlYWQtOTkyYi04ZWNlMmQyYTkwMDAw
+      IBcNMjQxMTI5MDQxMDM1WhgPMjA1NDExMjIwNTEwMzVaMC8xLTArBgNVBAMTJGU2
+      OWJkNWQxLWU5YmYtNGVhZC05OTJiLThlY2UyZDJhOTAwMDCCAaIwDQYJKoZIhvcN
+      AQEBBQADggGPADCCAYoCggGBAMpvt1vxY7ABe0i73tJ/GCTIMAxBItJ3Ftg2A3Dp
+      nlSS3EHDPp6uqXiRJBYj9Jb9gAdjT8iZn/Pe8RYnKeEOsng8EPd4NVAOSU/jxzbU
+      KZeOghEs9HE0C46lZXt5L1hb4Yv44dK6fnmq4Hru5AOmeMiVv8YdSMx1Wi4jt5rS
+      hoi7fFfHmC1rihz1xMJLq/ErxsCfTsSnLfAErrYkK/fFx6o5doykkxOF3IxDVsTE
+      dNf4UcvK9Dkfr/qs3ocQc9W5rEdSTDCvBLOnPTjcQs76xlbBz2ggKLwvhLDGGhsa
+      r8+Rxhe2hCfpIe2XkPAzEnIbMxmb6oN5QXGRh4TJTuchxpoHnV4Liwhlsx6XwqTH
+      UMY6E4iUAt1cc2VfsqaWjXUDklEEPPU+RpGWk1uS8b4k5UNyXSL4oc0+aFpw+ZYm
+      tJvBb++vD4Wqinjz4+APm2kXsStxO1WcZ6aWcBWxxAAfUM8IpYPUx95wR118l14K
+      +tdwkT71Smb1ekFcB5rkCay1kQIDAQABo0IwQDAOBgNVHQ8BAf8EBAMCAgQwDwYD
+      VR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUzK8PYwVs7RhkGmXpylNnVuswdkQwDQYJ
+      KoZIhvcNAQELBQADggGBAITDhG0mSJcgzm+FM2Wr+A0IzHEPj4k3B+6vW9IEp2hu
+      t4n8RKyDqtr9zYAbbWUKnqSaIpBM5254DjqgaAZ51oqgMFNZHfcN/lQx7g+SlRF6
+      liklNIAkVsQAbzZ749zYFMLHyjEDCZb8sj0nALm33m/qbAlfPgHwzXmpKVZctN7D
+      6lv58DVTiKr/M43dD0TEbb0X2gIrElgEltWxZPTqnuCgvep+W0osn8f+4fsHff4R
+      gwIMe2BowMO93KH3dIAPeKUwaIbs11Yb+3ccuR8wMO9G63HkvV4y2BcJvA3SLsju
+      SRp5dlXy403+kpBUh2vLWlGGdZuKNK7jgTLeE4wvkpi8BJYsJY1uSi0kTOGd2jgy
+      RB6jrK6NzxzlTi3/S8wWY+3tQ14LsvIMokw36lRIyRg9K+dkrbU3ED7clDZHRESu
+      crrmOxbQNDMGl8Au3DAbm4JJlNFDQA2xhfA8zblyQ53hqlY504zpuVMUguGE9lwF
+      8Cde7ttTiPt0LX518ZKcgw==
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2024-11-29T05:15:24Z"
+    name: kube-root-ca.crt
+    namespace: default
+    resourceVersion: "264"
+    uid: cec07241-6846-4a7a-89a9-d1b69d0233ff
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIELDCCApSgAwIBAgIQImYEcZq0Yl3q9QOlXcTOgTANBgkqhkiG9w0BAQsFADAv
+      MS0wKwYDVQQDEyRlNjliZDVkMS1lOWJmLTRlYWQtOTkyYi04ZWNlMmQyYTkwMDAw
+      IBcNMjQxMTI5MDQxMDM1WhgPMjA1NDExMjIwNTEwMzVaMC8xLTArBgNVBAMTJGU2
+      OWJkNWQxLWU5YmYtNGVhZC05OTJiLThlY2UyZDJhOTAwMDCCAaIwDQYJKoZIhvcN
+      AQEBBQADggGPADCCAYoCggGBAMpvt1vxY7ABe0i73tJ/GCTIMAxBItJ3Ftg2A3Dp
+      nlSS3EHDPp6uqXiRJBYj9Jb9gAdjT8iZn/Pe8RYnKeEOsng8EPd4NVAOSU/jxzbU
+      KZeOghEs9HE0C46lZXt5L1hb4Yv44dK6fnmq4Hru5AOmeMiVv8YdSMx1Wi4jt5rS
+      hoi7fFfHmC1rihz1xMJLq/ErxsCfTsSnLfAErrYkK/fFx6o5doykkxOF3IxDVsTE
+      dNf4UcvK9Dkfr/qs3ocQc9W5rEdSTDCvBLOnPTjcQs76xlbBz2ggKLwvhLDGGhsa
+      r8+Rxhe2hCfpIe2XkPAzEnIbMxmb6oN5QXGRh4TJTuchxpoHnV4Liwhlsx6XwqTH
+      UMY6E4iUAt1cc2VfsqaWjXUDklEEPPU+RpGWk1uS8b4k5UNyXSL4oc0+aFpw+ZYm
+      tJvBb++vD4Wqinjz4+APm2kXsStxO1WcZ6aWcBWxxAAfUM8IpYPUx95wR118l14K
+      +tdwkT71Smb1ekFcB5rkCay1kQIDAQABo0IwQDAOBgNVHQ8BAf8EBAMCAgQwDwYD
+      VR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUzK8PYwVs7RhkGmXpylNnVuswdkQwDQYJ
+      KoZIhvcNAQELBQADggGBAITDhG0mSJcgzm+FM2Wr+A0IzHEPj4k3B+6vW9IEp2hu
+      t4n8RKyDqtr9zYAbbWUKnqSaIpBM5254DjqgaAZ51oqgMFNZHfcN/lQx7g+SlRF6
+      liklNIAkVsQAbzZ749zYFMLHyjEDCZb8sj0nALm33m/qbAlfPgHwzXmpKVZctN7D
+      6lv58DVTiKr/M43dD0TEbb0X2gIrElgEltWxZPTqnuCgvep+W0osn8f+4fsHff4R
+      gwIMe2BowMO93KH3dIAPeKUwaIbs11Yb+3ccuR8wMO9G63HkvV4y2BcJvA3SLsju
+      SRp5dlXy403+kpBUh2vLWlGGdZuKNK7jgTLeE4wvkpi8BJYsJY1uSi0kTOGd2jgy
+      RB6jrK6NzxzlTi3/S8wWY+3tQ14LsvIMokw36lRIyRg9K+dkrbU3ED7clDZHRESu
+      crrmOxbQNDMGl8Au3DAbm4JJlNFDQA2xhfA8zblyQ53hqlY504zpuVMUguGE9lwF
+      8Cde7ttTiPt0LX518ZKcgw==
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2025-02-03T17:26:55Z"
+    name: kube-root-ca.crt
+    namespace: external-secrets
+    resourceVersion: "84908021"
+    uid: cee0595c-827d-4679-afb3-ac2a15119c75
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIELDCCApSgAwIBAgIQImYEcZq0Yl3q9QOlXcTOgTANBgkqhkiG9w0BAQsFADAv
+      MS0wKwYDVQQDEyRlNjliZDVkMS1lOWJmLTRlYWQtOTkyYi04ZWNlMmQyYTkwMDAw
+      IBcNMjQxMTI5MDQxMDM1WhgPMjA1NDExMjIwNTEwMzVaMC8xLTArBgNVBAMTJGU2
+      OWJkNWQxLWU5YmYtNGVhZC05OTJiLThlY2UyZDJhOTAwMDCCAaIwDQYJKoZIhvcN
+      AQEBBQADggGPADCCAYoCggGBAMpvt1vxY7ABe0i73tJ/GCTIMAxBItJ3Ftg2A3Dp
+      nlSS3EHDPp6uqXiRJBYj9Jb9gAdjT8iZn/Pe8RYnKeEOsng8EPd4NVAOSU/jxzbU
+      KZeOghEs9HE0C46lZXt5L1hb4Yv44dK6fnmq4Hru5AOmeMiVv8YdSMx1Wi4jt5rS
+      hoi7fFfHmC1rihz1xMJLq/ErxsCfTsSnLfAErrYkK/fFx6o5doykkxOF3IxDVsTE
+      dNf4UcvK9Dkfr/qs3ocQc9W5rEdSTDCvBLOnPTjcQs76xlbBz2ggKLwvhLDGGhsa
+      r8+Rxhe2hCfpIe2XkPAzEnIbMxmb6oN5QXGRh4TJTuchxpoHnV4Liwhlsx6XwqTH
+      UMY6E4iUAt1cc2VfsqaWjXUDklEEPPU+RpGWk1uS8b4k5UNyXSL4oc0+aFpw+ZYm
+      tJvBb++vD4Wqinjz4+APm2kXsStxO1WcZ6aWcBWxxAAfUM8IpYPUx95wR118l14K
+      +tdwkT71Smb1ekFcB5rkCay1kQIDAQABo0IwQDAOBgNVHQ8BAf8EBAMCAgQwDwYD
+      VR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUzK8PYwVs7RhkGmXpylNnVuswdkQwDQYJ
+      KoZIhvcNAQELBQADggGBAITDhG0mSJcgzm+FM2Wr+A0IzHEPj4k3B+6vW9IEp2hu
+      t4n8RKyDqtr9zYAbbWUKnqSaIpBM5254DjqgaAZ51oqgMFNZHfcN/lQx7g+SlRF6
+      liklNIAkVsQAbzZ749zYFMLHyjEDCZb8sj0nALm33m/qbAlfPgHwzXmpKVZctN7D
+      6lv58DVTiKr/M43dD0TEbb0X2gIrElgEltWxZPTqnuCgvep+W0osn8f+4fsHff4R
+      gwIMe2BowMO93KH3dIAPeKUwaIbs11Yb+3ccuR8wMO9G63HkvV4y2BcJvA3SLsju
+      SRp5dlXy403+kpBUh2vLWlGGdZuKNK7jgTLeE4wvkpi8BJYsJY1uSi0kTOGd2jgy
+      RB6jrK6NzxzlTi3/S8wWY+3tQ14LsvIMokw36lRIyRg9K+dkrbU3ED7clDZHRESu
+      crrmOxbQNDMGl8Au3DAbm4JJlNFDQA2xhfA8zblyQ53hqlY504zpuVMUguGE9lwF
+      8Cde7ttTiPt0LX518ZKcgw==
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2024-11-29T07:22:22Z"
+    name: kube-root-ca.crt
+    namespace: flux-system
+    resourceVersion: "105709"
+    uid: 8755006c-cf8e-4614-81e8-627b7481c14a
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIELDCCApSgAwIBAgIQImYEcZq0Yl3q9QOlXcTOgTANBgkqhkiG9w0BAQsFADAv
+      MS0wKwYDVQQDEyRlNjliZDVkMS1lOWJmLTRlYWQtOTkyYi04ZWNlMmQyYTkwMDAw
+      IBcNMjQxMTI5MDQxMDM1WhgPMjA1NDExMjIwNTEwMzVaMC8xLTArBgNVBAMTJGU2
+      OWJkNWQxLWU5YmYtNGVhZC05OTJiLThlY2UyZDJhOTAwMDCCAaIwDQYJKoZIhvcN
+      AQEBBQADggGPADCCAYoCggGBAMpvt1vxY7ABe0i73tJ/GCTIMAxBItJ3Ftg2A3Dp
+      nlSS3EHDPp6uqXiRJBYj9Jb9gAdjT8iZn/Pe8RYnKeEOsng8EPd4NVAOSU/jxzbU
+      KZeOghEs9HE0C46lZXt5L1hb4Yv44dK6fnmq4Hru5AOmeMiVv8YdSMx1Wi4jt5rS
+      hoi7fFfHmC1rihz1xMJLq/ErxsCfTsSnLfAErrYkK/fFx6o5doykkxOF3IxDVsTE
+      dNf4UcvK9Dkfr/qs3ocQc9W5rEdSTDCvBLOnPTjcQs76xlbBz2ggKLwvhLDGGhsa
+      r8+Rxhe2hCfpIe2XkPAzEnIbMxmb6oN5QXGRh4TJTuchxpoHnV4Liwhlsx6XwqTH
+      UMY6E4iUAt1cc2VfsqaWjXUDklEEPPU+RpGWk1uS8b4k5UNyXSL4oc0+aFpw+ZYm
+      tJvBb++vD4Wqinjz4+APm2kXsStxO1WcZ6aWcBWxxAAfUM8IpYPUx95wR118l14K
+      +tdwkT71Smb1ekFcB5rkCay1kQIDAQABo0IwQDAOBgNVHQ8BAf8EBAMCAgQwDwYD
+      VR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUzK8PYwVs7RhkGmXpylNnVuswdkQwDQYJ
+      KoZIhvcNAQELBQADggGBAITDhG0mSJcgzm+FM2Wr+A0IzHEPj4k3B+6vW9IEp2hu
+      t4n8RKyDqtr9zYAbbWUKnqSaIpBM5254DjqgaAZ51oqgMFNZHfcN/lQx7g+SlRF6
+      liklNIAkVsQAbzZ749zYFMLHyjEDCZb8sj0nALm33m/qbAlfPgHwzXmpKVZctN7D
+      6lv58DVTiKr/M43dD0TEbb0X2gIrElgEltWxZPTqnuCgvep+W0osn8f+4fsHff4R
+      gwIMe2BowMO93KH3dIAPeKUwaIbs11Yb+3ccuR8wMO9G63HkvV4y2BcJvA3SLsju
+      SRp5dlXy403+kpBUh2vLWlGGdZuKNK7jgTLeE4wvkpi8BJYsJY1uSi0kTOGd2jgy
+      RB6jrK6NzxzlTi3/S8wWY+3tQ14LsvIMokw36lRIyRg9K+dkrbU3ED7clDZHRESu
+      crrmOxbQNDMGl8Au3DAbm4JJlNFDQA2xhfA8zblyQ53hqlY504zpuVMUguGE9lwF
+      8Cde7ttTiPt0LX518ZKcgw==
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2024-11-29T05:15:44Z"
+    name: kube-root-ca.crt
+    namespace: gke-managed-system
+    resourceVersion: "509"
+    uid: 8f10532a-8ee8-4f37-bb7e-f3cdf55098d4
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIELDCCApSgAwIBAgIQImYEcZq0Yl3q9QOlXcTOgTANBgkqhkiG9w0BAQsFADAv
+      MS0wKwYDVQQDEyRlNjliZDVkMS1lOWJmLTRlYWQtOTkyYi04ZWNlMmQyYTkwMDAw
+      IBcNMjQxMTI5MDQxMDM1WhgPMjA1NDExMjIwNTEwMzVaMC8xLTArBgNVBAMTJGU2
+      OWJkNWQxLWU5YmYtNGVhZC05OTJiLThlY2UyZDJhOTAwMDCCAaIwDQYJKoZIhvcN
+      AQEBBQADggGPADCCAYoCggGBAMpvt1vxY7ABe0i73tJ/GCTIMAxBItJ3Ftg2A3Dp
+      nlSS3EHDPp6uqXiRJBYj9Jb9gAdjT8iZn/Pe8RYnKeEOsng8EPd4NVAOSU/jxzbU
+      KZeOghEs9HE0C46lZXt5L1hb4Yv44dK6fnmq4Hru5AOmeMiVv8YdSMx1Wi4jt5rS
+      hoi7fFfHmC1rihz1xMJLq/ErxsCfTsSnLfAErrYkK/fFx6o5doykkxOF3IxDVsTE
+      dNf4UcvK9Dkfr/qs3ocQc9W5rEdSTDCvBLOnPTjcQs76xlbBz2ggKLwvhLDGGhsa
+      r8+Rxhe2hCfpIe2XkPAzEnIbMxmb6oN5QXGRh4TJTuchxpoHnV4Liwhlsx6XwqTH
+      UMY6E4iUAt1cc2VfsqaWjXUDklEEPPU+RpGWk1uS8b4k5UNyXSL4oc0+aFpw+ZYm
+      tJvBb++vD4Wqinjz4+APm2kXsStxO1WcZ6aWcBWxxAAfUM8IpYPUx95wR118l14K
+      +tdwkT71Smb1ekFcB5rkCay1kQIDAQABo0IwQDAOBgNVHQ8BAf8EBAMCAgQwDwYD
+      VR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUzK8PYwVs7RhkGmXpylNnVuswdkQwDQYJ
+      KoZIhvcNAQELBQADggGBAITDhG0mSJcgzm+FM2Wr+A0IzHEPj4k3B+6vW9IEp2hu
+      t4n8RKyDqtr9zYAbbWUKnqSaIpBM5254DjqgaAZ51oqgMFNZHfcN/lQx7g+SlRF6
+      liklNIAkVsQAbzZ749zYFMLHyjEDCZb8sj0nALm33m/qbAlfPgHwzXmpKVZctN7D
+      6lv58DVTiKr/M43dD0TEbb0X2gIrElgEltWxZPTqnuCgvep+W0osn8f+4fsHff4R
+      gwIMe2BowMO93KH3dIAPeKUwaIbs11Yb+3ccuR8wMO9G63HkvV4y2BcJvA3SLsju
+      SRp5dlXy403+kpBUh2vLWlGGdZuKNK7jgTLeE4wvkpi8BJYsJY1uSi0kTOGd2jgy
+      RB6jrK6NzxzlTi3/S8wWY+3tQ14LsvIMokw36lRIyRg9K+dkrbU3ED7clDZHRESu
+      crrmOxbQNDMGl8Au3DAbm4JJlNFDQA2xhfA8zblyQ53hqlY504zpuVMUguGE9lwF
+      8Cde7ttTiPt0LX518ZKcgw==
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2024-11-29T05:16:03Z"
+    name: kube-root-ca.crt
+    namespace: gmp-public
+    resourceVersion: "812"
+    uid: 80f5fd8e-4822-45ae-a149-06afd90b3ee8
+- apiVersion: v1
+  data:
+    config.yaml: |
+      global: {}
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2024-11-29T05:21:24Z"
+    name: collector
+    namespace: gmp-system
+    resourceVersion: "6144"
+    uid: 54398e12-4674-4d6b-a5ca-75885fd5a421
+- apiVersion: v1
+  data:
+    datasource-syncer: us-central1-artifactregistry.gcr.io/gke-release/gke-release/prometheus-engine/datasource-syncer:v0.13.1-gke.0@sha256:978bd1fa19a70a2aa729e93f7e88b40220f3a2eb47c1a6dd7217fba6f364a01c
+    example-app: us-central1-artifactregistry.gcr.io/gke-release/gke-release/prometheus-engine/example-app:v0.13.1-gke.0@sha256:87cdc591aed871b1febb7b81615a44c0c6db32fc9e428738171907e0348a07b4
+    frontend: us-central1-artifactregistry.gcr.io/gke-release/gke-release/prometheus-engine/frontend:v0.13.1-gke.0@sha256:5fb82edadc729cabda578db193224a56af5684e4ae4d282ab5966dec82bdf052
+  kind: ConfigMap
+  metadata:
+    annotations:
+      components.gke.io/component-name: managed-prometheus
+      components.gke.io/component-version: 0.13.1-gke.0
+      components.gke.io/image-map: Images deployed by operator
+      components.gke.io/layer: addon
+    creationTimestamp: "2024-11-29T05:16:08Z"
+    labels:
+      addonmanager.kubernetes.io/mode: Reconcile
+    name: config-images
+    namespace: gmp-system
+    resourceVersion: "900"
+    uid: b69bea8c-343c-43ac-8cc8-04931d73d6a0
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIELDCCApSgAwIBAgIQImYEcZq0Yl3q9QOlXcTOgTANBgkqhkiG9w0BAQsFADAv
+      MS0wKwYDVQQDEyRlNjliZDVkMS1lOWJmLTRlYWQtOTkyYi04ZWNlMmQyYTkwMDAw
+      IBcNMjQxMTI5MDQxMDM1WhgPMjA1NDExMjIwNTEwMzVaMC8xLTArBgNVBAMTJGU2
+      OWJkNWQxLWU5YmYtNGVhZC05OTJiLThlY2UyZDJhOTAwMDCCAaIwDQYJKoZIhvcN
+      AQEBBQADggGPADCCAYoCggGBAMpvt1vxY7ABe0i73tJ/GCTIMAxBItJ3Ftg2A3Dp
+      nlSS3EHDPp6uqXiRJBYj9Jb9gAdjT8iZn/Pe8RYnKeEOsng8EPd4NVAOSU/jxzbU
+      KZeOghEs9HE0C46lZXt5L1hb4Yv44dK6fnmq4Hru5AOmeMiVv8YdSMx1Wi4jt5rS
+      hoi7fFfHmC1rihz1xMJLq/ErxsCfTsSnLfAErrYkK/fFx6o5doykkxOF3IxDVsTE
+      dNf4UcvK9Dkfr/qs3ocQc9W5rEdSTDCvBLOnPTjcQs76xlbBz2ggKLwvhLDGGhsa
+      r8+Rxhe2hCfpIe2XkPAzEnIbMxmb6oN5QXGRh4TJTuchxpoHnV4Liwhlsx6XwqTH
+      UMY6E4iUAt1cc2VfsqaWjXUDklEEPPU+RpGWk1uS8b4k5UNyXSL4oc0+aFpw+ZYm
+      tJvBb++vD4Wqinjz4+APm2kXsStxO1WcZ6aWcBWxxAAfUM8IpYPUx95wR118l14K
+      +tdwkT71Smb1ekFcB5rkCay1kQIDAQABo0IwQDAOBgNVHQ8BAf8EBAMCAgQwDwYD
+      VR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUzK8PYwVs7RhkGmXpylNnVuswdkQwDQYJ
+      KoZIhvcNAQELBQADggGBAITDhG0mSJcgzm+FM2Wr+A0IzHEPj4k3B+6vW9IEp2hu
+      t4n8RKyDqtr9zYAbbWUKnqSaIpBM5254DjqgaAZ51oqgMFNZHfcN/lQx7g+SlRF6
+      liklNIAkVsQAbzZ749zYFMLHyjEDCZb8sj0nALm33m/qbAlfPgHwzXmpKVZctN7D
+      6lv58DVTiKr/M43dD0TEbb0X2gIrElgEltWxZPTqnuCgvep+W0osn8f+4fsHff4R
+      gwIMe2BowMO93KH3dIAPeKUwaIbs11Yb+3ccuR8wMO9G63HkvV4y2BcJvA3SLsju
+      SRp5dlXy403+kpBUh2vLWlGGdZuKNK7jgTLeE4wvkpi8BJYsJY1uSi0kTOGd2jgy
+      RB6jrK6NzxzlTi3/S8wWY+3tQ14LsvIMokw36lRIyRg9K+dkrbU3ED7clDZHRESu
+      crrmOxbQNDMGl8Au3DAbm4JJlNFDQA2xhfA8zblyQ53hqlY504zpuVMUguGE9lwF
+      8Cde7ttTiPt0LX518ZKcgw==
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2024-11-29T05:16:03Z"
+    name: kube-root-ca.crt
+    namespace: gmp-system
+    resourceVersion: "807"
+    uid: 9ade8d18-9169-4ee2-b43a-24c077add2f8
+- apiVersion: v1
+  data:
+    config.yaml: |
+      global: {}
+      alerting:
+          alertmanagers:
+              - follow_redirects: true
+                enable_http2: true
+                scheme: http
+                timeout: 10s
+                api_version: v2
+                static_configs:
+                  - targets:
+                      - alertmanager.gmp-system:9093
+      rule_files:
+          - /etc/rules/*.yaml
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2024-11-29T05:21:25Z"
+    name: rule-evaluator
+    namespace: gmp-system
+    resourceVersion: "6148"
+    uid: e12e53aa-5929-4f0c-9352-cf0dd7ff90f9
+- apiVersion: v1
+  data:
+    empty.yaml: ""
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2024-11-29T05:21:24Z"
+    labels:
+      app.kubernetes.io/name: rule-evaluator
+    name: rules-generated
+    namespace: gmp-system
+    resourceVersion: "6133"
+    uid: 598048fa-2e9a-4894-9e06-4a6f99b0ee07
+- apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","data":null,"kind":"ConfigMap","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"controller","app.kubernetes.io/instance":"ingress-nginx","app.kubernetes.io/name":"ingress-nginx","app.kubernetes.io/part-of":"ingress-nginx","app.kubernetes.io/version":"1.12.0-beta.0"},"name":"ingress-nginx-controller","namespace":"ingress-nginx"}}
+    creationTimestamp: "2024-11-29T05:22:22Z"
+    labels:
+      app.kubernetes.io/component: controller
+      app.kubernetes.io/instance: ingress-nginx
+      app.kubernetes.io/name: ingress-nginx
+      app.kubernetes.io/part-of: ingress-nginx
+      app.kubernetes.io/version: 1.12.0-beta.0
+    name: ingress-nginx-controller
+    namespace: ingress-nginx
+    resourceVersion: "7082"
+    uid: 2d12d4a2-0e9b-48a4-9e38-992a4fceba1c
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIELDCCApSgAwIBAgIQImYEcZq0Yl3q9QOlXcTOgTANBgkqhkiG9w0BAQsFADAv
+      MS0wKwYDVQQDEyRlNjliZDVkMS1lOWJmLTRlYWQtOTkyYi04ZWNlMmQyYTkwMDAw
+      IBcNMjQxMTI5MDQxMDM1WhgPMjA1NDExMjIwNTEwMzVaMC8xLTArBgNVBAMTJGU2
+      OWJkNWQxLWU5YmYtNGVhZC05OTJiLThlY2UyZDJhOTAwMDCCAaIwDQYJKoZIhvcN
+      AQEBBQADggGPADCCAYoCggGBAMpvt1vxY7ABe0i73tJ/GCTIMAxBItJ3Ftg2A3Dp
+      nlSS3EHDPp6uqXiRJBYj9Jb9gAdjT8iZn/Pe8RYnKeEOsng8EPd4NVAOSU/jxzbU
+      KZeOghEs9HE0C46lZXt5L1hb4Yv44dK6fnmq4Hru5AOmeMiVv8YdSMx1Wi4jt5rS
+      hoi7fFfHmC1rihz1xMJLq/ErxsCfTsSnLfAErrYkK/fFx6o5doykkxOF3IxDVsTE
+      dNf4UcvK9Dkfr/qs3ocQc9W5rEdSTDCvBLOnPTjcQs76xlbBz2ggKLwvhLDGGhsa
+      r8+Rxhe2hCfpIe2XkPAzEnIbMxmb6oN5QXGRh4TJTuchxpoHnV4Liwhlsx6XwqTH
+      UMY6E4iUAt1cc2VfsqaWjXUDklEEPPU+RpGWk1uS8b4k5UNyXSL4oc0+aFpw+ZYm
+      tJvBb++vD4Wqinjz4+APm2kXsStxO1WcZ6aWcBWxxAAfUM8IpYPUx95wR118l14K
+      +tdwkT71Smb1ekFcB5rkCay1kQIDAQABo0IwQDAOBgNVHQ8BAf8EBAMCAgQwDwYD
+      VR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUzK8PYwVs7RhkGmXpylNnVuswdkQwDQYJ
+      KoZIhvcNAQELBQADggGBAITDhG0mSJcgzm+FM2Wr+A0IzHEPj4k3B+6vW9IEp2hu
+      t4n8RKyDqtr9zYAbbWUKnqSaIpBM5254DjqgaAZ51oqgMFNZHfcN/lQx7g+SlRF6
+      liklNIAkVsQAbzZ749zYFMLHyjEDCZb8sj0nALm33m/qbAlfPgHwzXmpKVZctN7D
+      6lv58DVTiKr/M43dD0TEbb0X2gIrElgEltWxZPTqnuCgvep+W0osn8f+4fsHff4R
+      gwIMe2BowMO93KH3dIAPeKUwaIbs11Yb+3ccuR8wMO9G63HkvV4y2BcJvA3SLsju
+      SRp5dlXy403+kpBUh2vLWlGGdZuKNK7jgTLeE4wvkpi8BJYsJY1uSi0kTOGd2jgy
+      RB6jrK6NzxzlTi3/S8wWY+3tQ14LsvIMokw36lRIyRg9K+dkrbU3ED7clDZHRESu
+      crrmOxbQNDMGl8Au3DAbm4JJlNFDQA2xhfA8zblyQ53hqlY504zpuVMUguGE9lwF
+      8Cde7ttTiPt0LX518ZKcgw==
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2024-11-29T05:22:20Z"
+    name: kube-root-ca.crt
+    namespace: ingress-nginx
+    resourceVersion: "7044"
+    uid: 4e343338-b6bb-4b06-bd0f-3f273d7d5428
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIELDCCApSgAwIBAgIQImYEcZq0Yl3q9QOlXcTOgTANBgkqhkiG9w0BAQsFADAv
+      MS0wKwYDVQQDEyRlNjliZDVkMS1lOWJmLTRlYWQtOTkyYi04ZWNlMmQyYTkwMDAw
+      IBcNMjQxMTI5MDQxMDM1WhgPMjA1NDExMjIwNTEwMzVaMC8xLTArBgNVBAMTJGU2
+      OWJkNWQxLWU5YmYtNGVhZC05OTJiLThlY2UyZDJhOTAwMDCCAaIwDQYJKoZIhvcN
+      AQEBBQADggGPADCCAYoCggGBAMpvt1vxY7ABe0i73tJ/GCTIMAxBItJ3Ftg2A3Dp
+      nlSS3EHDPp6uqXiRJBYj9Jb9gAdjT8iZn/Pe8RYnKeEOsng8EPd4NVAOSU/jxzbU
+      KZeOghEs9HE0C46lZXt5L1hb4Yv44dK6fnmq4Hru5AOmeMiVv8YdSMx1Wi4jt5rS
+      hoi7fFfHmC1rihz1xMJLq/ErxsCfTsSnLfAErrYkK/fFx6o5doykkxOF3IxDVsTE
+      dNf4UcvK9Dkfr/qs3ocQc9W5rEdSTDCvBLOnPTjcQs76xlbBz2ggKLwvhLDGGhsa
+      r8+Rxhe2hCfpIe2XkPAzEnIbMxmb6oN5QXGRh4TJTuchxpoHnV4Liwhlsx6XwqTH
+      UMY6E4iUAt1cc2VfsqaWjXUDklEEPPU+RpGWk1uS8b4k5UNyXSL4oc0+aFpw+ZYm
+      tJvBb++vD4Wqinjz4+APm2kXsStxO1WcZ6aWcBWxxAAfUM8IpYPUx95wR118l14K
+      +tdwkT71Smb1ekFcB5rkCay1kQIDAQABo0IwQDAOBgNVHQ8BAf8EBAMCAgQwDwYD
+      VR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUzK8PYwVs7RhkGmXpylNnVuswdkQwDQYJ
+      KoZIhvcNAQELBQADggGBAITDhG0mSJcgzm+FM2Wr+A0IzHEPj4k3B+6vW9IEp2hu
+      t4n8RKyDqtr9zYAbbWUKnqSaIpBM5254DjqgaAZ51oqgMFNZHfcN/lQx7g+SlRF6
+      liklNIAkVsQAbzZ749zYFMLHyjEDCZb8sj0nALm33m/qbAlfPgHwzXmpKVZctN7D
+      6lv58DVTiKr/M43dD0TEbb0X2gIrElgEltWxZPTqnuCgvep+W0osn8f+4fsHff4R
+      gwIMe2BowMO93KH3dIAPeKUwaIbs11Yb+3ccuR8wMO9G63HkvV4y2BcJvA3SLsju
+      SRp5dlXy403+kpBUh2vLWlGGdZuKNK7jgTLeE4wvkpi8BJYsJY1uSi0kTOGd2jgy
+      RB6jrK6NzxzlTi3/S8wWY+3tQ14LsvIMokw36lRIyRg9K+dkrbU3ED7clDZHRESu
+      crrmOxbQNDMGl8Au3DAbm4JJlNFDQA2xhfA8zblyQ53hqlY504zpuVMUguGE9lwF
+      8Cde7ttTiPt0LX518ZKcgw==
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2024-11-29T05:15:24Z"
+    name: kube-root-ca.crt
+    namespace: kube-node-lease
+    resourceVersion: "269"
+    uid: eb767c3b-8533-4130-97be-4f8cdbb4a4fd
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIELDCCApSgAwIBAgIQImYEcZq0Yl3q9QOlXcTOgTANBgkqhkiG9w0BAQsFADAv
+      MS0wKwYDVQQDEyRlNjliZDVkMS1lOWJmLTRlYWQtOTkyYi04ZWNlMmQyYTkwMDAw
+      IBcNMjQxMTI5MDQxMDM1WhgPMjA1NDExMjIwNTEwMzVaMC8xLTArBgNVBAMTJGU2
+      OWJkNWQxLWU5YmYtNGVhZC05OTJiLThlY2UyZDJhOTAwMDCCAaIwDQYJKoZIhvcN
+      AQEBBQADggGPADCCAYoCggGBAMpvt1vxY7ABe0i73tJ/GCTIMAxBItJ3Ftg2A3Dp
+      nlSS3EHDPp6uqXiRJBYj9Jb9gAdjT8iZn/Pe8RYnKeEOsng8EPd4NVAOSU/jxzbU
+      KZeOghEs9HE0C46lZXt5L1hb4Yv44dK6fnmq4Hru5AOmeMiVv8YdSMx1Wi4jt5rS
+      hoi7fFfHmC1rihz1xMJLq/ErxsCfTsSnLfAErrYkK/fFx6o5doykkxOF3IxDVsTE
+      dNf4UcvK9Dkfr/qs3ocQc9W5rEdSTDCvBLOnPTjcQs76xlbBz2ggKLwvhLDGGhsa
+      r8+Rxhe2hCfpIe2XkPAzEnIbMxmb6oN5QXGRh4TJTuchxpoHnV4Liwhlsx6XwqTH
+      UMY6E4iUAt1cc2VfsqaWjXUDklEEPPU+RpGWk1uS8b4k5UNyXSL4oc0+aFpw+ZYm
+      tJvBb++vD4Wqinjz4+APm2kXsStxO1WcZ6aWcBWxxAAfUM8IpYPUx95wR118l14K
+      +tdwkT71Smb1ekFcB5rkCay1kQIDAQABo0IwQDAOBgNVHQ8BAf8EBAMCAgQwDwYD
+      VR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUzK8PYwVs7RhkGmXpylNnVuswdkQwDQYJ
+      KoZIhvcNAQELBQADggGBAITDhG0mSJcgzm+FM2Wr+A0IzHEPj4k3B+6vW9IEp2hu
+      t4n8RKyDqtr9zYAbbWUKnqSaIpBM5254DjqgaAZ51oqgMFNZHfcN/lQx7g+SlRF6
+      liklNIAkVsQAbzZ749zYFMLHyjEDCZb8sj0nALm33m/qbAlfPgHwzXmpKVZctN7D
+      6lv58DVTiKr/M43dD0TEbb0X2gIrElgEltWxZPTqnuCgvep+W0osn8f+4fsHff4R
+      gwIMe2BowMO93KH3dIAPeKUwaIbs11Yb+3ccuR8wMO9G63HkvV4y2BcJvA3SLsju
+      SRp5dlXy403+kpBUh2vLWlGGdZuKNK7jgTLeE4wvkpi8BJYsJY1uSi0kTOGd2jgy
+      RB6jrK6NzxzlTi3/S8wWY+3tQ14LsvIMokw36lRIyRg9K+dkrbU3ED7clDZHRESu
+      crrmOxbQNDMGl8Au3DAbm4JJlNFDQA2xhfA8zblyQ53hqlY504zpuVMUguGE9lwF
+      8Cde7ttTiPt0LX518ZKcgw==
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2024-11-29T05:15:24Z"
+    name: kube-root-ca.crt
+    namespace: kube-public
+    resourceVersion: "271"
+    uid: 7ead6a7f-9da9-470d-9fed-04facb59209c
+- apiVersion: v1
+  data:
+    status: |
+      time: 2025-03-12 10:46:43.631036906 +0000 UTC
+      autoscalerStatus: Running
+      clusterWide:
+        health:
+          status: Healthy
+          nodeCounts:
+            registered:
+              total: 6
+              ready: 6
+              notStarted: 0
+            longUnregistered: 0
+            unregistered: 0
+          lastProbeTime: "2025-03-12T10:46:43.631036906Z"
+          lastTransitionTime: "2025-03-05T09:18:38.189580363Z"
+        scaleUp:
+          status: NoActivity
+          lastProbeTime: "2025-03-12T10:46:43.631036906Z"
+          lastTransitionTime: "2025-03-05T09:18:38.189580363Z"
+        scaleDown:
+          status: NoCandidates
+          lastProbeTime: "2025-03-12T10:46:43.631036906Z"
+          lastTransitionTime: "2025-03-06T05:54:30.168151968Z"
+      nodeGroups:
+      - name: https://www.googleapis.com/compute/v1/projects/techplain-hub/zones/us-central1-a/instanceGroups/gke-kareco-test-clus-kareco-test-clus-c3eb422c-grp
+        health:
+          status: Healthy
+          nodeCounts:
+            registered:
+              total: 2
+              ready: 2
+              notStarted: 0
+            longUnregistered: 0
+            unregistered: 0
+          cloudProviderTarget: 2
+          minSize: 2
+          maxSize: 30
+          lastProbeTime: "2025-03-12T10:46:43.631036906Z"
+          lastTransitionTime: "2025-03-05T09:18:38.189580363Z"
+        scaleUp:
+          status: NoActivity
+          lastProbeTime: "2025-03-12T10:46:43.631036906Z"
+          lastTransitionTime: "2025-03-05T09:18:38.189580363Z"
+        scaleDown:
+          status: NoCandidates
+          lastProbeTime: "2025-03-12T10:46:43.631036906Z"
+          lastTransitionTime: "2025-03-05T09:18:38.189580363Z"
+      - name: https://www.googleapis.com/compute/v1/projects/techplain-hub/zones/us-central1-b/instanceGroups/gke-kareco-test-clus-kareco-test-clus-1dccec96-grp
+        health:
+          status: Healthy
+          nodeCounts:
+            registered:
+              total: 2
+              ready: 2
+              notStarted: 0
+            longUnregistered: 0
+            unregistered: 0
+          cloudProviderTarget: 2
+          minSize: 2
+          maxSize: 30
+          lastProbeTime: "2025-03-12T10:46:43.631036906Z"
+          lastTransitionTime: "2025-03-05T09:18:38.189580363Z"
+        scaleUp:
+          status: NoActivity
+          lastProbeTime: "2025-03-12T10:46:43.631036906Z"
+          lastTransitionTime: "2025-03-05T09:18:38.189580363Z"
+        scaleDown:
+          status: NoCandidates
+          lastProbeTime: "2025-03-12T10:46:43.631036906Z"
+          lastTransitionTime: "2025-03-06T05:48:33.739175738Z"
+      - name: https://www.googleapis.com/compute/v1/projects/techplain-hub/zones/us-central1-c/instanceGroups/gke-kareco-test-clus-kareco-test-clus-521d6be4-grp
+        health:
+          status: Healthy
+          nodeCounts:
+            registered:
+              total: 2
+              ready: 2
+              notStarted: 0
+            longUnregistered: 0
+            unregistered: 0
+          cloudProviderTarget: 2
+          minSize: 2
+          maxSize: 30
+          lastProbeTime: "2025-03-12T10:46:43.631036906Z"
+          lastTransitionTime: "2025-03-05T09:18:38.189580363Z"
+        scaleUp:
+          status: NoActivity
+          lastProbeTime: "2025-03-12T10:46:43.631036906Z"
+          lastTransitionTime: "2025-03-05T09:18:38.189580363Z"
+        scaleDown:
+          status: NoCandidates
+          lastProbeTime: "2025-03-12T10:46:43.631036906Z"
+          lastTransitionTime: "2025-03-06T05:54:30.168151968Z"
+  kind: ConfigMap
+  metadata:
+    annotations:
+      cluster-autoscaler.kubernetes.io/last-updated: 2025-03-12 10:46:43.631036906
+        +0000 UTC
+    creationTimestamp: "2025-03-05T09:18:25Z"
+    name: cluster-autoscaler-status
+    namespace: kube-system
+    resourceVersion: "132541957"
+    uid: b8de8e26-a2e3-47fe-b302-bfe3175643da
+- apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    annotations:
+      control-plane.alpha.kubernetes.io/leader: '{"holderIdentity":"gke-4bb4d04649794705a184-4dae-da84-vm","leaseDurationSeconds":15,"acquireTime":"2025-03-05T09:39:54Z","renewTime":"2025-03-12T10:46:48Z","leaderTransitions":24}'
+    creationTimestamp: "2024-11-29T05:15:58Z"
+    name: cluster-kubestore
+    namespace: kube-system
+    resourceVersion: "132542020"
+    uid: 07a0853e-e254-44eb-958d-6f64bd5c43dc
+- apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    annotations:
+      control-plane.alpha.kubernetes.io/leader: '{"holderIdentity":"gke-4bb4d04649794705a184-79e2-0731-vm","leaseDurationSeconds":15,"acquireTime":"2025-03-05T09:39:54Z","renewTime":"2025-03-12T10:46:47Z","leaderTransitions":24}'
+    creationTimestamp: "2024-11-29T05:15:38Z"
+    name: clustermetrics
+    namespace: kube-system
+    resourceVersion: "132542014"
+    uid: 4cd1dfc5-630a-4974-ac11-99e0aa82353b
+- apiVersion: v1
+  data:
+    client-ca-file: |
+      -----BEGIN CERTIFICATE-----
+      MIIELDCCApSgAwIBAgIQImYEcZq0Yl3q9QOlXcTOgTANBgkqhkiG9w0BAQsFADAv
+      MS0wKwYDVQQDEyRlNjliZDVkMS1lOWJmLTRlYWQtOTkyYi04ZWNlMmQyYTkwMDAw
+      IBcNMjQxMTI5MDQxMDM1WhgPMjA1NDExMjIwNTEwMzVaMC8xLTArBgNVBAMTJGU2
+      OWJkNWQxLWU5YmYtNGVhZC05OTJiLThlY2UyZDJhOTAwMDCCAaIwDQYJKoZIhvcN
+      AQEBBQADggGPADCCAYoCggGBAMpvt1vxY7ABe0i73tJ/GCTIMAxBItJ3Ftg2A3Dp
+      nlSS3EHDPp6uqXiRJBYj9Jb9gAdjT8iZn/Pe8RYnKeEOsng8EPd4NVAOSU/jxzbU
+      KZeOghEs9HE0C46lZXt5L1hb4Yv44dK6fnmq4Hru5AOmeMiVv8YdSMx1Wi4jt5rS
+      hoi7fFfHmC1rihz1xMJLq/ErxsCfTsSnLfAErrYkK/fFx6o5doykkxOF3IxDVsTE
+      dNf4UcvK9Dkfr/qs3ocQc9W5rEdSTDCvBLOnPTjcQs76xlbBz2ggKLwvhLDGGhsa
+      r8+Rxhe2hCfpIe2XkPAzEnIbMxmb6oN5QXGRh4TJTuchxpoHnV4Liwhlsx6XwqTH
+      UMY6E4iUAt1cc2VfsqaWjXUDklEEPPU+RpGWk1uS8b4k5UNyXSL4oc0+aFpw+ZYm
+      tJvBb++vD4Wqinjz4+APm2kXsStxO1WcZ6aWcBWxxAAfUM8IpYPUx95wR118l14K
+      +tdwkT71Smb1ekFcB5rkCay1kQIDAQABo0IwQDAOBgNVHQ8BAf8EBAMCAgQwDwYD
+      VR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUzK8PYwVs7RhkGmXpylNnVuswdkQwDQYJ
+      KoZIhvcNAQELBQADggGBAITDhG0mSJcgzm+FM2Wr+A0IzHEPj4k3B+6vW9IEp2hu
+      t4n8RKyDqtr9zYAbbWUKnqSaIpBM5254DjqgaAZ51oqgMFNZHfcN/lQx7g+SlRF6
+      liklNIAkVsQAbzZ749zYFMLHyjEDCZb8sj0nALm33m/qbAlfPgHwzXmpKVZctN7D
+      6lv58DVTiKr/M43dD0TEbb0X2gIrElgEltWxZPTqnuCgvep+W0osn8f+4fsHff4R
+      gwIMe2BowMO93KH3dIAPeKUwaIbs11Yb+3ccuR8wMO9G63HkvV4y2BcJvA3SLsju
+      SRp5dlXy403+kpBUh2vLWlGGdZuKNK7jgTLeE4wvkpi8BJYsJY1uSi0kTOGd2jgy
+      RB6jrK6NzxzlTi3/S8wWY+3tQ14LsvIMokw36lRIyRg9K+dkrbU3ED7clDZHRESu
+      crrmOxbQNDMGl8Au3DAbm4JJlNFDQA2xhfA8zblyQ53hqlY504zpuVMUguGE9lwF
+      8Cde7ttTiPt0LX518ZKcgw==
+      -----END CERTIFICATE-----
+    requestheader-allowed-names: '["aggregator"]'
+    requestheader-client-ca-file: |
+      -----BEGIN CERTIFICATE-----
+      MIIELDCCApSgAwIBAgIQEkJhYehrdNJ8tUrwzhEpPzANBgkqhkiG9w0BAQsFADAv
+      MS0wKwYDVQQDEyQxNmE4ODQ3Yy1mYWRmLTQ5OGItODkwYi04ZjU1NTEzZGYzNDEw
+      IBcNMjQxMTI5MDQxMTExWhgPMjA1NDExMjIwNTExMTFaMC8xLTArBgNVBAMTJDE2
+      YTg4NDdjLWZhZGYtNDk4Yi04OTBiLThmNTU1MTNkZjM0MTCCAaIwDQYJKoZIhvcN
+      AQEBBQADggGPADCCAYoCggGBALxDcm0WbIVqiweGlV+ygCrracZkM+XayZhYXCj1
+      kNEN3GQeApk+4HM4EYPXVFJpoPsoKRkWs1KHrA1+FhVzyNY8VU/f8Y9Nl24ZkDZa
+      n17ieRcT9d99u+iOrEpDzXYIKV0PzgK+uWxav0wCHhtOimQNpu5G0Wy+aBx4qIUM
+      ljAeK727iu14AngfSMn8Ym4z6k1iqdGWIyhFvOpVNm/aIDxrG+hGl9PHyvzRnJ57
+      SA7xOFwOgBJZCH8P3UaV6oCXsBOco8Q4ZDY8scZkLkHjqs16qnh+pLoYrqVOjr8y
+      iVU9oOfeUY+TMZuaDUEU5+E7vdKkn6ODja39uAhK+FDQ+abMEuGJBNKCa/bCbqU3
+      d7V5lD5Ayd05fcKqoaopV1UW9gfaV3rft1cAqBAzNR3NjoRuG4x8awSKnolZKPZE
+      vZUuXSrlDa38PM511BhI7G6EJH0SN+1K9ZV7/kqwt6qZGpC7qNkwTc3Cj+DNfQzD
+      GRi2Q2U65HtnQt6nHwRgpvDiIwIDAQABo0IwQDAOBgNVHQ8BAf8EBAMCAgQwDwYD
+      VR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUhNks1oQXd7xm8fbLI0ZNcxF3Q5kwDQYJ
+      KoZIhvcNAQELBQADggGBAJgf35rzvggnxfjVanNM9z5M+/JEk4POThx3z9s0Tr8h
+      jxD3Wz8yRpFeUOr/tYyJaNyH9ZhtRAFWo23w3sk5TjMZYSX+AxVxlT03Cx8pqtCJ
+      MOy3kzc/otRqIgk0drOYEtgxQLNsO7u7/NMzKYVgYutQC2rDz6A2d2sjQJmpCvuT
+      aKU9KzfRdgOPARlqjndrP7SjgAC9xJzIe4MwAoj1SwpVXY48JLfvonxB0LN8IsIG
+      dFFU8roLLkBQwsyNB6y7vOSenZKREuz84oG22gyHy+auo50Py/bU5Z/rENtG9/TS
+      s8zS9iRg5EtRQAUoP8+W/AogDMUYyIdbs0L91cW4/hbwOQaEs7GIBNjLa1Vmb83t
+      3UJezxNVu4+3iY/WaQqySZzjCww2f4iSo8WjOFaDip0lz5fnJJPwpTpJ1YIu1XFL
+      PKP8NrNFA0bvI25TGWHUakx3/VzBBb9MRo4MDO6uiA5UEv8y5Emynx+cfGMsnuVJ
+      EcuGjUgXK70sBbEKJC2brA==
+      -----END CERTIFICATE-----
+    requestheader-extra-headers-prefix: '["X-Remote-Extra-"]'
+    requestheader-group-headers: '["X-Remote-Group"]'
+    requestheader-username-headers: '["X-Remote-User"]'
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2024-11-29T05:15:04Z"
+    name: extension-apiserver-authentication
+    namespace: kube-system
+    resourceVersion: "21"
+    uid: 34a1c868-6bfc-46cf-a5c6-0e320699c5ee
+- apiVersion: v1
+  data:
+    fluent-bit.conf: "[SERVICE]\n    Flush         5\n    Grace         120\n    Log_Level
+      \    info\n    \n    Log_File      /var/log/fluentbit.log\n    Daemon        off\n
+      \   Parsers_File  parsers.conf\n    HTTP_Server   On\n    HTTP_Listen   0.0.0.0\n
+      \   HTTP_PORT     2020\n\n\n[INPUT]\n    Name             tail\n    Alias            kube_containers_kube-system\n
+      \   Tag              kube_<namespace_name>_<pod_name>_<container_name>\n    Tag_Regex
+      \       (?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<namespace_name>[^_]+)_(?<container_name>.+)-\n
+      \   Path             /var/log/containers/*_kube-system_*.log\n    DB               /var/lib/google-fluentbit/pos-files/flb_kube_kube-system.db\n
+      \   Buffer_Max_Size  1MB\n    Mem_Buf_Limit    5MB\n    Skip_Long_Lines  On\n
+      \   Refresh_Interval 5\n    Read_from_Head   True\n\n[INPUT]\n    Name             tail\n
+      \   Alias            kube_containers_istio-system\n    Tag              kube_<namespace_name>_<pod_name>_<container_name>\n
+      \   Tag_Regex        (?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<namespace_name>[^_]+)_(?<container_name>.+)-\n
+      \   Path             /var/log/containers/*_istio-system_*.log\n    DB               /var/lib/google-fluentbit/pos-files/flb_kube_istio-system.db\n
+      \   Buffer_Max_Size  1MB\n    Mem_Buf_Limit    5MB\n    Skip_Long_Lines  On\n
+      \   Refresh_Interval 5\n    Read_from_Head   True\n\n[INPUT]\n    Name             tail\n
+      \   Alias            kube_containers_knative-serving\n    Tag              kube_<namespace_name>_<pod_name>_<container_name>\n
+      \   Tag_Regex        (?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<namespace_name>[^_]+)_(?<container_name>.+)-\n
+      \   Path             /var/log/containers/*_knative-serving_*.log\n    DB               /var/lib/google-fluentbit/pos-files/flb_kube_knative-serving.db\n
+      \   Buffer_Max_Size  1MB\n    Mem_Buf_Limit    5MB\n    Skip_Long_Lines  On\n
+      \   Refresh_Interval 5\n    Read_from_Head   True\n\n[INPUT]\n    Name             tail\n
+      \   Alias            kube_containers_gke-system\n    Tag              kube_<namespace_name>_<pod_name>_<container_name>\n
+      \   Tag_Regex        (?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<namespace_name>[^_]+)_(?<container_name>.+)-\n
+      \   Path             /var/log/containers/*_gke-system_*.log\n    DB               /var/lib/google-fluentbit/pos-files/flb_kube_gke-system.db\n
+      \   Buffer_Max_Size  1MB\n    Mem_Buf_Limit    5MB\n    Skip_Long_Lines  On\n
+      \   Refresh_Interval 5\n    Read_from_Head   True\n\n[INPUT]\n    Name             tail\n
+      \   Alias            kube_containers_config-management-system\n    Tag              kube_<namespace_name>_<pod_name>_<container_name>\n
+      \   Tag_Regex        (?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<namespace_name>[^_]+)_(?<container_name>.+)-\n
+      \   Path             /var/log/containers/*_config-management-system_*.log\n
+      \   DB               /var/lib/google-fluentbit/pos-files/flb_kube_config-management-system.db\n
+      \   Buffer_Max_Size  1MB\n    Mem_Buf_Limit    5MB\n    Skip_Long_Lines  On\n
+      \   Refresh_Interval 5\n    Read_from_Head   True\n\n[INPUT]\n    Name             tail\n
+      \   Alias            kube_containers_gmp-system\n    Tag              kube_<namespace_name>_<pod_name>_<container_name>\n
+      \   Tag_Regex        (?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<namespace_name>[^_]+)_(?<container_name>.+)-\n
+      \   Path             /var/log/containers/*_gmp-system_*.log\n    DB               /var/lib/google-fluentbit/pos-files/flb_kube_gmp-system.db\n
+      \   Buffer_Max_Size  1MB\n    Mem_Buf_Limit    5MB\n    Skip_Long_Lines  On\n
+      \   Refresh_Interval 5\n    Read_from_Head   True\n\n[INPUT]\n    Name             tail\n
+      \   Alias            kube_containers_gke-managed-cim\n    Tag              kube_<namespace_name>_<pod_name>_<container_name>\n
+      \   Tag_Regex        (?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<namespace_name>[^_]+)_(?<container_name>.+)-\n
+      \   Path             /var/log/containers/*_gke-managed-cim_*.log\n    DB               /var/lib/google-fluentbit/pos-files/flb_kube_gke-managed-cim.db\n
+      \   Buffer_Max_Size  1MB\n    Mem_Buf_Limit    5MB\n    Skip_Long_Lines  On\n
+      \   Refresh_Interval 5\n    Read_from_Head   True\n\n[INPUT]\n    Name             tail\n
+      \   Alias            kube_containers_gke-managed-volumepopulator\n    Tag              kube_<namespace_name>_<pod_name>_<container_name>\n
+      \   Tag_Regex        (?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<namespace_name>[^_]+)_(?<container_name>.+)-\n
+      \   Path             /var/log/containers/*_gke-managed-volumepopulator_*.log\n
+      \   DB               /var/lib/google-fluentbit/pos-files/flb_kube_gke-managed-volumepopulator.db\n
+      \   Buffer_Max_Size  1MB\n    Mem_Buf_Limit    5MB\n    Skip_Long_Lines  On\n
+      \   Refresh_Interval 5\n    Read_from_Head   True\n\n[INPUT]\n    Name             tail\n
+      \   Alias            kube_containers_gke-managed-checkpointing\n    Tag              kube_<namespace_name>_<pod_name>_<container_name>\n
+      \   Tag_Regex        (?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<namespace_name>[^_]+)_(?<container_name>.+)-\n
+      \   Path             /var/log/containers/*_gke-managed-checkpointing_*.log\n
+      \   DB               /var/lib/google-fluentbit/pos-files/flb_kube_gke-managed-checkpointing.db\n
+      \   Buffer_Max_Size  1MB\n    Mem_Buf_Limit    5MB\n    Skip_Long_Lines  On\n
+      \   Refresh_Interval 5\n    Read_from_Head   True\n\n\n\n[INPUT]\n    Name             tail\n
+      \   Alias            kube_containers\n    Tag              kube_<namespace_name>_<pod_name>_<container_name>\n
+      \   Tag_Regex        (?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<namespace_name>[^_]+)_(?<container_name>.+)-\n
+      \   Path             /var/log/containers/*.log\n    Exclude_Path     /var/log/containers/*_kube-system_*.log,/var/log/containers/*_istio-system_*.log,/var/log/containers/*_knative-serving_*.log,/var/log/containers/*_gke-system_*.log,/var/log/containers/*_config-management-system_*.log,/var/log/containers/*_gmp-system_*.log,/var/log/containers/*_gke-managed-cim_*.log,/var/log/containers/*_gke-managed-volumepopulator_*.log,/var/log/containers/*_gke-managed-checkpointing_*.log\n
+      \   DB               /var/lib/google-fluentbit/pos-files/flb_kube.db\n    Buffer_Max_Size
+      \ 20MB\n    Mem_Buf_Limit    100MB\n    Skip_Long_Lines  On\n    Refresh_Interval
+      1\n    Read_from_Head   True\n\n\n[FILTER]\n    Name         parser\n    Match
+      \       kube_*\n    Key_Name     log\n    Reserve_Data True\n    Parser       docker\n
+      \   Parser       containerd\n\n# Added the new \"gkemetricsagent\" parser for
+      gke-metrics-agent container\n# which is a container in the kube-system namespace.\n[FILTER]\n
+      \   Name         parser\n    Match        kube_kube-system_*_gke-metrics-agent\n
+      \   Key_Name     log\n    Reserve_Data True\n    Preserve_Key True\n    Parser
+      \      gkemetricsagent\n\n# This input is used  to watch changes to Kubernetes
+      pod log files live in the\n# directory /var/log/pods/NAMESPACE_NAME_UID. The
+      file name is used to\n# capture the pod namespace, name and runtime name.\n\n\n[INPUT]\n
+      \   Name             tail\n    Alias            gvisor_kube-system\n    Tag
+      \             kube-pod_<namespace_name>_<pod_name>_<runtime>\n    Tag_Regex
+      \       \\/var\\/log\\/pods\\/(?<namespace_name>[^_]+)_(?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<id>[\\-a-z0-9]+)\\/(?<runtime>[a-z]+)\\.log\n
+      \   Path             /var/log/pods/kube-system_*/*\n    DB               /var/lib/google-fluentbit/pos-files/gvisor_kube-system.db\n
+      \   Buffer_Max_Size  1MB\n    Mem_Buf_Limit    1MB\n    Skip_Long_Lines  On\n
+      \   Refresh_Interval 5\n    Read_from_Head   True\n\n[INPUT]\n    Name             tail\n
+      \   Alias            gvisor_istio-system\n    Tag              kube-pod_<namespace_name>_<pod_name>_<runtime>\n
+      \   Tag_Regex        \\/var\\/log\\/pods\\/(?<namespace_name>[^_]+)_(?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<id>[\\-a-z0-9]+)\\/(?<runtime>[a-z]+)\\.log\n
+      \   Path             /var/log/pods/istio-system_*/*\n    DB               /var/lib/google-fluentbit/pos-files/gvisor_istio-system.db\n
+      \   Buffer_Max_Size  1MB\n    Mem_Buf_Limit    1MB\n    Skip_Long_Lines  On\n
+      \   Refresh_Interval 5\n    Read_from_Head   True\n\n[INPUT]\n    Name             tail\n
+      \   Alias            gvisor_knative-serving\n    Tag              kube-pod_<namespace_name>_<pod_name>_<runtime>\n
+      \   Tag_Regex        \\/var\\/log\\/pods\\/(?<namespace_name>[^_]+)_(?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<id>[\\-a-z0-9]+)\\/(?<runtime>[a-z]+)\\.log\n
+      \   Path             /var/log/pods/knative-serving_*/*\n    DB               /var/lib/google-fluentbit/pos-files/gvisor_knative-serving.db\n
+      \   Buffer_Max_Size  1MB\n    Mem_Buf_Limit    1MB\n    Skip_Long_Lines  On\n
+      \   Refresh_Interval 5\n    Read_from_Head   True\n\n[INPUT]\n    Name             tail\n
+      \   Alias            gvisor_gke-system\n    Tag              kube-pod_<namespace_name>_<pod_name>_<runtime>\n
+      \   Tag_Regex        \\/var\\/log\\/pods\\/(?<namespace_name>[^_]+)_(?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<id>[\\-a-z0-9]+)\\/(?<runtime>[a-z]+)\\.log\n
+      \   Path             /var/log/pods/gke-system_*/*\n    DB               /var/lib/google-fluentbit/pos-files/gvisor_gke-system.db\n
+      \   Buffer_Max_Size  1MB\n    Mem_Buf_Limit    1MB\n    Skip_Long_Lines  On\n
+      \   Refresh_Interval 5\n    Read_from_Head   True\n\n[INPUT]\n    Name             tail\n
+      \   Alias            gvisor_config-management-system\n    Tag              kube-pod_<namespace_name>_<pod_name>_<runtime>\n
+      \   Tag_Regex        \\/var\\/log\\/pods\\/(?<namespace_name>[^_]+)_(?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<id>[\\-a-z0-9]+)\\/(?<runtime>[a-z]+)\\.log\n
+      \   Path             /var/log/pods/config-management-system_*/*\n    DB               /var/lib/google-fluentbit/pos-files/gvisor_config-management-system.db\n
+      \   Buffer_Max_Size  1MB\n    Mem_Buf_Limit    1MB\n    Skip_Long_Lines  On\n
+      \   Refresh_Interval 5\n    Read_from_Head   True\n\n[INPUT]\n    Name             tail\n
+      \   Alias            gvisor_gmp-system\n    Tag              kube-pod_<namespace_name>_<pod_name>_<runtime>\n
+      \   Tag_Regex        \\/var\\/log\\/pods\\/(?<namespace_name>[^_]+)_(?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<id>[\\-a-z0-9]+)\\/(?<runtime>[a-z]+)\\.log\n
+      \   Path             /var/log/pods/gmp-system_*/*\n    DB               /var/lib/google-fluentbit/pos-files/gvisor_gmp-system.db\n
+      \   Buffer_Max_Size  1MB\n    Mem_Buf_Limit    1MB\n    Skip_Long_Lines  On\n
+      \   Refresh_Interval 5\n    Read_from_Head   True\n\n[INPUT]\n    Name             tail\n
+      \   Alias            gvisor_gke-managed-cim\n    Tag              kube-pod_<namespace_name>_<pod_name>_<runtime>\n
+      \   Tag_Regex        \\/var\\/log\\/pods\\/(?<namespace_name>[^_]+)_(?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<id>[\\-a-z0-9]+)\\/(?<runtime>[a-z]+)\\.log\n
+      \   Path             /var/log/pods/gke-managed-cim_*/*\n    DB               /var/lib/google-fluentbit/pos-files/gvisor_gke-managed-cim.db\n
+      \   Buffer_Max_Size  1MB\n    Mem_Buf_Limit    1MB\n    Skip_Long_Lines  On\n
+      \   Refresh_Interval 5\n    Read_from_Head   True\n\n[INPUT]\n    Name             tail\n
+      \   Alias            gvisor_gke-managed-volumepopulator\n    Tag              kube-pod_<namespace_name>_<pod_name>_<runtime>\n
+      \   Tag_Regex        \\/var\\/log\\/pods\\/(?<namespace_name>[^_]+)_(?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<id>[\\-a-z0-9]+)\\/(?<runtime>[a-z]+)\\.log\n
+      \   Path             /var/log/pods/gke-managed-volumepopulator_*/*\n    DB               /var/lib/google-fluentbit/pos-files/gvisor_gke-managed-volumepopulator.db\n
+      \   Buffer_Max_Size  1MB\n    Mem_Buf_Limit    1MB\n    Skip_Long_Lines  On\n
+      \   Refresh_Interval 5\n    Read_from_Head   True\n\n[INPUT]\n    Name             tail\n
+      \   Alias            gvisor_gke-managed-checkpointing\n    Tag              kube-pod_<namespace_name>_<pod_name>_<runtime>\n
+      \   Tag_Regex        \\/var\\/log\\/pods\\/(?<namespace_name>[^_]+)_(?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<id>[\\-a-z0-9]+)\\/(?<runtime>[a-z]+)\\.log\n
+      \   Path             /var/log/pods/gke-managed-checkpointing_*/*\n    DB               /var/lib/google-fluentbit/pos-files/gvisor_gke-managed-checkpointing.db\n
+      \   Buffer_Max_Size  1MB\n    Mem_Buf_Limit    1MB\n    Skip_Long_Lines  On\n
+      \   Refresh_Interval 5\n    Read_from_Head   True\n\n\n\n[INPUT]\n    Name             tail\n
+      \   Alias            gvisor\n    Tag              kube-pod_<namespace_name>_<pod_name>_<runtime>\n
+      \   Tag_Regex        \\/var\\/log\\/pods\\/(?<namespace_name>[^_]+)_(?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<id>[\\-a-z0-9]+)\\/(?<runtime>[a-z]+)\\.log\n
+      \   Exclude_Path     /var/log/pods/*/*_panic.log,/var/log/pods/kube-system_*/*,/var/log/pods/istio-system_*/*,/var/log/pods/knative-serving_*/*,/var/log/pods/gke-system_*/*,/var/log/pods/config-management-system_*/*,/var/log/pods/gmp-system_*/*,/var/log/pods/gke-managed-cim_*/*,/var/log/pods/gke-managed-volumepopulator_*/*,/var/log/pods/gke-managed-checkpointing_*/*\n
+      \   Path             /var/log/pods/*/*.log\n    DB               /var/lib/google-fluentbit/pos-files/gvisor.db\n
+      \   Buffer_Max_Size  1MB\n    Mem_Buf_Limit    1MB\n    Skip_Long_Lines  On\n
+      \   Refresh_Interval 5\n    Read_from_Head   True\n\n[INPUT]\n    Name             tail\n
+      \   Alias            gvisor_panic\n    Tag              kube-pod_<namespace_name>_<pod_name>_<runtime>panic\n
+      \   Tag_Regex        \\/var\\/log\\/pods\\/(?<namespace_name>[^_]+)_(?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<id>[\\-a-z0-9]+)\\/(?<runtime>[a-z]+)_panic\\.log\n
+      \   Exclude_Path     /var/log/pods/kube-system_*/*,/var/log/pods/istio-system_*/*,/var/log/pods/knative-serving_*/*,/var/log/pods/gke-system_*/*,/var/log/pods/config-management-system_*/*,/var/log/pods/gmp-system_*/*,/var/log/pods/gke-managed-cim_*/*,/var/log/pods/gke-managed-volumepopulator_*/*,/var/log/pods/gke-managed-checkpointing_*/*\n
+      \   Path             /var/log/pods/*/*_panic.log\n    DB               /var/lib/google-fluentbit/pos-files/gvisor_panic.db\n
+      \   Buffer_Max_Size  1MB\n    Mem_Buf_Limit    1MB\n    Skip_Long_Lines  On\n
+      \   Refresh_Interval 5\n    Read_from_Head   True\n\n\n# Example:\n# Dec 21
+      23:17:22 gke-foo-1-1-4b5cbd14-node-4eoj startupscript: Finished running startup
+      script /var/run/google.startup.script\n[INPUT]\n    Name   tail\n    Parser
+      syslog\n    Path   /var/log/startupscript.log\n    DB     /var/lib/google-fluentbit/pos-files/startupscript.db\n
+      \   Alias  startupscript\n    Tag    startupscript\n\n# Logs from anetd for
+      policy action\n[INPUT]\n    Name             tail\n    Parser           network-log\n
+      \   Alias            policy-action\n    Tag              policy-action\n    Path
+      \            /var/log/network/policy_action.log\n    DB               /var/lib/google-fluentbit/pos-files/policy-action.db\n
+      \   Skip_Long_Lines  On\n    Refresh_Interval 5\n    Read_from_Head   True\n\n#
+      Example:\n# I1118 21:26:53.975789       6 proxier.go:1096] Port \"nodePort for
+      kube-system/default-http-backend:http\" (:31429/tcp) was open before and is
+      still needed\n[INPUT]\n    Name            tail\n    Alias           kube-proxy\n
+      \   Tag             kube-proxy\n    Path            /var/log/kube-proxy.log\n
+      \   DB              /var/lib/google-fluentbit/pos-files/kube-proxy.db\n    Buffer_Max_Size
+      1MB\n    Mem_Buf_Limit   1MB\n    Parser          glog\n    Read_from_Head  True\n\n#
+      Logs from systemd-journal for interesting services.\n\n[INPUT]\n    Name            systemd\n
+      \   Alias           docker\n    Tag             docker\n    Systemd_Filter  _SYSTEMD_UNIT=docker.service\n
+      \   Path            /var/log/journal\n    DB              /var/lib/google-fluentbit/pos-files/docker.db\n
+      \   Buffer_Max_Size 1MB\n    Mem_Buf_Limit   1MB\n\n[INPUT]\n    Name            systemd\n
+      \   Alias           kubelet\n    Tag             kubelet\n    Systemd_Filter
+      \ _SYSTEMD_UNIT=kubelet.service\n    Path            /var/log/journal\n    DB
+      \             /var/lib/google-fluentbit/pos-files/kubelet.db\n    Buffer_Max_Size
+      1MB\n    Mem_Buf_Limit   1MB\n\n[INPUT]\n    Name            systemd\n    Alias
+      \          kube-node-installation\n    Tag             kube-node-installation\n
+      \   Systemd_Filter  _SYSTEMD_UNIT=kube-node-installation.service\n    Path            /var/log/journal\n
+      \   DB              /var/lib/google-fluentbit/pos-files/kube-node-installation.db\n
+      \   Buffer_Max_Size 1MB\n    Mem_Buf_Limit   1MB\n\n[INPUT]\n    Name            systemd\n
+      \   Alias           kube-node-configuration\n    Tag             kube-node-configuration\n
+      \   Systemd_Filter  _SYSTEMD_UNIT=kube-node-configuration.service\n    Path
+      \           /var/log/journal\n    DB              /var/lib/google-fluentbit/pos-files/kube-node-configuration.db\n
+      \   Buffer_Max_Size 1MB\n    Mem_Buf_Limit   1MB\n\n[INPUT]\n    Name            systemd\n
+      \   Alias           kube-logrotate\n    Tag             kube-logrotate\n    Systemd_Filter
+      \ _SYSTEMD_UNIT=kube-logrotate.service\n    Path            /var/log/journal\n
+      \   DB              /var/lib/google-fluentbit/pos-files/kube-logrotate.db\n
+      \   Buffer_Max_Size 1MB\n    Mem_Buf_Limit   1MB\n\n[INPUT]\n    Name            systemd\n
+      \   Alias           node-problem-detector\n    Tag             node-problem-detector\n
+      \   Systemd_Filter  _SYSTEMD_UNIT=node-problem-detector.service\n    Path            /var/log/journal\n
+      \   DB              /var/lib/google-fluentbit/pos-files/node-problem-detector.db\n
+      \   Buffer_Max_Size 1MB\n    Mem_Buf_Limit   1MB\n\n[INPUT]\n    Name            systemd\n
+      \   Alias           kube-container-runtime-monitor\n    Tag             kube-container-runtime-monitor\n
+      \   Systemd_Filter  _SYSTEMD_UNIT=kube-container-runtime-monitor.service\n    Path
+      \           /var/log/journal\n    DB              /var/lib/google-fluentbit/pos-files/kube-container-runtime-monitor.db\n
+      \   Buffer_Max_Size 1MB\n    Mem_Buf_Limit   1MB\n\n[INPUT]\n    Name            systemd\n
+      \   Alias           kubelet-monitor\n    Tag             kubelet-monitor\n    Systemd_Filter
+      \ _SYSTEMD_UNIT=kubelet-monitor.service\n    Path            /var/log/journal\n
+      \   DB              /var/lib/google-fluentbit/pos-files/kubelet-monitor.db\n
+      \   Buffer_Max_Size 1MB\n    Mem_Buf_Limit   1MB\n\n[INPUT]\n    Name            systemd\n
+      \   Alias           gcfsd\n    Tag             gcfsd\n    Systemd_Filter  _SYSTEMD_UNIT=gcfsd.service\n
+      \   Path            /var/log/journal\n    DB              /var/lib/google-fluentbit/pos-files/gcfsd.db\n
+      \   Buffer_Max_Size 1MB\n    Mem_Buf_Limit   1MB\n\n[INPUT]\n    Name            systemd\n
+      \   Alias           gcfs-snapshotter\n    Tag             gcfs-snapshotter\n
+      \   Systemd_Filter  _SYSTEMD_UNIT=gcfs-snapshotter.service\n    Path            /var/log/journal\n
+      \   DB              /var/lib/google-fluentbit/pos-files/gcfs-snapshotter.db\n
+      \   Buffer_Max_Size 1MB\n    Mem_Buf_Limit   1MB\n\n\n[INPUT]\n    Name            systemd\n
+      \   Alias           container-runtime\n    Tag             container-runtime\n
+      \   Systemd_Filter  _SYSTEMD_UNIT=containerd.service\n    Path            /var/log/journal\n
+      \   DB              /var/lib/google-fluentbit/pos-files/container-runtime.db\n
+      \   Buffer_Max_Size 1MB\n    Mem_Buf_Limit   1MB\n\n[FILTER]\n    Name                lua\n
+      \   Alias               redact-kubelet-lua\n    Match               kubelet\n
+      \   Script              redact_kubelet.lua\n    Call                redact_sensitive_info\n\n[FILTER]\n
+      \   Name               modify\n    Match              kubelet\n    Alias              kubelet_remove_cmdline\n
+      \   Remove             _CMDLINE\n\n\n[FILTER]\n    Name        modify\n    Match
+      \      *\n    Hard_rename log message\n\n[FILTER]\n    Name         parser\n
+      \   Match        kube_*\n    Key_Name     message\n    Reserve_Data True\n    Parser
+      \      glog\n    Parser       json\n\n# level is a common synonym for severity,\n#
+      the default field name in libraries such as GoLang's zap.\n# populate severity
+      with level, if severity does not exist.\n[FILTER]\n    Name        modify\n
+      \   Match       kube_*\n    Copy        level severity\n\n[OUTPUT]\n    Name
+      \       http\n    Match       *\n    Host        127.0.0.1\n    Port        2021\n
+      \   URI         /logs\n    header_tag  FLUENT-TAG\n    Format      msgpack\n
+      \   Retry_Limit 2"
+    parsers.conf: |-
+      [PARSER]
+          Name        docker
+          Format      json
+          Time_Key    time
+          Time_Format %Y-%m-%dT%H:%M:%S.%L%z
+
+      [PARSER]
+          Name        containerd
+          Format      regex
+          # The timestamp is described in https://www.rfc-editor.org/rfc/rfc3339#section-5.6
+          Regex       ^(?<time>[0-9]{4}-[0-9]{2}-[0-9]{2}[Tt ][0-9]{2}:[0-9]{2}:[0-9]{2}(?:\.[0-9]+)?(?:[Zz]|[+-][0-9]{2}:[0-9]{2})) (?<stream>stdout|stderr) [^ ]* (?<log>.*)$
+          Time_Key    time
+          Time_Format %Y-%m-%dT%H:%M:%S.%L%z
+
+      [PARSER]
+          Name        json
+          Format      json
+
+      [PARSER]
+          Name        syslog
+          Format      regex
+          Regex       ^\<(?<pri>[0-9]+)\>(?<time>[^ ]* {1,2}[^ ]* [^ ]*) (?<host>[^ ]*) (?<ident>[a-zA-Z0-9_\/\.\-]*)(?:\[(?<pid>[0-9]+)\])?(?:[^\:]*\:)? *(?<message>.*)$
+          Time_Key    time
+          Time_Format %b %d %H:%M:%S
+
+      [PARSER]
+          Name        glog
+          Format      regex
+          # We skip the glog timestamp as it doesn't have year (in most cases) and time zone information.
+          # Instead, we rely on the containerd timestamp, which is available for every log line.
+          Regex       ^(?<severity>\w)\d{4}?\d{4} [^\s]*\s+(?<pid>\d+)\s+(?<source_file>[^ \]]+)\:(?<source_line>\d+)\]\s(?<message>.*)$
+
+      [PARSER]
+          Name        network-log
+          Format      json
+          Time_Key    timestamp
+          Time_Format %Y-%m-%dT%H:%M:%S.%L%z
+
+      # Example:
+      # [2023/01/05 00:01:58] [ info] [output:http:http.0] 127.0.0.1:2021, HTTP status=200\
+      # Rubular: https://screenshot.googleplex.com/8SvHiZJLUkW9idQ
+      [PARSER]
+          Name   fluentbit
+          Format regex
+          Regex  ^\[(?<time>[^\]]+)\][ ]*\[[ ]*(?<severity>[^\]]+)\][ ]*\[(?<plugin>[^\]]+)\] (?<log>.*)
+          Time_Key time
+          Time_Format %Y/%m/%d %H:%M:%S
+
+      # Example Log to be parsed:
+      # 2024-05-29T13:44:23.947Z [TAB] warn [TAB] internal/metricsbuilder.go:128 [TAB] The 'up' metric contains invalid value...
+      [PARSER]
+          Name        gkemetricsagent
+          Format      regex
+          Regex       ^[0-9]{4}-[0-9]{2}-[0-9]{2}[Tt ][0-9]{2}:[0-9]{2}:[0-9]{2}(?:\.[0-9]+)?(?:[Zz]|[+-][0-9]{2}:[0-9]{2})\s+(?<severity>[\w]+)\s+(?<source_file>[^ \]]+)\:(?<source_line>\d+).*$
+    redact_kubelet.lua: |-
+      function redact_sensitive_info(tag, timestamp, record)
+        message = record["MESSAGE"]
+        if message then
+          if string.find(message, "access_token=ya29.[a-zA-Z0-9._-]*") then
+            local redact_message = string.gsub(message, "access_token=ya29.[a-zA-Z0-9._-]*", "access_token=<REDACTED>")
+            record["MESSAGE"] = redact_message
+            return 2, timestamp, record
+          end
+        end
+        return 0, timestamp, record
+      end
+  kind: ConfigMap
+  metadata:
+    annotations:
+      components.gke.io/component-name: fluentbit
+      components.gke.io/component-version: 1.30.3-gke.0
+    creationTimestamp: "2024-11-29T05:15:39Z"
+    labels:
+      addonmanager.kubernetes.io/mode: Reconcile
+    name: fluentbit-gke-config-v1.4.0
+    namespace: kube-system
+    resourceVersion: "103950290"
+    uid: 0ebee8ac-9c8f-4e8d-a242-cd1b6f80598a
+- apiVersion: v1
+  data:
+    fluentbit-metrics-collector-config-data: |-
+      # proto-file: cloud/kubernetes/metrics/components/collector/config/collector.proto
+      # proto-message: Config
+
+      scrape_target:  {
+        url:  "http://127.0.0.1:2020/api/v1/metrics/prometheus"
+        target_name:  "fluentbit"
+      }
+      export_target:  {
+        endpoint:  "monitoring.googleapis.com:443"
+      }
+      metrics:  {
+        source_metric_name:  "fluentbit_input_records_total"
+        export_metric_name:  "kubernetes.io/internal/addons/fluentbit/input_records_total"
+        resource_metadata:  {
+          metric_schema:  SCHEMA_K8S_CONTAINER
+        }
+        value_type:  VALUE_TYPE_INT64
+        metric_kind:  METRIC_KIND_CUMULATIVE
+        metric_labels:  {
+          source_name:  "name"
+          type:  METRIC_LABEL_STRING
+          description:  "Name of the input plugin."
+        }
+        description:  "Number of records read by the input plugin."
+        unit:  "1"
+      }
+      metrics:  {
+        source_metric_name:  "fluentbit_input_bytes_total"
+        export_metric_name:  "kubernetes.io/internal/addons/fluentbit/input_bytes_total"
+        resource_metadata:  {
+          metric_schema:  SCHEMA_K8S_CONTAINER
+        }
+        value_type:  VALUE_TYPE_INT64
+        metric_kind:  METRIC_KIND_CUMULATIVE
+        metric_labels:  {
+          source_name:  "name"
+          type:  METRIC_LABEL_STRING
+          description:  "Name of the input plugin."
+        }
+        description:  "Number of bytes read by the input plugin."
+        unit:  "By"
+      }
+      metrics:  {
+        source_metric_name:  "fluentbit_build_info"
+        export_metric_name:  "kubernetes.io/internal/addons/fluentbit/fluentbit_build_info"
+        resource_metadata:  {
+          metric_schema:  SCHEMA_K8S_CONTAINER
+        }
+        value_type:  VALUE_TYPE_INT64
+        metric_kind:  METRIC_KIND_GAUGE
+        metric_labels:  {
+          source_name:  "edition"
+          type:  METRIC_LABEL_STRING
+          description:  "Fluentbit edition."
+        }
+        metric_labels:  {
+          source_name:  "version"
+          type:  METRIC_LABEL_STRING
+          description:  "Fluentbit version."
+        }
+        description:  "Build information(version and edition) about open source fluentbit that is running."
+        unit:  "1"
+      }
+      metrics:  {
+        source_metric_name:  "fluentbit_output_proc_records_total"
+        export_metric_name:  "kubernetes.io/internal/addons/fluentbit/output_proc_records_total"
+        resource_metadata:  {
+          metric_schema:  SCHEMA_K8S_CONTAINER
+        }
+        value_type:  VALUE_TYPE_INT64
+        metric_kind:  METRIC_KIND_CUMULATIVE
+        metric_labels:  {
+          source_name:  "name"
+          type:  METRIC_LABEL_STRING
+          description:  "Name of the output plugin."
+        }
+        description:  "Number of records successfully processed by the output plugin."
+        unit:  "1"
+      }
+      metrics:  {
+        source_metric_name:  "fluentbit_output_proc_bytes_total"
+        export_metric_name:  "kubernetes.io/internal/addons/fluentbit/output_proc_bytes_total"
+        resource_metadata:  {
+          metric_schema:  SCHEMA_K8S_CONTAINER
+        }
+        value_type:  VALUE_TYPE_INT64
+        metric_kind:  METRIC_KIND_CUMULATIVE
+        metric_labels:  {
+          source_name:  "name"
+          type:  METRIC_LABEL_STRING
+          description:  "Name of the output plugin."
+        }
+        description:  "Number of bytes successfully processed by the output plugin."
+        unit:  "By"
+      }
+      metrics:  {
+        source_metric_name:  "fluentbit_output_errors_total"
+        export_metric_name:  "kubernetes.io/internal/addons/fluentbit/output_errors_total"
+        resource_metadata:  {
+          metric_schema:  SCHEMA_K8S_CONTAINER
+        }
+        value_type:  VALUE_TYPE_INT64
+        metric_kind:  METRIC_KIND_CUMULATIVE
+        metric_labels:  {
+          source_name:  "name"
+          type:  METRIC_LABEL_STRING
+          description:  "Name of the output plugin."
+        }
+        description:  "Number of dropped log batches by the output plugin."
+        unit:  "1"
+      }
+      metrics:  {
+        source_metric_name:  "fluentbit_output_retries_total"
+        export_metric_name:  "kubernetes.io/internal/addons/fluentbit/output_retries_total"
+        resource_metadata:  {
+          metric_schema:  SCHEMA_K8S_CONTAINER
+        }
+        value_type:  VALUE_TYPE_INT64
+        metric_kind:  METRIC_KIND_CUMULATIVE
+        metric_labels:  {
+          source_name:  "name"
+          type:  METRIC_LABEL_STRING
+          description:  "Name of fluent-bit plugin."
+        }
+        description:  "Number of times Fluent Bit retried to send log batches."
+        unit:  "1"
+      }
+      metrics:  {
+        source_metric_name:  "fluentbit_output_retries_failed_total"
+        export_metric_name:  "kubernetes.io/internal/addons/fluentbit/output_retries_failed_total"
+        resource_metadata:  {
+          metric_schema:  SCHEMA_K8S_CONTAINER
+        }
+        value_type:  VALUE_TYPE_INT64
+        metric_kind:  METRIC_KIND_CUMULATIVE
+        metric_labels:  {
+          source_name:  "name"
+          type:  METRIC_LABEL_STRING
+          description:  "Name of fluent-bit plugin."
+        }
+        description:  "Number of dropped log batches due to reaching retry limit."
+        unit:  "1"
+      }
+
+      metrics:  {
+        source_metric_name:  "fluentbit_filter_drop_records_total"
+        export_metric_name:  "kubernetes.io/internal/addons/fluentbit/filter_drop_records_total"
+        resource_metadata:  {
+          metric_schema:  SCHEMA_K8S_CONTAINER
+        }
+        value_type:  VALUE_TYPE_INT64
+        metric_kind:  METRIC_KIND_CUMULATIVE
+        metric_labels:  {
+          source_name:  "name"
+          type:  METRIC_LABEL_STRING
+          description:  "name: the name or alias for the filter instance"
+        }
+        description:  "The number of log records that have been dropped by the filter. This means they removed from the data pipeline."
+        unit:  "1"
+      }
+  kind: ConfigMap
+  metadata:
+    annotations:
+      components.gke.io/component-name: fluentbit
+      components.gke.io/component-version: 1.30.3-gke.0
+      components.gke.io/layer: addon
+    creationTimestamp: "2024-11-29T05:15:40Z"
+    labels:
+      addonmanager.kubernetes.io/mode: Reconcile
+    name: fluentbit-metrics-collector-config-map
+    namespace: kube-system
+    resourceVersion: "103950330"
+    uid: d6d45909-19ff-492e-b944-a56a11ff4142
+- apiVersion: v1
+  data:
+    "1741776287545107635": '{"hostname":"gke-4bb4d04649794705a184-79e2-0731-vm","version":"3.0.48"}'
+    "1741776295836359473": '{"hostname":"gke-4bb4d04649794705a184-1348-3fe3-vm","version":"3.0.48"}'
+    "1741776296333940606": '{"hostname":"gke-4bb4d04649794705a184-4dae-da84-vm","version":"3.0.48"}'
+    "1741776311517557310": '{"hostname":"gke-4bb4d04649794705a184-8703-16b6-vm","version":"3.0.48"}'
+    "1741776317542042800": '{"hostname":"gke-4bb4d04649794705a184-79e2-0731-vm","version":"3.0.48"}'
+    "1741776325837794795": '{"hostname":"gke-4bb4d04649794705a184-1348-3fe3-vm","version":"3.0.48"}'
+    "1741776326338665996": '{"hostname":"gke-4bb4d04649794705a184-4dae-da84-vm","version":"3.0.48"}'
+    "1741776341517235232": '{"hostname":"gke-4bb4d04649794705a184-8703-16b6-vm","version":"3.0.48"}'
+    "1741776347542049866": '{"hostname":"gke-4bb4d04649794705a184-79e2-0731-vm","version":"3.0.48"}'
+    "1741776355837946209": '{"hostname":"gke-4bb4d04649794705a184-1348-3fe3-vm","version":"3.0.48"}'
+    "1741776356333621299": '{"hostname":"gke-4bb4d04649794705a184-4dae-da84-vm","version":"3.0.48"}'
+    "1741776371522000375": '{"hostname":"gke-4bb4d04649794705a184-8703-16b6-vm","version":"3.0.48"}'
+    "1741776377543715648": '{"hostname":"gke-4bb4d04649794705a184-79e2-0731-vm","version":"3.0.48"}'
+    "1741776385838340055": '{"hostname":"gke-4bb4d04649794705a184-1348-3fe3-vm","version":"3.0.48"}'
+    "1741776386335224331": '{"hostname":"gke-4bb4d04649794705a184-4dae-da84-vm","version":"3.0.48"}'
+    "1741776401536107406": '{"hostname":"gke-4bb4d04649794705a184-8703-16b6-vm","version":"3.0.48"}'
+    "1741776407542848565": '{"hostname":"gke-4bb4d04649794705a184-79e2-0731-vm","version":"3.0.48"}'
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2024-11-29T05:15:43Z"
+    name: gke-common-webhook-heartbeat
+    namespace: kube-system
+    resourceVersion: "132542011"
+    uid: eaf9d822-510a-40a5-a6a2-6eccb26a52c7
+- apiVersion: v1
+  data:
+    provider-uid: 82f20baa7147247c
+    uid: 82f20baa7147247c
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2024-11-29T05:16:01Z"
+    name: ingress-uid
+    namespace: kube-system
+    resourceVersion: "762"
+    uid: a8d4d5cd-07f5-4208-adfc-00e24c49bdd4
+- apiVersion: v1
+  data:
+    ladder: |-
+      {
+        "coresToReplicas": [],
+        "nodesToReplicas":
+        [
+          [1, 1],
+          [2, 2],
+          [3, 3],
+          [4, 4],
+          [5, 5],
+          [6, 6],
+          [10, 8],
+          [100, 12],
+          [250, 18],
+          [500, 25],
+          [2000, 50],
+          [5000, 100]
+        ]
+      }
+  kind: ConfigMap
+  metadata:
+    annotations:
+      components.gke.io/component-name: konnectivitynetworkproxy-combined
+      components.gke.io/component-version: 1.12.6
+      components.gke.io/layer: addon
+    creationTimestamp: "2024-11-29T05:15:56Z"
+    labels:
+      addonmanager.kubernetes.io/mode: EnsureExists
+      kubernetes.io/cluster-service: "true"
+    name: konnectivity-agent-autoscaler-config
+    namespace: kube-system
+    resourceVersion: "678"
+    uid: ff207132-911b-4f3e-abf8-5dff8bf493ff
+- apiVersion: v1
+  data:
+    konnectivity-agent-metrics-collector-config-data: |
+      # proto-file: cloud/kubernetes/metrics/components/collector/config/collector.proto
+      # proto-message: Config
+
+      scrape_target: {
+        url: "http://localhost:8093/metrics"
+        target_name: "konnectivity-agent"
+      }
+      export_target: {
+        endpoint: "monitoring.googleapis.com:443"
+      }
+      metrics: {
+        source_metric_name: "go_goroutines"
+        export_metric_name: "kubernetes.io/internal/addons/konnectivitynetworkproxy_agent/go_goroutines"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_CONTAINER
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        description: "The current number of goroutines in existence in the Konnectivity proxy agent."
+        unit: "count"
+      }
+      metrics: {
+        source_metric_name: "process_start_time_seconds"
+        export_metric_name: "kubernetes.io/internal/addons/konnectivitynetworkproxy_agent/process_start_time_seconds"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_CONTAINER
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        description: "Start time of the Konnectivity proxy agent since unix epoch in seconds."
+        unit: "seconds"
+      }
+      metrics: {
+        source_metric_name: "process_virtual_memory_bytes"
+        export_metric_name: "kubernetes.io/internal/addons/konnectivitynetworkproxy_agent/process_virtual_memory_bytes"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_CONTAINER
+        }
+        value_type: VALUE_TYPE_DOUBLE
+        metric_kind: METRIC_KIND_GAUGE
+        description: "Virtual memory (bytes) used by the Konnectivity proxy agent."
+        unit: "By"
+      }
+      metrics: {
+        source_metric_name: "konnectivity_network_proxy_agent_dial_duration_seconds"
+        export_metric_name: "kubernetes.io/internal/addons/konnectivitynetworkproxy_agent/konnectivity_network_proxy_agent_dial_duration_seconds"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_CONTAINER
+        }
+        value_type: VALUE_TYPE_DISTRIBUTION
+        metric_kind: METRIC_KIND_CUMULATIVE
+        description: "The latency of the Konnectivity proxy agent dialing to the final endpoint, in seconds."
+        unit: "seconds"
+      }
+      metrics: {
+        source_metric_name: "konnectivity_network_proxy_agent_server_connection_failure_count"
+        export_metric_name: "kubernetes.io/internal/addons/konnectivitynetworkproxy_agent/konnectivity_network_proxy_agent_server_connection_failure_count"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_CONTAINER
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_CUMULATIVE
+        metric_labels: {
+          source_name: "direction"
+          type: METRIC_LABEL_STRING
+          description: "Direction of the connection, either from_server or to_server"
+        }
+        description: "Count of failures of Konnectivity proxy agent sending to or receiving from the proxy server."
+        unit: "1"
+      }
+      metrics: {
+        source_metric_name: "konnectivity_network_proxy_agent_endpoint_dial_failure_total"
+        export_metric_name: "kubernetes.io/internal/addons/konnectivitynetworkproxy_agent/konnectivity_network_proxy_agent_endpoint_dial_failure_total"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_CONTAINER
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_CUMULATIVE
+        metric_labels: {
+          source_name: "reason"
+          type: METRIC_LABEL_STRING
+          description: "reason"
+        }
+        description: "Number of failures dialing the remote endpoint, by reason (example: timeout)."
+        unit: "count"
+      }
+      metrics: {
+        source_metric_name: "konnectivity_network_proxy_agent_open_server_connections"
+        export_metric_name: "kubernetes.io/internal/addons/konnectivitynetworkproxy_agent/konnectivity_network_proxy_agent_open_server_connections"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_CONTAINER
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        description: "Current number of open server connections."
+        unit: "count"
+      }
+      metrics: {
+        source_metric_name: "konnectivity_network_proxy_agent_open_endpoint_connections"
+        export_metric_name: "kubernetes.io/internal/addons/konnectivitynetworkproxy_agent/konnectivity_network_proxy_agent_open_endpoint_connections"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_CONTAINER
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        description: "Current number of open endpoint connections."
+        unit: "count"
+      }
+      metrics: {
+        source_metric_name: "konnectivity_network_proxy_agent_stream_packets_total"
+        export_metric_name: "kubernetes.io/internal/addons/konnectivitynetworkproxy_agent/konnectivity_network_proxy_agent_stream_packets_total"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_CONTAINER
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_CUMULATIVE
+        metric_labels: {
+          source_name: "packet_type"
+          type: METRIC_LABEL_STRING
+          description: "packet_type"
+        }
+        metric_labels: {
+          source_name: "segment"
+          type: METRIC_LABEL_STRING
+          description: "segment"
+        }
+        description: "Count of packets processed, by segment and packet type (example: from_client, DIAL_REQ)."
+        unit: "count"
+      }
+      metrics: {
+        source_metric_name: "konnectivity_network_proxy_agent_stream_errors_total"
+        export_metric_name: "kubernetes.io/internal/addons/konnectivitynetworkproxy_agent/konnectivity_network_proxy_agent_stream_errors_total"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_CONTAINER
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_CUMULATIVE
+        metric_labels: {
+          source_name: "code"
+          type: METRIC_LABEL_STRING
+          description: "code"
+        }
+        metric_labels: {
+          source_name: "packet_type"
+          type: METRIC_LABEL_STRING
+          description: "packet_type"
+        }
+        metric_labels: {
+          source_name: "segment"
+          type: METRIC_LABEL_STRING
+          description: "segment"
+        }
+        description: "Count of gRPC stream errors, by segment, grpc Code, packet type. (example: from_agent, Code.Unavailable, DIAL_RSP)."
+        unit: "count"
+      }
+  kind: ConfigMap
+  metadata:
+    annotations:
+      components.gke.io/component-name: konnectivitynetworkproxy-combined
+      components.gke.io/component-version: 1.12.11
+      components.gke.io/layer: addon
+    creationTimestamp: "2024-11-29T05:15:57Z"
+    labels:
+      addonmanager.kubernetes.io/mode: Reconcile
+    name: konnectivity-agent-metrics-collector-config-map
+    namespace: kube-system
+    resourceVersion: "103950539"
+    uid: 5988847d-5b57-4b4a-a6bf-af5e032c3af4
+- apiVersion: v1
+  data:
+    since: "2024-11-29"
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2024-11-29T05:15:03Z"
+    name: kube-apiserver-legacy-service-account-token-tracking
+    namespace: kube-system
+    resourceVersion: "17"
+    uid: d1a4d41b-fcf7-4207-ba80-ff6a8c906ad0
+- apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2025-01-29T16:16:02Z"
+    labels:
+      addonmanager.kubernetes.io/mode: EnsureExists
+    name: kube-dns
+    namespace: kube-system
+    resourceVersion: "78281672"
+    uid: dedc8a3e-989e-40a8-b700-a9254eed7b09
+- apiVersion: v1
+  data:
+    linear: '{"coresPerReplica":256,"includeUnschedulableNodes":true,"nodesPerReplica":16,"preventSinglePointFailure":true}'
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2024-11-29T05:21:23Z"
+    name: kube-dns-autoscaler
+    namespace: kube-system
+    resourceVersion: "6099"
+    uid: c33a276d-e3a7-49b3-90be-f7c62d38060b
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIELDCCApSgAwIBAgIQImYEcZq0Yl3q9QOlXcTOgTANBgkqhkiG9w0BAQsFADAv
+      MS0wKwYDVQQDEyRlNjliZDVkMS1lOWJmLTRlYWQtOTkyYi04ZWNlMmQyYTkwMDAw
+      IBcNMjQxMTI5MDQxMDM1WhgPMjA1NDExMjIwNTEwMzVaMC8xLTArBgNVBAMTJGU2
+      OWJkNWQxLWU5YmYtNGVhZC05OTJiLThlY2UyZDJhOTAwMDCCAaIwDQYJKoZIhvcN
+      AQEBBQADggGPADCCAYoCggGBAMpvt1vxY7ABe0i73tJ/GCTIMAxBItJ3Ftg2A3Dp
+      nlSS3EHDPp6uqXiRJBYj9Jb9gAdjT8iZn/Pe8RYnKeEOsng8EPd4NVAOSU/jxzbU
+      KZeOghEs9HE0C46lZXt5L1hb4Yv44dK6fnmq4Hru5AOmeMiVv8YdSMx1Wi4jt5rS
+      hoi7fFfHmC1rihz1xMJLq/ErxsCfTsSnLfAErrYkK/fFx6o5doykkxOF3IxDVsTE
+      dNf4UcvK9Dkfr/qs3ocQc9W5rEdSTDCvBLOnPTjcQs76xlbBz2ggKLwvhLDGGhsa
+      r8+Rxhe2hCfpIe2XkPAzEnIbMxmb6oN5QXGRh4TJTuchxpoHnV4Liwhlsx6XwqTH
+      UMY6E4iUAt1cc2VfsqaWjXUDklEEPPU+RpGWk1uS8b4k5UNyXSL4oc0+aFpw+ZYm
+      tJvBb++vD4Wqinjz4+APm2kXsStxO1WcZ6aWcBWxxAAfUM8IpYPUx95wR118l14K
+      +tdwkT71Smb1ekFcB5rkCay1kQIDAQABo0IwQDAOBgNVHQ8BAf8EBAMCAgQwDwYD
+      VR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUzK8PYwVs7RhkGmXpylNnVuswdkQwDQYJ
+      KoZIhvcNAQELBQADggGBAITDhG0mSJcgzm+FM2Wr+A0IzHEPj4k3B+6vW9IEp2hu
+      t4n8RKyDqtr9zYAbbWUKnqSaIpBM5254DjqgaAZ51oqgMFNZHfcN/lQx7g+SlRF6
+      liklNIAkVsQAbzZ749zYFMLHyjEDCZb8sj0nALm33m/qbAlfPgHwzXmpKVZctN7D
+      6lv58DVTiKr/M43dD0TEbb0X2gIrElgEltWxZPTqnuCgvep+W0osn8f+4fsHff4R
+      gwIMe2BowMO93KH3dIAPeKUwaIbs11Yb+3ccuR8wMO9G63HkvV4y2BcJvA3SLsju
+      SRp5dlXy403+kpBUh2vLWlGGdZuKNK7jgTLeE4wvkpi8BJYsJY1uSi0kTOGd2jgy
+      RB6jrK6NzxzlTi3/S8wWY+3tQ14LsvIMokw36lRIyRg9K+dkrbU3ED7clDZHRESu
+      crrmOxbQNDMGl8Au3DAbm4JJlNFDQA2xhfA8zblyQ53hqlY504zpuVMUguGE9lwF
+      8Cde7ttTiPt0LX518ZKcgw==
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2024-11-29T05:15:24Z"
+    name: kube-root-ca.crt
+    namespace: kube-system
+    resourceVersion: "273"
+    uid: d23cc44b-a1d6-4084-a285-b8245d600278
+- apiVersion: v1
+  data:
+    kubedns.dnsmasq-nanny: us-central1-artifactregistry.gcr.io/gke-release/gke-release/k8s-dns-dnsmasq-nanny:1.23.0-gke.20@sha256:e178b753d49a90ec32f1f45e0f52ce64019641d3fd45d8deadcf08cb73b8c840
+    kubedns.kube-dns: us-central1-artifactregistry.gcr.io/gke-release/gke-release/k8s-dns-kube-dns:1.23.0-gke.20@sha256:b609a51c8aa4add2d1d0811737f177b4e944ea0781a48eead0d804722787f96f
+    kubedns.kubedns-metrics-collector: us-central1-artifactregistry.gcr.io/gke-release/gke-release/gke-metrics-collector:20250122_2300_RC0@sha256:1e189a5b2618a8088ebf7719bf2680dac2a943e321b5850c3651ffa8805b3116
+    kubedns.prom-to-sd: us-central1-artifactregistry.gcr.io/gke-release/gke-release/prometheus-to-sd:v0.11.12-gke.49@sha256:443ce4937d4bc893e894cd740c730e9039ccc76e0bd7494d8bf8725486658e10
+    kubedns.sidecar: us-central1-artifactregistry.gcr.io/gke-release/gke-release/k8s-dns-sidecar:1.23.0-gke.20@sha256:9e60f83b54d010a7dd7e5a868a6713ad410442c72f0b7540cda010c50651c0bc
+  kind: ConfigMap
+  metadata:
+    annotations:
+      components.gke.io/component-name: kubedns
+      components.gke.io/component-version: 30.1.1
+      components.gke.io/image-map: Images deployed by operator
+    creationTimestamp: "2024-11-29T05:15:57Z"
+    labels:
+      addonmanager.kubernetes.io/mode: Reconcile
+      kubedns.cloud.google.com/operator-system: "true"
+    name: kubedns-config-images
+    namespace: kube-system
+    resourceVersion: "113143714"
+    uid: 9c829f55-e424-4914-ba7f-220d42ee9988
+- apiVersion: v1
+  data:
+    kubedns-metrics-collector-config-data: |
+      # proto-file: cloud/kubernetes/metrics/components/collector/config/collector.proto
+      # proto-message: Config
+
+      scrape_target: {
+        url: "http://127.0.0.1:10055/metrics"
+        target_name: "kubedns"
+      }
+      export_target: {
+        endpoint: "monitoring.googleapis.com:443"
+      }
+      metrics: {
+        source_metric_name: "skydns_skydns_dns_request_count_total"
+        export_metric_name: "kubernetes.io/internal/addons/kubedns/skydns_dns_request_count_total"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_CONTAINER
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_CUMULATIVE
+        metric_labels: {
+          source_name: "system"
+          type: METRIC_LABEL_STRING
+          description: "Name of the system handling the query - cache, stub, recursive..."
+        }
+        description: "Counter of DNS requests made."
+        unit: "{requests}"
+      }
+      metrics: {
+        source_metric_name: "skydns_skydns_dns_request_duration_seconds"
+        export_metric_name: "kubernetes.io/internal/addons/kubedns/skydns_dns_request_duration_seconds"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_CONTAINER
+        }
+        value_type: VALUE_TYPE_DISTRIBUTION
+        metric_kind: METRIC_KIND_CUMULATIVE
+        metric_labels: {
+          source_name: "system"
+          type: METRIC_LABEL_STRING
+          description: "Name of the system handling the query - cache, stub, recursive..."
+        }
+        description: "Histogram of the time (in seconds) each request took to resolve."
+        unit: "s"
+      }
+      metrics: {
+        source_metric_name: "skydns_skydns_dns_response_size_bytes"
+        export_metric_name: "kubernetes.io/internal/addons/kubedns/skydns_dns_response_size_bytes"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_CONTAINER
+        }
+        value_type: VALUE_TYPE_DISTRIBUTION
+        metric_kind: METRIC_KIND_CUMULATIVE
+        metric_labels: {
+          source_name: "system"
+          type: METRIC_LABEL_STRING
+          description: "Name of the system handling the query - cache, stub, recursive..."
+        }
+        description: "Size of the returns response in bytes."
+        unit: "By"
+      }
+      metrics: {
+        source_metric_name: "skydns_skydns_dns_error_count_total"
+        export_metric_name: "kubernetes.io/internal/addons/kubedns/skydns_dns_error_count_total"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_CONTAINER
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_CUMULATIVE
+        metric_labels: {
+          source_name: "cause"
+          type: METRIC_LABEL_STRING
+          description: "Cause of the error."
+        }
+        metric_labels: {
+          source_name: "system"
+          type: METRIC_LABEL_STRING
+          description: "Name of the system handling the query - cache, stub, recursive..."
+        }
+        description: "Counter of DNS requests resulting in an error."
+        unit: "{requests}"
+      }
+      metrics: {
+        source_metric_name: "skydns_skydns_dns_cachemiss_count_total"
+        export_metric_name: "kubernetes.io/internal/addons/kubedns/skydns_dns_cachemiss_count_total"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_CONTAINER
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_CUMULATIVE
+        metric_labels: {
+          source_name: "cache"
+          type: METRIC_LABEL_STRING
+          description: "Type of cache - DNSSec cache or Responses cache."
+        }
+        description: "Counter of DNS requests that result in a cache miss."
+        unit: "{requests}"
+      }
+  kind: ConfigMap
+  metadata:
+    annotations:
+      components.gke.io/component-name: kubedns
+      components.gke.io/component-version: 30.1.1
+      components.gke.io/layer: addon
+    creationTimestamp: "2024-11-29T05:15:57Z"
+    labels:
+      addonmanager.kubernetes.io/mode: Reconcile
+    name: kubedns-metrics-collector-config-map
+    namespace: kube-system
+    resourceVersion: "113143717"
+    uid: 6329038e-1d53-4027-85dc-61daad630ba4
+- apiVersion: v1
+  data:
+    NannyConfiguration: |-
+      apiVersion: nannyconfig/v1alpha1
+      kind: NannyConfiguration
+  kind: ConfigMap
+  metadata:
+    annotations:
+      components.gke.io/component-name: metrics-server
+      components.gke.io/component-version: 1.30.3-gke.6
+      components.gke.io/layer: addon
+    creationTimestamp: "2024-11-29T05:16:10Z"
+    labels:
+      addonmanager.kubernetes.io/mode: EnsureExists
+      kubernetes.io/cluster-service: "true"
+    name: metrics-server-config
+    namespace: kube-system
+    resourceVersion: "929"
+    uid: c9b03625-7a6d-4345-b9ff-57bac42eb987
+- apiVersion: v1
+  data:
+    cilium_health_max_wait_time_seconds: "600"
+    cilium_watchdog_failure_retry_seconds: "60"
+    cilium_watchdog_fast_start_wait_seconds: "60"
+    cilium_watchdog_success_wait_seconds: "300"
+    cni_spec_ipv6_route: '{"dst": "::/0"}'
+    cni_spec_name: 10-gke-ptp.conflist
+    cni_spec_template: |-
+      {
+        "name": "gke-pod-network",
+        "cniVersion": "0.3.1",
+        "plugins": [
+          {
+            "type": "gke",
+            "mtu": @mtu,
+            "ipam": {
+              "type": "host-local",
+              "ranges": [
+                @ipv4Subnet@ipv6SubnetOptional
+              ],
+              "routes": [
+                {"dst": "0.0.0.0/0"}@ipv6RouteOptional
+              ]
+            }
+          },
+          {
+            "type": "portmap",
+            "capabilities": {
+              "portMappings": true
+            }
+          },
+          {
+            "type": "bandwidth",
+            "capabilities": {
+              "bandwidth": true
+            }
+          }@cniCiliumPlugin@cniIstioPlugin
+        ]
+      }
+    enable_bandwidth_plugin: "false"
+    enable_calico_network_policy: "false"
+    enable_cilium_plugin: "false"
+    enable_ipv6: "false"
+    enable_policy_routing: "false"
+    master_ip: 10.10.10.2
+    reconcile_interval_seconds: 60s
+  kind: ConfigMap
+  metadata:
+    annotations:
+      components.gke.io/component-name: netd-combined
+      components.gke.io/component-version: 10.7.8
+      components.gke.io/layer: addon
+    creationTimestamp: "2024-11-29T05:16:14Z"
+    labels:
+      addonmanager.kubernetes.io/mode: Reconcile
+    name: netd-config
+    namespace: kube-system
+    resourceVersion: "94812423"
+    uid: f24ae42b-bb45-46d1-bc21-84a6f00f5467
+- apiVersion: v1
+  data:
+    netd-metrics-collector-config-data: |
+      # proto-file: cloud/kubernetes/metrics/components/collector/config/collector.proto
+      # proto-message: Config
+      # Netd is an open-source component, and is an exception for using a sidecar for metrics collection to keep netd start time short.
+
+      scrape_target: {
+        target_name: "netd"
+        url: "http://${METRICS_ADDRESS}/metrics"
+      }
+
+      export_target: {
+        endpoint: "monitoring.googleapis.com:443"
+      }
+      metrics: {
+        source_metric_name: "conntrack_entries"
+        export_metric_name: "kubernetes.io/internal/net/cluster/node/conntrack_entries"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        description: "Number of currently allocated flow entries for connection tracking."
+        unit: "{entries}"
+      }
+      metrics: {
+        source_metric_name: "conntrack_error_count"
+        export_metric_name: "kubernetes.io/internal/net/cluster/node/conntrack_error_count"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_CUMULATIVE
+        metric_labels: {
+          source_name: "type"
+          type: METRIC_LABEL_STRING
+          description: "The type of error"
+        }
+        description: "Conntrack error counters."
+        unit: "1"
+      }
+      metrics: {
+        source_metric_name: "conntrack_size"
+        export_metric_name: "kubernetes.io/internal/net/cluster/node/conntrack_size"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        description: "Size of connection tracking table."
+        unit: "{entries}"
+      }
+      metrics: {
+        source_metric_name: "num_inuse_sockets"
+        export_metric_name: "kubernetes.io/internal/net/cluster/node/num_inuse_sockets"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        metric_labels: {
+          source_name: "protocol"
+          type: METRIC_LABEL_STRING
+          description: "Socket protocol type"
+        }
+        description: "Number of inuse sockets."
+        unit: "{sockets}"
+      }
+      metrics: {
+        source_metric_name: "num_tw_sockets"
+        export_metric_name: "kubernetes.io/internal/net/cluster/node/num_tw_sockets"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        description: "Number of sockets in time wait state."
+        unit: "{sockets}"
+      }
+      metrics: {
+        source_metric_name: "socket_memory"
+        export_metric_name: "kubernetes.io/internal/net/cluster/node/socket_memory"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        description: "Amount of memory used by sockets."
+        unit: "bytes"
+      }
+      metrics: {
+        source_metric_name: "tcp_timeout_rehash_count"
+        export_metric_name: "kubernetes.io/internal/net/cluster/node/tcp_timeout_rehash_count"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_CUMULATIVE
+        description: "Tcp timeout rehash total."
+        unit: "1"
+      }
+      metrics: {
+        source_metric_name: "tcp_duplicate_rehash_count"
+        export_metric_name: "kubernetes.io/internal/net/cluster/node/tcp_duplicate_rehash_count"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_CUMULATIVE
+        description: "Tcp duplicate rehash total."
+        unit: "1"
+      }
+      metrics: {
+        source_metric_name: "tcp_segments_received_count"
+        export_metric_name: "kubernetes.io/internal/net/cluster/node/tcp_segments_received_count"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_CUMULATIVE
+        description: "Total TCP segments received on the node."
+        unit: "1"
+      }
+      metrics: {
+        source_metric_name: "tcp_segments_sent_count"
+        export_metric_name: "kubernetes.io/internal/net/cluster/node/tcp_segments_sent_count"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_CUMULATIVE
+        description: "Total TCP segments sent from node."
+        unit: "1"
+      }
+      metrics: {
+        source_metric_name: "tcp_segments_retransmitted_count"
+        export_metric_name: "kubernetes.io/internal/net/cluster/node/tcp_segments_retransmitted_count"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_CUMULATIVE
+        description: "Total TCP segments retransmitted on the node."
+        unit: "1"
+      }
+      metrics: {
+        source_metric_name: "used_ipv4_addr_count"
+        export_metric_name: "kubernetes.io/internal/net/cluster/node/used_ipv4_addr_count"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        description: "Indicates how many IPv4 addresses are in use on the node."
+        unit: "{ipv4_addresses}"
+      }
+      metrics: {
+        source_metric_name: "used_ipv6_addr_count"
+        export_metric_name: "kubernetes.io/internal/net/cluster/node/used_ipv6_addr_count"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        description: "Indicates how many IPv6 addresses are in use on the node."
+        unit: "{ipv6_addresses}"
+      }
+      metrics: {
+        source_metric_name: "dual_stack_count"
+        export_metric_name: "kubernetes.io/internal/net/cluster/node/dual_stack_count"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        description: "Indicates how many pods have dual stack IP addresses."
+        unit: "{dual_stack}"
+      }
+      metrics: {
+        source_metric_name: "dual_stack_error_count"
+        export_metric_name: "kubernetes.io/internal/net/cluster/node/dual_stack_error_count"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        description: "Indicates how many pods did not get dual stack IPs erroneously."
+        unit: "{dual_stack_errors}"
+      }
+      metrics: {
+        source_metric_name: "ip_reuse_minimum_time_milliseconds"
+        export_metric_name: "kubernetes.io/internal/net/cluster/node/ip_reuse_minimum_time_milliseconds"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        description: "Indicates the minimum IP reuse time."
+        unit: "milliseconds"
+      }
+      metrics: {
+        source_metric_name: "ip_reuse_average_time_milliseconds"
+        export_metric_name: "kubernetes.io/internal/net/cluster/node/ip_reuse_average_time_milliseconds"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        value_type: VALUE_TYPE_DOUBLE
+        metric_kind: METRIC_KIND_GAUGE
+        description: "Indicates the average IP reuse time."
+        unit: "milliseconds"
+      }
+      metrics: {
+        source_metric_name: "ip_reuse_time_duration_milliseconds"
+        export_metric_name: "kubernetes.io/internal/net/cluster/node/ip_reuse_time_duration_milliseconds"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        value_type: VALUE_TYPE_DISTRIBUTION
+        metric_kind: METRIC_KIND_CUMULATIVE
+        description: "Indicates the IP reuse duration in millisecond for all IPs."
+        unit: "milliseconds"
+      }
+      metrics: {
+        source_metric_name: "active_tcp_connections"
+        export_metric_name: "kubernetes.io/internal/net/cluster/pod/active_tcp_connections"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_POD
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        metric_labels: {
+          source_name: "pod_name"
+          type: METRIC_LABEL_STRING
+          description: "pod name"
+        }
+        metric_labels: {
+          source_name: "namespace_name"
+          type: METRIC_LABEL_STRING
+          description: "namespace name"
+        }
+        description: "Active TCP connections on a pod."
+        unit: "1"
+      }
+      metrics: {
+        source_metric_name: "active_tcp_retransmits"
+        export_metric_name: "kubernetes.io/internal/net/cluster/pod/active_tcp_retransmits"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_POD
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        metric_labels: {
+          source_name: "pod_name"
+          type: METRIC_LABEL_STRING
+          description: "pod name"
+        }
+        metric_labels: {
+          source_name: "namespace_name"
+          type: METRIC_LABEL_STRING
+          description: "namespace name"
+        }
+        description: "Current number of TCP retransmits on a pod from active tcp connections."
+        unit: "1"
+      }
+      metrics: {
+        source_metric_name: "ipv4_assigned_count"
+        export_metric_name: "kubernetes.io/internal/net/cluster/node/ipv4_assigned_count"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        description: "Indicates the total IPv4 IPs assigned to the subnetwork."
+        unit: "1"
+      }
+      metrics: {
+        source_metric_name: "ipv6_assigned_count"
+        export_metric_name: "kubernetes.io/internal/net/cluster/node/ipv6_assigned_count"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        description: "Indicates the total IPv6 IPs assigned to the subnetwork."
+        unit: "1"
+      }
+  kind: ConfigMap
+  metadata:
+    annotations:
+      components.gke.io/component-name: netd-combined
+      components.gke.io/component-version: 10.7.8
+      components.gke.io/layer: addon
+    creationTimestamp: "2024-11-29T05:16:15Z"
+    labels:
+      addonmanager.kubernetes.io/mode: Reconcile
+    name: netd-metrics-collector-config-map
+    namespace: kube-system
+    resourceVersion: "94812449"
+    uid: 0065bc12-7a43-4a1e-9b23-473a283137d3
+- apiVersion: v1
+  data:
+    export_interval: 2m
+    metrics_address: localhost:10231
+    metrics_collectors: conntrack,socket,pod_ip_metrics,kernel_metrics
+    stack_type: IPV4
+  kind: ConfigMap
+  metadata:
+    annotations:
+      components.gke.io/component-name: netd-combined
+      components.gke.io/component-version: 10.7.8
+      components.gke.io/layer: addon
+    creationTimestamp: "2024-11-29T05:16:14Z"
+    labels:
+      addonmanager.kubernetes.io/mode: Reconcile
+    name: networking-metrics-config
+    namespace: kube-system
+    resourceVersion: "94812426"
+    uid: c04033d4-f7d3-475a-aafa-8d9d678c50d0
+- apiVersion: v1
+  data:
+    gpu-device-plugin-metrics-collector-config-data: |
+      # proto-file: cloud/kubernetes/metrics/components/collector/config/collector.proto
+      # proto-message: Config
+
+      scrape_target: {
+        url: "http://127.0.0.1:2112/metrics"
+        target_name: "gpu-device-plugin"
+      }
+
+      export_target: {
+        endpoint: "monitoring.googleapis.com:443"
+      }
+
+      metrics: {
+        source_metric_name: "memory_total"
+        export_metric_name: "kubernetes.io/container/accelerator/memory_total"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_CONTAINER
+        }
+        description: "Total accelerator memory in bytes."
+        unit: "bytes"
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        metric_labels: {
+          source_name: "make"
+          type: METRIC_LABEL_STRING
+          description: "Make of the accelerator (e.g. nvidia)"
+        }
+        metric_labels: {
+          source_name: "accelerator_id"
+          type: METRIC_LABEL_STRING
+          description: "ID of the accelerator"
+        }
+        metric_labels: {
+          source_name: "model"
+          type: METRIC_LABEL_STRING
+          description: "Model of the accelerator (e.g. Tesla P100)"
+        }
+        override_labels: {
+          resource_label_target: {
+            name: "namespace_name"
+          }
+          metric_label: {
+            name: "namespace"
+          }
+        }
+        override_labels: {
+          resource_label_target: {
+            name: "pod_name"
+          }
+          metric_label: {
+            name: "pod"
+          }
+        }
+        override_labels: {
+          resource_label_target: {
+            name: "container_name"
+          }
+          metric_label: {
+            name: "container"
+          }
+        }
+      }
+
+      metrics: {
+        source_metric_name: "memory_used"
+        export_metric_name: "kubernetes.io/container/accelerator/memory_used"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_CONTAINER
+        }
+        description: "Total accelerator memory allocated in bytes."
+        unit: "bytes"
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        metric_labels: {
+          source_name: "make"
+          type: METRIC_LABEL_STRING
+          description: "Make of the accelerator (e.g. nvidia)"
+        }
+        metric_labels: {
+          source_name: "accelerator_id"
+          type: METRIC_LABEL_STRING
+          description: "ID of the accelerator"
+        }
+        metric_labels: {
+          source_name: "model"
+          type: METRIC_LABEL_STRING
+          description: "Model of the accelerator (e.g. Tesla P100)"
+        }
+        override_labels: {
+          resource_label_target: {
+            name: "namespace_name"
+          }
+          metric_label: {
+            name: "namespace"
+          }
+        }
+        override_labels: {
+          resource_label_target: {
+            name: "pod_name"
+          }
+          metric_label: {
+            name: "pod"
+          }
+        }
+        override_labels: {
+          resource_label_target: {
+            name: "container_name"
+          }
+          metric_label: {
+            name: "container"
+          }
+        }
+      }
+
+      metrics: {
+        source_metric_name: "duty_cycle"
+        export_metric_name: "kubernetes.io/container/accelerator/duty_cycle"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_CONTAINER
+        }
+        description: "Percent of time over the past sample period (10s) during which the accelerator was actively processing. Values are integers between 0 and 100."
+        unit: "%"
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        metric_labels: {
+          source_name: "make"
+          type: METRIC_LABEL_STRING
+          description: "Make of the accelerator (e.g. nvidia)"
+        }
+        metric_labels: {
+          source_name: "accelerator_id"
+          type: METRIC_LABEL_STRING
+          description: "ID of the accelerator"
+        }
+        metric_labels: {
+          source_name: "model"
+          type: METRIC_LABEL_STRING
+          description: "Model of the accelerator (e.g. Tesla P100)"
+        }
+        override_labels: {
+          resource_label_target: {
+            name: "namespace_name"
+          }
+          metric_label: {
+            name: "namespace"
+          }
+        }
+        override_labels: {
+          resource_label_target: {
+            name: "pod_name"
+          }
+          metric_label: {
+            name: "pod"
+          }
+        }
+        override_labels: {
+          resource_label_target: {
+            name: "container_name"
+          }
+          metric_label: {
+            name: "container"
+          }
+        }
+      }
+
+      metrics: {
+        source_metric_name: "memory_total_gpu_node"
+        export_metric_name: "kubernetes.io/node/accelerator/memory_total"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        description: "Total accelerator memory with node in bytes."
+        unit: "bytes"
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        metric_labels: {
+          source_name: "make"
+          type: METRIC_LABEL_STRING
+          description: "Make of the accelerator (e.g. nvidia)"
+        }
+        metric_labels: {
+          source_name: "accelerator_id"
+          type: METRIC_LABEL_STRING
+          description: "ID of the accelerator"
+        }
+        metric_labels: {
+          source_name: "model"
+          type: METRIC_LABEL_STRING
+          description: "Model of the accelerator (e.g. Tesla P100)"
+        }
+      }
+
+      metrics: {
+        source_metric_name: "memory_used_gpu_node"
+        export_metric_name: "kubernetes.io/node/accelerator/memory_used"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        description: "Total accelerator memory allocated with node in bytes."
+        unit: "bytes"
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        metric_labels: {
+          source_name: "make"
+          type: METRIC_LABEL_STRING
+          description: "Make of the accelerator (e.g. nvidia)"
+        }
+        metric_labels: {
+          source_name: "accelerator_id"
+          type: METRIC_LABEL_STRING
+          description: "ID of the accelerator"
+        }
+        metric_labels: {
+          source_name: "model"
+          type: METRIC_LABEL_STRING
+          description: "Model of the accelerator (e.g. Tesla P100)"
+        }
+      }
+
+      metrics: {
+        source_metric_name: "duty_cycle_gpu_node"
+        export_metric_name: "kubernetes.io/node/accelerator/duty_cycle"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_NODE
+        }
+        description: "Total accelerator memory allocated with node in bytes."
+        unit: "bytes"
+        value_type: VALUE_TYPE_DOUBLE
+        metric_kind: METRIC_KIND_GAUGE
+        metric_labels: {
+          source_name: "make"
+          type: METRIC_LABEL_STRING
+          description: "Make of the accelerator (e.g. nvidia)"
+        }
+        metric_labels: {
+          source_name: "accelerator_id"
+          type: METRIC_LABEL_STRING
+          description: "ID of the accelerator"
+        }
+        metric_labels: {
+          source_name: "model"
+          type: METRIC_LABEL_STRING
+          description: "Model of the accelerator (e.g. Tesla P100)"
+        }
+      }
+
+      metrics: {
+        source_metric_name: "request"
+        export_metric_name: "kubernetes.io/internal/container/accelerator/request"
+        resource_metadata: {
+          metric_schema: SCHEMA_K8S_CONTAINER
+        }
+        description: "Number of accelerator devices requested by the container."
+        unit: "{devices}"
+        value_type: VALUE_TYPE_INT64
+        metric_kind: METRIC_KIND_GAUGE
+        metric_labels: {
+          source_name: "resource_name"
+          type: METRIC_LABEL_STRING
+          description: "Name of the requested accelerator resource."
+        }
+        override_labels: {
+          resource_label_target: {
+            name: "namespace_name"
+          }
+          metric_label: {
+            name: "namespace"
+          }
+        }
+        override_labels: {
+          resource_label_target: {
+            name: "pod_name"
+          }
+          metric_label: {
+            name: "pod"
+          }
+        }
+        override_labels: {
+          resource_label_target: {
+            name: "container_name"
+          }
+          metric_label: {
+            name: "container"
+          }
+        }
+      }
+  kind: ConfigMap
+  metadata:
+    annotations:
+      components.gke.io/component-name: gpu-device-plugin
+      components.gke.io/component-version: 0.1.36
+      components.gke.io/layer: addon
+    creationTimestamp: "2024-11-29T05:15:53Z"
+    labels:
+      addonmanager.kubernetes.io/mode: Reconcile
+    name: nvidia-metrics-collector-config-map
+    namespace: kube-system
+    resourceVersion: "634"
+    uid: b752f2f7-f518-4018-86d2-b03614bdf5d7
+- apiVersion: v1
+  data:
+    app.properties: |
+      # Ensure that your Spring Boot application is configured to handle forwarded headers correctly
+      server.forward-headers-strategy=framework
+
+      ## **********************************************************************************************
+      ## DEBUG
+      ## **********************************************************************************************
+
+      odi.security.tokenMode=true
+
+      # **********************************************************************************************
+      # LOGGING
+      # **********************************************************************************************
+
+      logging.level.org.springframework.cache=DEBUG
+      logging.level.org.apache.kafka=ERROR
+      logging.level.org.springframework.kafka=ERROR
+      logging.level.org.springframework.security=WARN
+      #logging.level.org.springframework.web=TRACE
+      #logging.level.org.springframework.batch=TRACE
+      #logging.level.org.springframework.web=DEBUG
+      logging.level.org.springframework.jdbc=WARN
+      logging.level.org.springframework.statemachine=INFO
+      logging.level.com.kareco=TRACE
+      logging.level.org.flywaydb=INFO
+  kind: ConfigMap
+  metadata:
+    annotations:
+      app: odi
+    creationTimestamp: "2025-03-11T13:51:47Z"
+    labels:
+      app: odi
+      component: dev-odi-wallet
+      kustomize.toolkit.fluxcd.io/name: odi-flux-kustomize-deploy-dev
+      kustomize.toolkit.fluxcd.io/namespace: flux-system
+    name: dev-odi-wallet-app-specific-config
+    namespace: odi-dev
+    resourceVersion: "131507715"
+    uid: a0186c5f-7088-4e48-9b32-38f92ba8bf47
+- apiVersion: v1
+  data:
+    app.properties: |+
+      # Ensure that your Spring Boot application is configured to handle forwarded headers correctly
+      server.forward-headers-strategy=framework
+
+      ## **********************************************************************************************
+      ## DEBUG
+      ## **********************************************************************************************
+
+
+      # **********************************************************************************************
+      # LOGGING
+      # **********************************************************************************************
+
+    config.json: |-
+      {
+        "production": true,
+        "api": "http://localhost:80",
+        "authGuardEnabled": true,
+        "useSessionToken": false
+      }
+  kind: ConfigMap
+  metadata:
+    annotations:
+      app: odi
+    creationTimestamp: "2025-03-11T13:51:48Z"
+    labels:
+      app: odi
+      component: dev-odi-wallet-client
+      kustomize.toolkit.fluxcd.io/name: odi-flux-kustomize-deploy-dev
+      kustomize.toolkit.fluxcd.io/namespace: flux-system
+    name: dev-odi-wallet-client-app-specific-config
+    namespace: odi-dev
+    resourceVersion: "131507716"
+    uid: e35ea037-3f26-4e4d-bd90-1441eff69ca6
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIELDCCApSgAwIBAgIQImYEcZq0Yl3q9QOlXcTOgTANBgkqhkiG9w0BAQsFADAv
+      MS0wKwYDVQQDEyRlNjliZDVkMS1lOWJmLTRlYWQtOTkyYi04ZWNlMmQyYTkwMDAw
+      IBcNMjQxMTI5MDQxMDM1WhgPMjA1NDExMjIwNTEwMzVaMC8xLTArBgNVBAMTJGU2
+      OWJkNWQxLWU5YmYtNGVhZC05OTJiLThlY2UyZDJhOTAwMDCCAaIwDQYJKoZIhvcN
+      AQEBBQADggGPADCCAYoCggGBAMpvt1vxY7ABe0i73tJ/GCTIMAxBItJ3Ftg2A3Dp
+      nlSS3EHDPp6uqXiRJBYj9Jb9gAdjT8iZn/Pe8RYnKeEOsng8EPd4NVAOSU/jxzbU
+      KZeOghEs9HE0C46lZXt5L1hb4Yv44dK6fnmq4Hru5AOmeMiVv8YdSMx1Wi4jt5rS
+      hoi7fFfHmC1rihz1xMJLq/ErxsCfTsSnLfAErrYkK/fFx6o5doykkxOF3IxDVsTE
+      dNf4UcvK9Dkfr/qs3ocQc9W5rEdSTDCvBLOnPTjcQs76xlbBz2ggKLwvhLDGGhsa
+      r8+Rxhe2hCfpIe2XkPAzEnIbMxmb6oN5QXGRh4TJTuchxpoHnV4Liwhlsx6XwqTH
+      UMY6E4iUAt1cc2VfsqaWjXUDklEEPPU+RpGWk1uS8b4k5UNyXSL4oc0+aFpw+ZYm
+      tJvBb++vD4Wqinjz4+APm2kXsStxO1WcZ6aWcBWxxAAfUM8IpYPUx95wR118l14K
+      +tdwkT71Smb1ekFcB5rkCay1kQIDAQABo0IwQDAOBgNVHQ8BAf8EBAMCAgQwDwYD
+      VR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUzK8PYwVs7RhkGmXpylNnVuswdkQwDQYJ
+      KoZIhvcNAQELBQADggGBAITDhG0mSJcgzm+FM2Wr+A0IzHEPj4k3B+6vW9IEp2hu
+      t4n8RKyDqtr9zYAbbWUKnqSaIpBM5254DjqgaAZ51oqgMFNZHfcN/lQx7g+SlRF6
+      liklNIAkVsQAbzZ749zYFMLHyjEDCZb8sj0nALm33m/qbAlfPgHwzXmpKVZctN7D
+      6lv58DVTiKr/M43dD0TEbb0X2gIrElgEltWxZPTqnuCgvep+W0osn8f+4fsHff4R
+      gwIMe2BowMO93KH3dIAPeKUwaIbs11Yb+3ccuR8wMO9G63HkvV4y2BcJvA3SLsju
+      SRp5dlXy403+kpBUh2vLWlGGdZuKNK7jgTLeE4wvkpi8BJYsJY1uSi0kTOGd2jgy
+      RB6jrK6NzxzlTi3/S8wWY+3tQ14LsvIMokw36lRIyRg9K+dkrbU3ED7clDZHRESu
+      crrmOxbQNDMGl8Au3DAbm4JJlNFDQA2xhfA8zblyQ53hqlY504zpuVMUguGE9lwF
+      8Cde7ttTiPt0LX518ZKcgw==
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2024-12-12T06:31:08Z"
+    name: kube-root-ca.crt
+    namespace: odi-dev
+    resourceVersion: "16241113"
+    uid: ddf0f2eb-8f24-4f58-9ca6-3f451fb2734e
+- apiVersion: v1
+  data:
+    env.properties: |-
+      # **********************************************************************************************
+      # PER ENVIRONMENT
+      # **********************************************************************************************
+
+      # Flyway
+      odi.hibernate.hbm2ddl.auto=none
+      odi.db.env=dev
+
+      # Wallet DB
+      #odi.db.wallet.connectionString=jdbc:mysql://10.254.7.5:3306/wallet
+      #odi.db.wallet.userName=odi-dev-admin
+      #odi.db.wallet.password=:yuTAbdlArHOOg?5
+      odi.db.wallet.connectionString=jdbc:mysql://34.66.142.220:3306/wallet
+      odi.db.wallet.userName=odi
+      odi.db.wallet.password=:_VRF:r23=fk{yz~
+
+      # Odibets DB
+      #odi.db.odibets.connectionString=jdbc:mysql://10.254.7.5:3306/odibets
+      #odi.db.odibets.userName=odi-dev-admin
+      #odi.db.odibets.password=:yuTAbdlArHOOg?5
+      odi.db.odibets.connectionString=jdbc:mysql://34.66.142.220:3306/odibets
+      odi.db.odibets.userName=odi
+      odi.db.odibets.password=:_VRF:r23=fk{yz~
+
+      # Redis
+      fs.caching.redis.host=odi-dev-redis-master.odi-dev.svc.cluster.local
+      fs.caching.redis.port=6379
+
+      # Kafka
+
+      fs.kafka.bootstrap-servers=bootstrap.odi-dev-kafka.us-central1.managedkafka.techplain-hub.cloud.goog:9092
+      fs.kafka.sasl.user=odi-dev-kafka-sa@techplain-hub.iam.gserviceaccount.com
+      fs.kafka.sasl.password=ewogICJ0eXBlIjogInNlcnZpY2VfYWNjb3VudCIsCiAgInByb2plY3RfaWQiOiAidGVjaHBsYWluLWh1YiIsCiAgInByaXZhdGVfa2V5X2lkIjogImUwZjBhNzNjNWNiZmNmNDJjMzBhOGMxNDFiYWJmOTUzYWEyZTlmYjAiLAogICJwcml2YXRlX2tleSI6ICItLS0tLUJFR0lOIFBSSVZBVEUgS0VZLS0tLS1cbk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktjd2dnU2pBZ0VBQW9JQkFRQ1dsMkRzME11elpjcXRcbjBvZ1laUzdxUS9DNWNrZ1NRZWxUeFV6R2VwcW93S1dIS3NGSDh0Zkd0cjFzZm95TFRLcENlTG1CcGtUZGVFL3Ncbmk3Z0Q1RjBkaHJKS1JTdTVQQ3V3MkprR1pvck9aSE50Tyt3OFRtcHdpV1Q3bnp6ZkozYmwwNWdMWFF4V1BRV3hcbnNsOXFkODIvTExzM1lweHM5OWErUHV3dHIzTWtNekJEejd5S24yM0IxOFRLR2I5aHp6NzgzZHNnbUJzWTI2TVRcbmZDYkY0VGZnZXY3cUhuekR2WlNRc0Q3WW56YjFvNXhDdXRvS2VXcERTb2JYTlFBNWo1dHVLSEtMUGpaOEY1SEJcbmo4RUVlT0dDYXJTeFRNbzk0VkFKcUhQaGdic1RsMEZ6RURsUHBhUU1sYStXSC9PMGxQaFlkWnVNUU93MTZoTTNcblNiM3RLNjN2QWdNQkFBRUNnZ0VBRnA2ZVhIUHdaUDRCTjZMTDluNGNVZXZxbUxCbHl2aERoK1cyNW9rNytlVVZcbjkvdWdGS0tSYnJPOE9ETzZBS0ovWUlTcHVLTzA3RjlLQWducWxnc1RRWUFkLzdIc0kySzZYVkhyaWw2VXN2TzdcbnNzaXhiMDJJQjJkYjE3L1BjT1dJb25UcC9hcjRVMnZQRXlYcjF4NHZ0V3VPbzM4WVovWENOOGxUeUhqMkhwV21cbnhlZ1J2NXd3WW4yUHZhTEhkbUpLWmt2ajlyQks3S21zTWY5cGxvN1dHRVB2QnQvV1UxT2lmd3lVaVhERVh3RU5cbkp5SUZHTmhlL2oyV2dxNVZMUVV5bWlKc3ZQTGthMkFMWDcwUWIxNC8rSHgyN2QydUlUR0lmUzAxNmFubWN3MktcbnlyT091Zk5GOEVzNm1xS1hBc3Ywc1BnQTB1UEpRTGpSNG5nOWJkTnBvUUtCZ1FESkNrV1BRMWwzalAvU1JrOURcbkxxdU5lVEFqR0gyS1hqaFk3ZUpDb21kZWV1NWErUXYwZmF3cnRObWs2cU16K0lwMEUzc1JpU2xtS2dFM1RKeVRcbmdWaU1Fb1YrOWNhczVuVndFVmJwZTlMY0J3RDhGUG0xNG5DZVMvOXZ2OE9ZaEJzZG8rM3VWaHZKMjdwR1RJcHZcbi9OaERsQXlDMzJxNnNydHp2Y0RlaUozell3S0JnUUMvd25hN3pFU2NEWk9MM1g4L2hqVkF2UW9pNW1UTHIyTkxcbkYzYllwUlBKTVViMnE3Z0FWblBmS3JZb0xpSHUwRzk5NVArWVgwSktDY1daTHJpczZ4L2ZhN3U4L1Bxc3IyczlcbmQ5U1BPZ3FnN01sVlQvUzdJb3hzdEF2QjVnbmNVZ0g0SFB4a05vdy9hbzh3OW5CVjZXSUM5K0k4Zk4zSWlrNUlcbk45ZE85SnB2QlFLQmdRQ1FkSndFMUIwT1JUZHc3V3A0MktrV1Q5VWg4ckFLWTZkVFp5TWtSRFBJZE1hZWdjTndcblcza0NNc0lNdVRpcDJGWU1FQTluUzBwL0NZRzBMWTE0aEFHUExLUFYxVjU3MEdEa05PRmhoY0srclIydEJKbGxcbmN4Nys3NWJNd2xzV1ZSNXl6dDdoV2VnL3hHMzFvM3Y1K2hHZmhWcjBFdnRLeWJEZCtxUUNndUlVQndLQmdEYUVcblNzMUpYWmdnSS9wM2xsMnhBaUxObTd3Z1ZEZTBQVDUwQlUzQ1lNV3FSTXFNTjF1aE9JQVIzSWUvMWRYWFhGc21cblo2UWlNTzVycU1uTUJxVGlrOFVwRTg2Ky9XVnEyY28zN3k1cENleUdaUmJrREdmSGdyVEUyekxjKzZDdmorL0NcbkRkOVB3citrdytEZnIwQTlnYWZtWVdOZy9JeXZCV0p5dmJ1c3Z0c2hBb0dBSFgwQ1hpbk1qU2dsK1Z2bVQwYk1cbmt5OVl1WW9neVhUWmZZb212TjBuR3pHYTZDSFNSU25jUzloTklCKzZKYlI0bWtvU0hmQWhQSDI3cFNrbS9WTzJcbjNOd0orbXJITDZLQnNMRVVJNjMyV2pTc09pdTYwd1M5Vlh0NkNYS1E3dDMraTFtQlRhS3ZQYTVXckVuaEdHd2Rcbmlpa0VaaFpzRlQvcms1d3M5WW5jMDN3PVxuLS0tLS1FTkQgUFJJVkFURSBLRVktLS0tLVxuIiwKICAiY2xpZW50X2VtYWlsIjogIm9kaS1kZXYta2Fma2Etc2FAdGVjaHBsYWluLWh1Yi5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsCiAgImNsaWVudF9pZCI6ICIxMTgwMTY0ODAzNTEyODU2NDgyNjQiLAogICJhdXRoX3VyaSI6ICJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20vby9vYXV0aDIvYXV0aCIsCiAgInRva2VuX3VyaSI6ICJodHRwczovL29hdXRoMi5nb29nbGVhcGlzLmNvbS90b2tlbiIsCiAgImF1dGhfcHJvdmlkZXJfeDUwOV9jZXJ0X3VybCI6ICJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9vYXV0aDIvdjEvY2VydHMiLAogICJjbGllbnRfeDUwOV9jZXJ0X3VybCI6ICJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9yb2JvdC92MS9tZXRhZGF0YS94NTA5L29kaS1kZXYta2Fma2Etc2ElNDB0ZWNocGxhaW4taHViLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwKICAidW5pdmVyc2VfZG9tYWluIjogImdvb2dsZWFwaXMuY29tIgp9Cg==
+      odi.kafka.topics.defaultPartitions=3
+      odi.kafka.topics.defaultNumReplicationFactor=1
+  kind: ConfigMap
+  metadata:
+    annotations:
+      app: odi
+    creationTimestamp: "2025-03-11T12:44:07Z"
+    labels:
+      app: odi
+      kustomize.toolkit.fluxcd.io/name: odi-flux-kustomize-deploy-dev
+      kustomize.toolkit.fluxcd.io/namespace: flux-system
+    name: odi-dev-conf-common-cm-env-config-8mhhghbh9m
+    namespace: odi-dev
+    resourceVersion: "131399992"
+    uid: 0d609c21-b69c-4053-8ceb-808cd73a0737
+- apiVersion: v1
+  data:
+    master.conf: |-
+      dir /data
+      # User-supplied master configuration:
+      rename-command FLUSHDB ""
+      rename-command FLUSHALL ""
+      # End of master configuration
+    redis.conf: |-
+      # User-supplied common configuration:
+      # Enable AOF https://redis.io/topics/persistence#append-only-file
+      appendonly yes
+      # Disable RDB persistence, AOF persistence already enabled.
+      save ""
+      # End of common configuration
+    replica.conf: |-
+      dir /data
+      # User-supplied replica configuration:
+      rename-command FLUSHDB ""
+      rename-command FLUSHALL ""
+      # End of replica configuration
+    users.acl: ""
+  kind: ConfigMap
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: odi-dev-redis
+      meta.helm.sh/release-namespace: odi-dev
+    creationTimestamp: "2025-03-05T21:50:57Z"
+    labels:
+      app.kubernetes.io/instance: odi-dev-redis
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: redis
+      app.kubernetes.io/version: 7.4.2
+      helm.sh/chart: redis-20.11.2
+    name: odi-dev-redis-configuration
+    namespace: odi-dev
+    resourceVersion: "124410077"
+    uid: 2d81dea6-0069-4897-bc82-073eaa079b08
+- apiVersion: v1
+  data:
+    ping_liveness_local.sh: |-
+      #!/bin/bash
+
+      [[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD="$(< "${REDIS_PASSWORD_FILE}")"
+      [[ -n "$REDIS_PASSWORD" ]] && export REDISCLI_AUTH="$REDIS_PASSWORD"
+      response=$(
+        timeout -s 15 $1 \
+        redis-cli \
+          -h localhost \
+          -p $REDIS_PORT \
+          ping
+      )
+      if [ "$?" -eq "124" ]; then
+        echo "Timed out"
+        exit 1
+      fi
+      responseFirstWord=$(echo $response | head -n1 | awk '{print $1;}')
+      if [ "$response" != "PONG" ] && [ "$responseFirstWord" != "LOADING" ] && [ "$responseFirstWord" != "MASTERDOWN" ]; then
+        echo "$response"
+        exit 1
+      fi
+    ping_liveness_local_and_master.sh: |-
+      script_dir="$(dirname "$0")"
+      exit_status=0
+      "$script_dir/ping_liveness_local.sh" $1 || exit_status=$?
+      "$script_dir/ping_liveness_master.sh" $1 || exit_status=$?
+      exit $exit_status
+    ping_liveness_master.sh: |-
+      #!/bin/bash
+
+      [[ -f $REDIS_MASTER_PASSWORD_FILE ]] && export REDIS_MASTER_PASSWORD="$(< "${REDIS_MASTER_PASSWORD_FILE}")"
+      [[ -n "$REDIS_MASTER_PASSWORD" ]] && export REDISCLI_AUTH="$REDIS_MASTER_PASSWORD"
+      response=$(
+        timeout -s 15 $1 \
+        redis-cli \
+          -h $REDIS_MASTER_HOST \
+          -p $REDIS_MASTER_PORT_NUMBER \
+          ping
+      )
+      if [ "$?" -eq "124" ]; then
+        echo "Timed out"
+        exit 1
+      fi
+      responseFirstWord=$(echo $response | head -n1 | awk '{print $1;}')
+      if [ "$response" != "PONG" ] && [ "$responseFirstWord" != "LOADING" ]; then
+        echo "$response"
+        exit 1
+      fi
+    ping_readiness_local.sh: |-
+      #!/bin/bash
+
+      [[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD="$(< "${REDIS_PASSWORD_FILE}")"
+      [[ -n "$REDIS_PASSWORD" ]] && export REDISCLI_AUTH="$REDIS_PASSWORD"
+      response=$(
+        timeout -s 15 $1 \
+        redis-cli \
+          -h localhost \
+          -p $REDIS_PORT \
+          ping
+      )
+      if [ "$?" -eq "124" ]; then
+        echo "Timed out"
+        exit 1
+      fi
+      if [ "$response" != "PONG" ]; then
+        echo "$response"
+        exit 1
+      fi
+    ping_readiness_local_and_master.sh: |-
+      script_dir="$(dirname "$0")"
+      exit_status=0
+      "$script_dir/ping_readiness_local.sh" $1 || exit_status=$?
+      "$script_dir/ping_readiness_master.sh" $1 || exit_status=$?
+      exit $exit_status
+    ping_readiness_master.sh: |-
+      #!/bin/bash
+
+      [[ -f $REDIS_MASTER_PASSWORD_FILE ]] && export REDIS_MASTER_PASSWORD="$(< "${REDIS_MASTER_PASSWORD_FILE}")"
+      [[ -n "$REDIS_MASTER_PASSWORD" ]] && export REDISCLI_AUTH="$REDIS_MASTER_PASSWORD"
+      response=$(
+        timeout -s 15 $1 \
+        redis-cli \
+          -h $REDIS_MASTER_HOST \
+          -p $REDIS_MASTER_PORT_NUMBER \
+          ping
+      )
+      if [ "$?" -eq "124" ]; then
+        echo "Timed out"
+        exit 1
+      fi
+      if [ "$response" != "PONG" ]; then
+        echo "$response"
+        exit 1
+      fi
+  kind: ConfigMap
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: odi-dev-redis
+      meta.helm.sh/release-namespace: odi-dev
+    creationTimestamp: "2025-03-05T21:50:57Z"
+    labels:
+      app.kubernetes.io/instance: odi-dev-redis
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: redis
+      app.kubernetes.io/version: 7.4.2
+      helm.sh/chart: redis-20.11.2
+    name: odi-dev-redis-health
+    namespace: odi-dev
+    resourceVersion: "124410078"
+    uid: c9688521-19b8-4c23-a415-f2cbcaa31ff8
+- apiVersion: v1
+  data:
+    start-master.sh: |
+      #!/bin/bash
+
+      [[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD="$(< "${REDIS_PASSWORD_FILE}")"
+      if [[ -f /opt/bitnami/redis/mounted-etc/master.conf ]];then
+          cp /opt/bitnami/redis/mounted-etc/master.conf /opt/bitnami/redis/etc/master.conf
+      fi
+      if [[ -f /opt/bitnami/redis/mounted-etc/redis.conf ]];then
+          cp /opt/bitnami/redis/mounted-etc/redis.conf /opt/bitnami/redis/etc/redis.conf
+      fi
+      if [[ -f /opt/bitnami/redis/mounted-etc/users.acl ]];then
+          cp /opt/bitnami/redis/mounted-etc/users.acl /opt/bitnami/redis/etc/users.acl
+      fi
+      ARGS=("--port" "${REDIS_PORT}")
+      ARGS+=("--protected-mode" "no")
+      ARGS+=("--include" "/opt/bitnami/redis/etc/redis.conf")
+      ARGS+=("--include" "/opt/bitnami/redis/etc/master.conf")
+      exec redis-server "${ARGS[@]}"
+    start-replica.sh: |
+      #!/bin/bash
+
+      get_port() {
+          hostname="$1"
+          type="$2"
+
+          port_var=$(echo "${hostname^^}_SERVICE_PORT_$type" | sed "s/-/_/g")
+          port=${!port_var}
+
+          if [ -z "$port" ]; then
+              case $type in
+                  "SENTINEL")
+                      echo 26379
+                      ;;
+                  "REDIS")
+                      echo 6379
+                      ;;
+              esac
+          else
+              echo $port
+          fi
+      }
+
+      get_full_hostname() {
+          hostname="$1"
+          full_hostname="${hostname}.${HEADLESS_SERVICE}"
+          echo "${full_hostname}"
+      }
+
+      REDISPORT=$(get_port "$HOSTNAME" "REDIS")
+      HEADLESS_SERVICE="odi-dev-redis-headless.odi-dev.svc.cluster.local"
+
+      [[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD="$(< "${REDIS_PASSWORD_FILE}")"
+      [[ -f $REDIS_MASTER_PASSWORD_FILE ]] && export REDIS_MASTER_PASSWORD="$(< "${REDIS_MASTER_PASSWORD_FILE}")"
+      if [[ -f /opt/bitnami/redis/mounted-etc/replica.conf ]];then
+          cp /opt/bitnami/redis/mounted-etc/replica.conf /opt/bitnami/redis/etc/replica.conf
+      fi
+      if [[ -f /opt/bitnami/redis/mounted-etc/redis.conf ]];then
+          cp /opt/bitnami/redis/mounted-etc/redis.conf /opt/bitnami/redis/etc/redis.conf
+      fi
+      if [[ -f /opt/bitnami/redis/mounted-etc/users.acl ]];then
+          cp /opt/bitnami/redis/mounted-etc/users.acl /opt/bitnami/redis/etc/users.acl
+      fi
+
+      echo "" >> /opt/bitnami/redis/etc/replica.conf
+      echo "replica-announce-port $REDISPORT" >> /opt/bitnami/redis/etc/replica.conf
+      echo "replica-announce-ip $(get_full_hostname "$HOSTNAME")" >> /opt/bitnami/redis/etc/replica.conf
+      ARGS=("--port" "${REDIS_PORT}")
+      ARGS+=("--replicaof" "${REDIS_MASTER_HOST}" "${REDIS_MASTER_PORT_NUMBER}")
+      ARGS+=("--protected-mode" "no")
+      ARGS+=("--include" "/opt/bitnami/redis/etc/redis.conf")
+      ARGS+=("--include" "/opt/bitnami/redis/etc/replica.conf")
+      exec redis-server "${ARGS[@]}"
+  kind: ConfigMap
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: odi-dev-redis
+      meta.helm.sh/release-namespace: odi-dev
+    creationTimestamp: "2025-03-05T21:50:57Z"
+    labels:
+      app.kubernetes.io/instance: odi-dev-redis
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: redis
+      app.kubernetes.io/version: 7.4.2
+      helm.sh/chart: redis-20.11.2
+    name: odi-dev-redis-scripts
+    namespace: odi-dev
+    resourceVersion: "124410076"
+    uid: 12312cff-0a42-4d33-899b-0471eb4ac87c
+kind: List
+metadata:
+  resourceVersion: ""

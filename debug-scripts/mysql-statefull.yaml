@@ -1,0 +1,40 @@
+#  rediness and liveness probe need to be added
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: odi-dev-mysql-debug
+  namespace: odi-dev
+spec:
+  serviceName: odi-dev-mysql
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-debug
+      
+  template:
+    metadata:
+      labels:
+        app: mysql-debug
+    spec:
+      containers:
+        - name: mysql-server
+          image: mysql:5.7
+          ports:
+            - containerPort: 3306
+              name: mysql
+              protocol: TCP
+          envFrom:
+            - secretRef:
+                name: database-creds
+          # envFrom:
+          #   - configMapRef:
+          #       name: dev-odi-wallet-app-specific-config
+
+          resources:
+            requests:
+              cpu: "10m"
+              memory: "64Mi"
+            limits:
+              cpu: "50m"
+              memory: "256Mi"

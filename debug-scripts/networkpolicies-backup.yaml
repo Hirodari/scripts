@@ -1,0 +1,163 @@
+apiVersion: v1
+items:
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: ww-gitops
+      meta.helm.sh/release-namespace: flux-system
+    creationTimestamp: "2024-12-10T10:12:19Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      helm.toolkit.fluxcd.io/name: ww-gitops
+      helm.toolkit.fluxcd.io/namespace: flux-system
+    name: allow-dashboard-egress
+    namespace: flux-system
+    resourceVersion: "13940365"
+    uid: 90614a11-cdb1-4d89-9840-5ae31a1e7ce6
+  spec:
+    egress:
+    - {}
+    podSelector:
+      matchLabels:
+        app.kubernetes.io/instance: ww-gitops
+        app.kubernetes.io/name: weave-gitops
+    policyTypes:
+    - Egress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: ww-gitops
+      meta.helm.sh/release-namespace: flux-system
+    creationTimestamp: "2024-12-10T10:12:19Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      helm.toolkit.fluxcd.io/name: ww-gitops
+      helm.toolkit.fluxcd.io/namespace: flux-system
+    name: allow-dashboard-ingress
+    namespace: flux-system
+    resourceVersion: "13940366"
+    uid: 3df39b9c-5e7d-45b3-8bd2-2e3673e3cd1c
+  spec:
+    ingress:
+    - ports:
+      - port: 9001
+        protocol: TCP
+    podSelector:
+      matchLabels:
+        app.kubernetes.io/instance: ww-gitops
+        app.kubernetes.io/name: weave-gitops
+    policyTypes:
+    - Ingress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    creationTimestamp: "2024-11-29T10:21:56Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/instance: flux-system
+      app.kubernetes.io/part-of: flux
+      app.kubernetes.io/version: v2.4.0
+      kustomize.toolkit.fluxcd.io/name: flux-system
+      kustomize.toolkit.fluxcd.io/namespace: flux-system
+    name: allow-egress
+    namespace: flux-system
+    resourceVersion: "5042382"
+    uid: c8313959-4147-4e7d-82fb-03faae7518f0
+  spec:
+    egress:
+    - {}
+    ingress:
+    - from:
+      - podSelector: {}
+    podSelector: {}
+    policyTypes:
+    - Ingress
+    - Egress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    creationTimestamp: "2024-11-29T10:21:57Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/instance: flux-system
+      app.kubernetes.io/part-of: flux
+      app.kubernetes.io/version: v2.4.0
+      kustomize.toolkit.fluxcd.io/name: flux-system
+      kustomize.toolkit.fluxcd.io/namespace: flux-system
+    name: allow-scraping
+    namespace: flux-system
+    resourceVersion: "5042383"
+    uid: 4553263c-b9bf-4e86-a871-8b930983e9df
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector: {}
+      ports:
+      - port: 8080
+        protocol: TCP
+    podSelector: {}
+    policyTypes:
+    - Ingress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    creationTimestamp: "2024-11-29T10:21:57Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/instance: flux-system
+      app.kubernetes.io/part-of: flux
+      app.kubernetes.io/version: v2.4.0
+      kustomize.toolkit.fluxcd.io/name: flux-system
+      kustomize.toolkit.fluxcd.io/namespace: flux-system
+    name: allow-webhooks
+    namespace: flux-system
+    resourceVersion: "5042384"
+    uid: bbf36432-bdde-4d8c-8a87-95e4a6721a62
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector: {}
+    podSelector:
+      matchLabels:
+        app: notification-controller
+    policyTypes:
+    - Ingress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: odi-dev-redis
+      meta.helm.sh/release-namespace: odi-dev
+    creationTimestamp: "2025-03-05T21:50:56Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/instance: odi-dev-redis
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: redis
+      app.kubernetes.io/version: 7.4.2
+      helm.sh/chart: redis-20.11.2
+    name: odi-dev-redis
+    namespace: odi-dev
+    resourceVersion: "124410053"
+    uid: a829e134-e63f-4da1-a6ae-f6d09311062e
+  spec:
+    egress:
+    - {}
+    ingress:
+    - ports:
+      - port: 6379
+        protocol: TCP
+    podSelector:
+      matchLabels:
+        app.kubernetes.io/instance: odi-dev-redis
+        app.kubernetes.io/name: redis
+    policyTypes:
+    - Ingress
+    - Egress
+kind: List
+metadata:
+  resourceVersion: ""
