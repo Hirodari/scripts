@@ -1,0 +1,293 @@
+trivy k8s --include-namespaces odi-dev --timeout 10m --report summary -f table -o trivy-report.txt
+kubectl get pods -n odi-dev -o jsonpath="{.items[*].spec.containers[*].ports[*].containerPort}"
+trivy k8s --include-namespaces odi-dev --timeout 10m --severity CRITICAL -f table
+### find cluster external IP
+kubectl get svc --all-namespaces | grep -E 'LoadBalancer|Ingress'
+### scan all ports
+nmap -p- 34.132.235.232
+nmap -p 80,443 -sV 34.132.235.232
+
+# check firewall rule
+gcloud compute firewall-rules list --filter="network:kareco-test-vpc AND disabled=false" --format="table(name,network,direction,priority,sourceRanges,destinationRanges,allowed,denied)"
+
+
+# Create and switch to the new branch
+git checkout -b branch_protection
+
+# Push the new branch to the remote and set the upstream tracking
+git push -u origin branch_protection
+
+# Switch back to the main branch
+git checkout main
+
+
+PROJECT_ID="techplain-hub"
+PROJECT_NUMBER=$(gcloud projects describe $PROJECT_ID --format="value(projectNumber)")
+
+gcloud projects add-iam-policy-binding techplain-hub \
+    --member="serviceAccount:service-87573678172@gcp-sa-managedkafka.iam.gserviceaccount.com" \
+    --role="roles/managedkafka.serviceAgent"
+
+
+gcloud container clusters describe kareco-test-cluster --zone us-central1 --project techplain-hub
+kubectl get pod kafka-client -n odi-dev -o=jsonpath='{.spec.serviceAccountName}'
+
+
+kubectl run -it --rm debug-pod --image=busybox --restart=Never -- sh
+
+kubectl run debug-pod --rm -it --image=ubuntu:latest -n odi-dev -- bash
+
+nc -zv 10.10.10.202 9092
+
+apt update && apt install -y \
+    telnet \
+    netcat-openbsd \
+    dnsutils \
+    wget \
+    curl \
+    gnupg2
+
+wget https://packages.confluent.io/archive/7.5/confluent-community-7.5.2.tar.gz
+tar -xvzf confluent-community-7.5.2.tar.gz
+mv confluent-7.5.2 /opt/confluent
+echo 'export PATH=$PATH:/opt/confluent/bin' >> ~/.bashrc
+source ~/.bashrc
+
+apt update && apt install -y openjdk-11-jre
+
+gcloud compute firewall-rules create allow-kafka \
+    --direction=INGRESS \
+    --priority=1000 \
+    --network=kareco-test-vpc \
+    --action=ALLOW \
+    --rules=tcp:9092 \
+    --source-ranges=10.10.10.0/24
+
+kafka-broker-api-versions --bootstrap-server bootstrap.odi-dev-kafka.us-central1.managedkafka.techplain-hub.cloud.goog:9092
+kafka-topics --bootstrap-server bootstrap.odi-dev-kafka.us-central1.managedkafka.techplain-hub.cloud.goog:9092  --list
+export KAFKA_HEAP_OPTS="-Xmx2G -Xms1G"
+
+telnet bootstrap.odi-dev-kafka.us-central1.managedkafka.techplain-hub.cloud.goog 9092
+nslookup bootstrap.odi-dev-kafka.us-central1.managedkafka.techplain-hub.cloud.goog:9092
+
+1. Generate an OAuth Bearer Token
+ gcloud auth application-default print-access-token
+ya29.a0AeXRPp5HKEGKKRr0Cb3U2BQj2ZIlvnbAmM6Nc0-LV1yeEPj8WpG3fAsicNuzAyxbTG9jYNX5xbou7YiYYRk1vP5IXGcrqqjO7vLQxzzkmeSHpO3mgJQCNAn9UjIQdfQ7UETtw2c1xJX7m5LY7vF8yiDZQ_yu6mDHsrngd2howQaCgYKAXYSARASFQHGX2Mi1iIwbD6z-gYoglRJCv3vJQ0177
+
+2. Update the client.properties File
+
+Requirements:
+a. Create a service account with role: managedkafka.client
+b. Download the key 
+c. Encode the service account file by using base64-encode to use as your authentication string. 
+base64 -w 0 < my_service_account_key.json > password.txt
+use password and username as the email of the service account 
+
+cat <<EOF > /root/client.properties
+security.protocol=SASL_SSL
+sasl.mechanism=PLAIN
+sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required \
+username="kareco-test-cluster-gke-svc@techplain-hub.iam.gserviceaccount.com" \
+password="xxxx";
+EOF
+
+4. Test the Kafka Connection
+kafka-topics --bootstrap-server bootstrap.odi-dev-kafka.us-central1.managedkafka.techplain-hub.cloud.goog:9092 \
+--command-config /root/client.properties --list
+
+
+gcloud iam service-accounts add-iam-policy-binding \
+  kareco-test-cluster-gke-svc@techplain-hub.iam.gserviceaccount.com \
+  --role=roles/iam.workloadIdentityUser \
+  --member="serviceAccount:techplain-hub.svc.id.goog[odi-dev/default]"
+
+gcloud container clusters describe kareco-test-cluster \
+  --region us-central1 --project techplain-hub \
+  --format="value(workloadIdentityConfig.workloadPool)"
+
+gcloud iam service-accounts add-iam-policy-binding \
+  kareco-test-cluster-gke-svc@techplain-hub.iam.gserviceaccount.com \
+  --role=roles/iam.workloadIdentityUser \
+  --member="serviceAccount:techplain-hub.svc.id.goog[odi-dev/default]"
+Updated IAM policy for serviceAccount [kareco-test-cluster-gke-svc@techplain-hub.iam.gserviceaccount.com].
+bindings:
+- members:
+  - serviceAccount:techplain-hub.svc.id.goog[odi-dev/default]
+  - serviceAccount:techplain-hub.svc.id.goog[odi-dev/odi-wallet-ksa]
+  role: roles/iam.workloadIdentityUser
+etag: BwYvvpJ86lM=
+version: 1
+
+
+kubectl annotate serviceaccount default -n odi-dev iam.gke.io/gcp-service-account=kareco-test-cluster-gke-svc@techplain-hub.iam.gserviceaccount.com
+
+mysql -h 127.0.0.1 -u odi-dev-admin --password=:yuTAbdlArHOOg?5 -P 3306
+apt update && apt install -y mariadb-client
+
+gcloud compute networks subnets describe <SUBNET_NAME> --project=techplain-hub --region=us-central1
+
+
+gcloud compute addresses create google-managed-services-default \
+  --global \
+  --purpose=VPC_PEERING \
+  --network=kareco-test-vpc \
+  --prefix-length=16 \
+  --description="Allocated range for Google services"
+
+
+====== connect GKE to cloudsql on private IP =======
+
+Create a Secret object
+
+kubectl create secret generic <YOUR-DB-SECRET> \
+  --from-literal=username=<YOUR-DATABASE-USER> \
+  --from-literal=password=<YOUR-DATABASE-PASSWORD> \
+  --from-literal=database=<YOUR-DATABASE-NAME>
+
+
+Step 1: Create a Kubernetes Service Account (KSA)
+kubectl create serviceaccount odi-dev-cloudsql-ksa --namespace odi-dev
+kubectl get serviceaccount odi-dev-cloudsql-ksa --namespace odi-dev
+
+Step 2: Create a Google IAM Service Account (GSA)
+gcloud iam service-accounts create odi-dev-cloudsql-gsa \
+    --project techplain-hub \
+    --description "GSA for Kubernetes to access Cloud SQL using Workload Identity" \
+    --display-name "odi-dev-cloudsql-gsa"
+gcloud iam service-accounts list --filter="email:odi-dev-cloudsql-gsa@techplain-hub.iam.gserviceaccount.com"
+
+Step 3: Grant Cloud SQL Permissions to the GSA
+gcloud projects add-iam-policy-binding techplain-hub \
+    --member="serviceAccount:odi-dev-cloudsql-gsa@techplain-hub.iam.gserviceaccount.com" \
+    --role="roles/cloudsql.client"
+gcloud projects get-iam-policy techplain-hub --flatten="bindings[].members" --format="table(bindings.role)" --filter="bindings.members:odi-dev-cloudsql-gsa"
+
+Step 4: Bind the GSA to the KSA
+gcloud iam service-accounts add-iam-policy-binding odi-dev-cloudsql-gsa@techplain-hub.iam.gserviceaccount.com \
+    --role=roles/iam.workloadIdentityUser \
+    --member="serviceAccount:techplain-hub.svc.id.goog[odi-dev/odi-dev-cloudsql-ksa]"
+Updated IAM policy for serviceAccount [odi-dev-cloudsql-gsa@techplain-hub.iam.gserviceaccount.com].
+bindings:
+- members:
+  - serviceAccount:techplain-hub.svc.id.goog[odi-dev/odi-dev-cloudsql-ksa]
+  role: roles/iam.workloadIdentityUser
+etag: BwYv9bZkXZg=
+version: 1
+gcloud iam service-accounts get-iam-policy odi-dev-cloudsql-gsa@techplain-hub.iam.gserviceaccount.com
+bindings:
+- members:
+  - serviceAccount:techplain-hub.svc.id.goog[odi-dev/odi-dev-cloudsql-ksa]
+  role: roles/iam.workloadIdentityUser
+etag: BwYv9bZkXZg=
+version: 1
+
+Step 5: Annotate the KSA with the GSA
+kubectl annotate serviceaccount \
+    odi-dev-cloudsql-ksa \
+    --namespace odi-dev \
+    iam.gke.io/gcp-service-account=odi-dev-cloudsql-gsa@techplain-hub.iam.gserviceaccount.com
+serviceaccount/odi-dev-cloudsql-ksa annotated
+
+
+
+kubectl get serviceaccount odi-dev-cloudsql-ksa --namespace odi-dev -o yaml | grep "iam.gke.io/gcp-service-account"
+    iam.gke.io/gcp-service-account: odi-dev-cloudsql-gsa@techplain-hub.iam.gserviceaccount.com
+
+gcloud container clusters update kareco-test-cluster --workload-pool=techplain-hub.svc.id.goog --location=us-central1
+
+
+# Download keys from SA for cloudsql
+gcloud iam service-accounts keys create odi-dev-cloudsql-keys.json \
+  --iam-account odi-dev-cloudsql-gsa@techplain-hub.iam.gserviceaccount.com
+
+# make it a K8s secrets
+kubectl create secret generic odi-dev-cloudsql-creds -n odi-dev \
+  --from-file=credentials.json=./odi-dev-cloudsql-keys.json
+
+kubectl get secrets -n odi-dev | grep odi-dev-cloudsql-creds
+kubectl describe secret odi-dev-cloudsql-creds -n odi-dev
+kubectl get secret odi-dev-cloudsql-creds -n odi-dev -o jsonpath="{.data.credentials\.json}" | base64 --decode
+
+mysql -h 127.0.0.1 -u odi-dev-admin -p:yuTAbdlArHOOg?5
+
+gcloud compute routers create kareco-test-nat-router \
+    --network=kareco-test-vpc \
+    --region=us-central1
+
+gcloud compute routers nats create kareco-test-nat \
+    --router=kareco-test-nat-router \
+    --region=us-central1 \
+    --nat-all-subnet-ip-ranges \
+    --auto-allocate-nat-external-ips
+
+gcloud compute instances create debug-vm \
+    --zone=us-central1-a \
+    --machine-type=e2-micro \
+    --subnet=kareco-test-vpc-subnet-01\
+    --no-address \
+    --image-family=debian-11 \
+    --image-project=debian-cloud \
+    --tags=debug
+
+
+gcloud projects add-iam-policy-binding techplain-hub \
+  --member=user:fred.bitenyo@cloudsmiths.ai \
+  --role=roles/iap.tunnelResourceAccessor
+
+gcloud projects add-iam-policy-binding techplain-hub \
+  --member=user:fred.bitenyo@cloudsmiths.ai \
+  --role=roles/compute.instanceAdmin.v1
+
+gcloud compute firewall-rules create tmp-allow-ssh \
+  --network=kareco-test-vpc \
+  --allow=tcp:22 \
+  --source-ranges=0.0.0.0/0 \
+  --target-tags=allow-ssh
+
+gcloud compute firewall-rules create tmp-allow-iap-ssh \
+    --direction=INGRESS \
+    --priority=1000 \
+    --network=kareco-test-vpc \
+    --action=ALLOW \
+    --rules=tcp:22 \
+    --source-ranges=35.235.240.0/20 \
+    --target-tags=iap-enabled
+
+
+mysql -h 127.0.0.1 -u admin -padmin
+
+gcloud compute firewall-rules create allow-egress-cloudsql \
+  --direction=EGRESS \
+  --priority=1000 \
+  --network=kareco-test-vpc \
+  --action=ALLOW \
+  --rules=tcp:3307 \
+  --destination-ranges=10.254.7.10/32
+
+
+google-managed-services  10.100.0.0/16 - -
+google-managed-services-default 10.158.0.0/16 - -
+google-managed-services-kareco-test-vpc 10.183.185.0/24 - -
+kareco-test-vpc-allocated-range 10.254.7.0/24 - -
+kareco-test-vpc-ip-range  10.75.112.0/20  - -
+psa-ip-reserved-for-cloud-sql 10.29.237.0/24  Google Cloud Platform servicenetworking-googleapis-com 
+odi-dev-psa-ip-range-redis  10.207.0.0/16 
+
+	
+
+
+
+192.168.40.0/24, 192.40.0.0/16, 192.40.4.0/24, 10.254.7.0/24, 10.207.0.0/16
+
+ 
+gcloud projects add-iam-policy-binding techplain-hub \
+  --member=serviceAccount:odi-dev-cloudsql-ksa@techplain-hub.iam.gserviceaccount.com \
+  --role=roles/cloudsql.client
+
+gcloud services vpc-peerings connect \
+  --service=servicenetworking.googleapis.com \
+  --network=kareco-test-vpc \
+  --ranges=10.207.0.0/16 
+
+
+servicenetworking-googleapis-com odi-dev-psa-ip-range-cloudsql  Google Cloud Platform Enabled
