@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: debug-pod-sql
+  namespace: odi-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      serviceAccountName: odi-dev-cloudsql-ksa
+      containers:
+      - name: my-app
+        image: "ubuntu:latest"
+        command:
+          - /bin/bash
+          - -c
+        args:
+          - apt update && apt install -y telnet dnsutils netcat-openbsd iputils-ping mysql-client && sleep infinity
+        # env:
+        #   - name: DB_HOST
+        #     value: "127.0.0.1"  # Connect via proxy
+        #   - name: DB_PORT
+        #     value: "3306"  # Connect via proxy
+        #   - name: DB_USER
+        #     value: "odi-dev-admin"
+        #   - name: DB_PASS
+        #     value: ":yuTAbdlArHOOg?5"
+        #   - name: DB_NAME
+        #     value: "odi-dev-mysql"
+        ports:
+          - containerPort: 8080
+
+      # initContainers:
+      # - name: cloud-sql-proxy
+      #   restartPolicy: Always
+      #   # image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:latest #2.14.1
+      #   image: gcr.io/cloudsql-docker/gce-proxy:1.28.0
+      #   args:
+      #   - /cloud_sql_proxy
+      #   - "--dir=/cloudsql"
+      #   # - "--private-ip"
+      #   - "-instances=techplain-hub:us-central1:odi-dev-mysql-terra=tcp:0.0.0.0:3307"
+      #   - "-credential_file=/secrets/credentials.json"
+        # - "--auto-iam-authn"
+        # - "--structured-logs"
+        # - "--port=3307"
+        # - "--address=0.0.0.0"
+        # - "techplain-hub:us-central1:odi-dev-mysql-terra"
+        
+        
+
+    #     securityContext:
+    #       runAsNonRoot: true
+
+    #     volumeMounts:
+    #       - name: cloudsql-instance-credentials
+    #         mountPath: /secrets/
+    #         readOnly: true
+    #     securityContext:
+    #       runAsNonRoot: true
+
+    # volumes:
+    # - name: cloudsql-instance-credentials
+    #   secret:
+    #     secretName: odi-dev-cloudsql-creds

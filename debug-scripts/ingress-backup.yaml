@@ -1,0 +1,122 @@
+apiVersion: v1
+items:
+- apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    creationTimestamp: "2024-12-12T14:00:56Z"
+    generation: 3
+    labels:
+      k8slens-edit-resource-version: v1
+      kustomize.toolkit.fluxcd.io/name: flux-system
+      kustomize.toolkit.fluxcd.io/namespace: flux-system
+    name: www-gitops-weave-gitops-ingress
+    namespace: flux-system
+    resourceVersion: "126406292"
+    uid: b2b70db1-6cc6-494e-ab11-b12c13387fc5
+  spec:
+    ingressClassName: nginx
+    rules:
+    - host: gitops.kareco.ideamdev.com
+      http:
+        paths:
+        - backend:
+            service:
+              name: ww-gitops-weave-gitops
+              port:
+                number: 9001
+          path: /
+          pathType: Prefix
+    tls:
+    - hosts:
+      - gitops.kareco.ideamdev.com
+      secretName: gitops-kareco-tls-secret
+  status:
+    loadBalancer:
+      ingress:
+      - ip: 34.170.57.14
+- apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    annotations:
+      app: odi
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+      nginx.ingress.kubernetes.io/rewrite-target: /
+    creationTimestamp: "2025-03-11T13:51:48Z"
+    generation: 1
+    labels:
+      app: odi
+      component: dev-odi-wallet-client
+      kustomize.toolkit.fluxcd.io/name: odi-flux-kustomize-deploy-dev
+      kustomize.toolkit.fluxcd.io/namespace: flux-system
+    name: dev-odi-wallet-client-ingress-public
+    namespace: odi-dev
+    resourceVersion: "131507718"
+    uid: 8a9a33e6-a59e-43a9-b8dd-c0aa0a2468e6
+  spec:
+    ingressClassName: nginx
+    rules:
+    - host: walletclient.dev.apps.kareco.ideamdev.com
+      http:
+        paths:
+        - backend:
+            service:
+              name: dev-odi-wallet-client-service-cluster-ip
+              port:
+                number: 8080
+          path: /
+          pathType: ImplementationSpecific
+    tls:
+    - hosts:
+      - walletclient.dev.apps.kareco.ideamdev.com
+      secretName: wallet-client-app-tls-secret
+  status:
+    loadBalancer:
+      ingress:
+      - ip: 34.170.57.14
+- apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    annotations:
+      app: odi
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+      nginx.ingress.kubernetes.io/rewrite-target: /
+    creationTimestamp: "2025-03-11T13:51:48Z"
+    generation: 1
+    labels:
+      app: odi
+      component: dev-odi-wallet
+      kustomize.toolkit.fluxcd.io/name: odi-flux-kustomize-deploy-dev
+      kustomize.toolkit.fluxcd.io/namespace: flux-system
+    name: dev-odi-wallet-ingress-public
+    namespace: odi-dev
+    resourceVersion: "131507719"
+    uid: 6f5b804c-9b08-4bf5-8930-ad6111d6578c
+  spec:
+    ingressClassName: nginx
+    rules:
+    - host: wallet.apps.kareco.ideamdev.com
+      http:
+        paths:
+        - backend:
+            service:
+              name: dev-odi-wallet-service-cluster-ip
+              port:
+                number: 8080
+          path: /
+          pathType: ImplementationSpecific
+    tls:
+    - hosts:
+      - wallet.apps.kareco.ideamdev.com
+      secretName: wallet-app-tls-secret
+  status:
+    loadBalancer:
+      ingress:
+      - ip: 34.170.57.14
+kind: List
+metadata:
+  resourceVersion: ""
