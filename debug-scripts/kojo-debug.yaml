@@ -20,11 +20,11 @@ spec:
           args:
           - "/cloud_sql_proxy"
           - "--dir=/cloudsql"
-          - "-instances=techplain-hub:us-central1:odi-dev-mysql-terra=tcp:0.0.0.0:3307"
+          - "-instances=techplain-hub:us-central1:odi-dev-mysql-terra=tcp:0.0.0.0:3306"
           - "-credential_file=/secrets/credentials.json"
           ports: 
             - name: "debug-port"
-              containerPort: 3307
+              containerPort: 3306
               protocol: "TCP"
           securityContext:
             runAsNonRoot: true

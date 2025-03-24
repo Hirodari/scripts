@@ -1,13 +1,36 @@
-resource "google_compute_network" "vpc" {
-  name                    = var.network_name
-  project                 = var.project_id
-  auto_create_subnetworks = false
+/**
+ * Copyright 2019 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/******************************************
+	VPC configuration
+ *****************************************/
+resource "google_compute_network" "network" {
+  # provider                                  = google-beta
+  name                                      = var.network_name
+  auto_create_subnetworks                   = var.auto_create_subnetworks
+  routing_mode                              = var.routing_mode
+  # project                                   = var.project_id
+  # description                               = var.description
+  # delete_default_routes_on_create           = var.delete_default_routes_on_create
+  mtu                                       = var.mtu
+  # enable_ula_internal_ipv6                  = var.enable_ula_internal_ipv6
+  # internal_ipv6_range                       = var.internal_ipv6_range
+  network_firewall_policy_enforcement_order = var.network_firewall_policy_enforcement_order
+  # network_profile                           = var.network_profile
 }
 
-resource "google_compute_subnetwork" "subnet" {
-  name          = "${var.network_name}-subnet"
-  ip_cidr_range = var.subnet_cidr
-  region        = var.region
-  network       = google_compute_network.vpc.self_link
-  project       = var.project_id
-}
+
+

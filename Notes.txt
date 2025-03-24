@@ -291,3 +291,27 @@ gcloud services vpc-peerings connect \
 
 
 servicenetworking-googleapis-com odi-dev-psa-ip-range-cloudsql  Google Cloud Platform Enabled
+
+- match the IP range for debug-cluster [pod and services]: 192.168.0.0/20 for pod, 192.168.16.0/20 for services
+- move cluster from subnet 1 -> subnet 2 : Done
+- intranode visibility to be enabled
+
+  ./cloud-sql-proxy --unix-socket /cloudsql --credentials-file debug-scripts/odi-dev-cloudsql-keys.json techplain-hub:europe-west1:transactions-copy-dev &
+gcloud sql instances patch transactions-copy-dev --database-flags read_only=on
+
+cloud sql instances patch transactions-copy-dev --database-flags read_only=on
+The following message will be used for the patch API method.
+{"name": "transactions-copy-dev", "project": "techplain-hub", "settings": {"databaseFlags": [{"name": "read_only", "value": "on"}]}}
+WARNING: This patch modifies database flag values, which may require your instance to be restarted. Check the list of supported flags -
+ https://cloud.google.com/sql/docs/mysql/flags - to see if your instance will be restarted when this patch is submitted.
+
+Do you want to continue (Y/n)?  Y
+
+Patching Cloud SQL instance...done.                                                                                                   
+Updated [https://sqladmin.googleapis.com/sql/v1beta4/projects/techplain-hub/instances/transactions-copy-dev].
+
+gcloud sql instances patch transactions-copy-dev --database-flags read_only=on
+gcloud sql instances patch transactions-copy-dev --database-flags super_read_only=on # did not work
+gcloud sql instances patch transactions-copy-dev --database-flags log_bin=on
+
+to enable binary log, you need to enable PITR: Point it time recovery.
