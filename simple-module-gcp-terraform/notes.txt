@@ -1,0 +1,5 @@
+registry.terraform.io/providers/hashicorp/google/latest/docs
+
+terraform plan -out=plan.tf
+terraform show -json plan.tf | jq '.planned_values.outputs'
+
