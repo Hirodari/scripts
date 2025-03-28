@@ -10,8 +10,8 @@ variable "gcp_apis" {
     "gkebackup.googleapis.com",
     "containersecurity.googleapis.com",
     "redis.googleapis.com",
-    "kafka.googleapis.com",
-    "datamigration.googleapis.com"
+    "datamigration.googleapis.com",
+    "admin.googleapis.com"
   ]
   description = "GCP apis needed"
 }

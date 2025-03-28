@@ -40,6 +40,9 @@ variable "cluster_node_pool_machine_type" {}
 variable "cluster_node_pool_disk_size_gb" {}
 variable "cluster_node_pool_disk_type" {}
 
+# service account for the cluster
+variable "k8s_svc_account" {}
+
 locals {
   gke_pods_range_name = "ip-range-pods"
   gke_svc_range_name  = "ip-range-svc"

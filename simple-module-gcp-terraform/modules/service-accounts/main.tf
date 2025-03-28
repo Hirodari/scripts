@@ -63,10 +63,10 @@
 #   ]
 # }
 
-############### Kubernetes Service Accounts ##############
+############### Google Service Accounts for the k8s cluster ##############
 
 resource "google_service_account" "k8s" {
-  account_id   = "${var.cluster_name}-gke-svc-account"
+  account_id   = "${var.cluster_name}-svc-account"
   display_name = "K8s cluster service account"
 }
 
@@ -78,4 +78,46 @@ resource "google_project_iam_binding" "k8s" {
   members = [
     "serviceAccount:${google_service_account.k8s.email}"
   ]
+}
+
+############### Cloud SQL Service Accounts ##############
+resource "google_service_account" "cloudsql" {
+  project      = var.project_id
+  account_id   = "odi-dev-cloudsql-gsa-terraform"
+  display_name = "GSA for Kubernetes to access Cloud SQL via Workload Identity"
+  
+}
+
+# Grant the Cloud SQL client role to the GSA
+resource "google_project_iam_member" "cloudsql_client" {
+  project = var.project_id
+  role    = "roles/cloudsql.client"
+  member  = "serviceAccount:${google_service_account.cloudsql.email}"
+}
+
+############### Kubernetes Service Accounts ##############
+
+data "kubernetes_namespace" "odi_dev" {
+  metadata {
+    name = "odi-dev"
+  }
+}
+
+resource "kubernetes_service_account" "cloudsql_ksa" {
+  metadata {
+    name      = "odi-dev-cloudsql-ksa"
+    namespace = "odi-dev"
+    annotations = {
+      # Annotate the KSA with the email of the GSA
+      "iam.gke.io/gcp-service-account" = google_service_account.cloudsql.email
+    }
+  }
+  depends_on = [data.kubernetes_namespace.odi_dev]
+}
+
+# Bind the GSA to the KSA for Workload Identity (allow the KSA to impersonate the GSA)
+resource "google_service_account_iam_member" "cloudsql_ksa_binding" {
+  service_account_id = google_service_account.cloudsql.name
+  role               = "roles/iam.workloadIdentityUser"
+  member             = "serviceAccount:${var.project_id}.svc.id.goog[odi-dev/odi-dev-cloudsql-ksa]"
 }

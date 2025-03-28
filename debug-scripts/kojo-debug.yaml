@@ -20,8 +20,8 @@ spec:
           args:
           - "/cloud_sql_proxy"
           - "--dir=/cloudsql"
-          - "-instances=techplain-hub:us-central1:odi-dev-mysql-terra=tcp:0.0.0.0:3306"
-          - "-credential_file=/secrets/credentials.json"
+          - "-instances=techplain-hub:africa-south1:odi-dev-mysql-terraform=tcp:0.0.0.0:3306"
+          # - "-credential_file=/secrets/credentials.json"
           ports: 
             - name: "debug-port"
               containerPort: 3306
@@ -29,14 +29,14 @@ spec:
           securityContext:
             runAsNonRoot: true
 
-          volumeMounts:
-          - name: cloudsql-instance-credentials
-            mountPath: /secrets/
-            readOnly: true
-          securityContext:
-            runAsNonRoot: true
+      #     volumeMounts:
+      #     - name: cloudsql-instance-credentials
+      #       mountPath: /secrets
+      #       readOnly: true
+      #     securityContext:
+      #       runAsNonRoot: true
 
-      volumes:
-      - name: cloudsql-instance-credentials
-        secret:
-          secretName: odi-dev-cloudsql-creds
+      # volumes:
+      # - name: cloudsql-instance-credentials
+      #   secret:
+      #     secretName: odi-dev-cloudsql-creds

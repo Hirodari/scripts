@@ -1,5 +1,107 @@
+Things to take into consideration:
+- make sure ingress nginx controller version: 1.12.1
+- admin.googleapis.com
+
+10.10.0.2:443
+
 registry.terraform.io/providers/hashicorp/google/latest/docs
 
 terraform plan -out=plan.tf
 terraform show -json plan.tf | jq '.planned_values.outputs'
 
+###### Deploy on different environment ########
+1. Define Environment-Specific Variables
+In your variables.tf at the root, add variables for your environment and for the project/vpc names:
+
+
+
+variable "environment" {
+  description = "Deployment environment (dev or prod)"
+  type        = string
+}
+
+variable "dev_project_id" {
+  description = "Project ID for the dev environment"
+  type        = string
+}
+
+variable "prod_project_id" {
+  description = "Project ID for the prod environment"
+  type        = string
+}
+
+variable "dev_vpc_name" {
+  description = "VPC name for the dev environment"
+  type        = string
+}
+
+variable "prod_vpc_name" {
+  description = "VPC name for the prod environment"
+  type        = string
+}
+
+variable "region" {
+  description = "GCP region"
+  type        = string
+}
+
+2. Create Separate tfvars Files
+
+dev.tfvars
+
+environment    = "dev"
+dev_project_id = "techplain-hub-dev"
+dev_vpc_name   = "odi-dev-vpc"
+region         = "us-central1"
+
+prod.tfvars
+
+environment     = "prod"
+prod_project_id = "techplain-hub-prod"
+prod_vpc_name   = "odi-prod-vpc"
+region          = "us-central1"
+
+. Use Conditionals in Your Root Module
+
+In your root main.tf, reference the proper values using conditionals based on var.environment:
+
+module "vpc" {
+  source     = "../modules/network"
+  project_id = var.environment == "prod" ? var.prod_project_id : var.dev_project_id
+  region     = var.region
+  vpc_name   = var.environment == "prod" ? var.prod_vpc_name : var.dev_vpc_name
+}
+
+If you have more modules (like for subnets), pass the environment-specific values similarly:
+
+module "subnet" {
+  source        = "../modules/subnet"
+  project_id    = var.environment == "prod" ? var.prod_project_id : var.dev_project_id
+  region        = var.region
+  vpc_id        = module.vpc.vpc_id         # assuming the network module outputs the full VPC ID
+  vpc_name      = var.environment == "prod" ? var.prod_vpc_name : var.dev_vpc_name
+  subnet_01_cidr = var.subnet_01_cidr       # You can also parameterize these values per environment if needed.
+  subnet_02_cidr = var.subnet_02_cidr
+}
+
+4. Deploy Using the Appropriate tfvars File
+
+When running Terraform, specify the environment-specific tfvars file:
+
+For dev:
+
+terraform plan -var-file="dev.tfvars"
+terraform apply -var-file="dev.tfvars"
+
+For prod:
+
+terraform plan -var-file="prod.tfvars"
+terraform apply -var-file="prod.tfvars"
+
+
+gcloud compute addresses create default-private-service-access \
+  --global \
+  --purpose=VPC_PEERING \
+  --prefix-length=16 \
+  --network=default \
+  --project=techplain-hub

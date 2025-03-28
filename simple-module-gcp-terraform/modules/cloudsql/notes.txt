@@ -1,0 +1,2 @@
+kubectl create secret generic odi-dev-cloudsql-creds -n odi-dev \
+--from-file=credentials.json=./odi-dev-cloudsql-keys.json

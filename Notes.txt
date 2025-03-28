@@ -163,6 +163,7 @@ gcloud projects add-iam-policy-binding techplain-hub \
 gcloud projects get-iam-policy techplain-hub --flatten="bindings[].members" --format="table(bindings.role)" --filter="bindings.members:odi-dev-cloudsql-gsa"
 
 Step 4: Bind the GSA to the KSA
+
 gcloud iam service-accounts add-iam-policy-binding odi-dev-cloudsql-gsa@techplain-hub.iam.gserviceaccount.com \
     --role=roles/iam.workloadIdentityUser \
     --member="serviceAccount:techplain-hub.svc.id.goog[odi-dev/odi-dev-cloudsql-ksa]"
