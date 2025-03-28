@@ -50,7 +50,7 @@ resource "google_compute_firewall" "allow_internal_traffic" {
     ports    = ["53"] # 53 UDP is DNS port, very important for pods to communicate
   }
 
-  source_ranges = ["10.10.10.0/24", "10.10.20.0/24", "10.10.0.0/16", "192.40.0.0/16", "192.50.0.0/16", "192.168.64.0/24", "10.29.237.0/24"] # Include both node and pod CIDRs
+  source_ranges = ["10.10.0.0/16"] # Include both node and pod CIDRs
   #   target_tags   = ["gke-${var.gke_name}"]
   depends_on = [var.vpc_id]
 }

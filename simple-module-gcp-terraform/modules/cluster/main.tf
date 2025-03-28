@@ -1,4 +1,5 @@
 resource "google_container_cluster" "gke_main" {
+  
   project  = var.project_id   
   name     = var.cluster_name 
   location = var.region       
@@ -14,17 +15,16 @@ resource "google_container_cluster" "gke_main" {
   # Enable kubernetes monitoring for managed Prometheus and logging.
   monitoring_service       = var.kubernetes_monitoring_service 
   logging_service          = var.kubernetes_logging_service 
-  deletion_protection      = var.infrastructure_environment == "prod"
+  deletion_protection      = var.infrastructure_environment == "prod" 
   
   # default set up
   remove_default_node_pool = true 
-  # initial_node_count = 1
+  initial_node_count = 1
 
   # Enable private cluster
   private_cluster_config {
     enable_private_nodes    = var.enable_private_nodes 
     enable_private_endpoint = var.enable_private_endpoint
-
   }
 
   # enable vertical pod autoscaling
@@ -41,11 +41,14 @@ resource "google_container_cluster" "gke_main" {
   }
 
   
-  master_authorized_networks_config {
+  master_authorized_networks_config  {
     # enabled = true
+    # gcp_public_cidrs_access_enabled = false
+
+    private_endpoint_enforcement_enabled = true
     cidr_blocks {
-      cidr_block   = var.master_authorized_networks_cidr  
-      display_name = "all"
+      cidr_block   = var.master_authorized_networks_cidr 
+      # display_name = "developing"
     }
   }
 
@@ -99,7 +102,7 @@ resource "google_container_node_pool" "gke_main_node_pool" {
     disk_size_gb    = var.cluster_node_pool_disk_size_gb
     disk_type       = var.cluster_node_pool_disk_type
     preemptible     = false
-    service_account = "${var.cluster_name}-gke-svc-account@${var.project_id}.iam.gserviceaccount.com"
+    service_account = var.k8s_svc_account #"${var.cluster_name}-gke-svc-account@${var.project_id}.iam.gserviceaccount.com"
     oauth_scopes = [
       "https://www.googleapis.com/auth/logging.write",
       "https://www.googleapis.com/auth/monitoring",

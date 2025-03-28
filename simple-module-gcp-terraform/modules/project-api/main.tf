@@ -20,3 +20,6 @@ variable "disable_services_on_destroy" {
   type    = bool
   default = false 
 }
+
+
+data "google_client_config" "config" {}
