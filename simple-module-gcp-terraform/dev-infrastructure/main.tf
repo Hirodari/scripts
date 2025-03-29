@@ -20,10 +20,19 @@ module "subnet" {
 
 }
 
+# module "cloud_nat" {
+#   source              = "../modules/cloud_nat"
+#   project_id          = var.project_id
+#   region              = var.region
+#   vpc_id              = module.vpc.vpc_id
+# }
+
 module "firewall" {
   source = "../modules/firewall"
   vpc_id = module.vpc.vpc_id
 }
+
+
 
 # module "cluster" {
 #   source                          = "../modules/cluster"
@@ -99,36 +108,36 @@ module "namespace" {
   depends_on = [module.gke]
 }
 
-# module "psc" {
-#   source                      = "../modules/psc-cloudsql"
-#   cloudsql_allocated_ip_range = var.cloudsql_allocated_ip_range
-#   cloudsql_purpose            = var.cloudsql_purpose
-#   cloudsql_prefix             = var.cloudsql_prefix
-#   vpc_id                      = module.vpc.vpc_id
-# }
+module "psc" {
+  source                      = "../modules/psc-cloudsql"
+  cloudsql_allocated_ip_range = var.cloudsql_allocated_ip_range
+  cloudsql_purpose            = var.cloudsql_purpose
+  cloudsql_prefix             = var.cloudsql_prefix
+  vpc_id                      = module.vpc.vpc_id
+}
 
-# module "cloudsql" {
-#   source                       = "../modules/cloudsql"
-#   project_id                   = var.project_id
-#   region                       = var.region
-#   vpc_id                       = module.vpc.vpc_id
-#   cloudsql_allocated_ip_range  = var.cloudsql_allocated_ip_range
-#   cloudsql_purpose             = var.cloudsql_purpose
-#   cloudsql_prefix              = var.cloudsql_prefix
-#   cloudsql_name                = var.cloudsql_name
-#   cloudsql_version             = var.cloudsql_version
-#   cloudsql_tier                = var.cloudsql_tier
-#   cloudsql_deletion_protection = var.cloudsql_deletion_protection
-#   cloudsql_disk_autoresize     = var.cloudsql_disk_autoresize
-#   cloudsql_ipv4_enabled        = var.cloudsql_ipv4_enabled
-#   cloudsql_availability_type   = var.cloudsql_availability_type
-#   cloudsql_backup_enabled      = var.cloudsql_backup_enabled
-#   cloudsql_backup_start_time   = var.cloudsql_backup_start_time
-#   private_service_connection   = module.psc.private_service_connection
-#   db_name                      = var.db_name
-#   # master_username = var.master_username
-#   # master_user_password = var.master_username
-# }
+module "cloudsql" {
+  source                       = "../modules/cloudsql"
+  project_id                   = var.project_id
+  region                       = var.region
+  vpc_id                       = module.vpc.vpc_id
+  cloudsql_allocated_ip_range  = var.cloudsql_allocated_ip_range
+  cloudsql_purpose             = var.cloudsql_purpose
+  cloudsql_prefix              = var.cloudsql_prefix
+  cloudsql_name                = var.cloudsql_name
+  cloudsql_version             = var.cloudsql_version
+  cloudsql_tier                = var.cloudsql_tier
+  cloudsql_deletion_protection = var.cloudsql_deletion_protection
+  cloudsql_disk_autoresize     = var.cloudsql_disk_autoresize
+  cloudsql_ipv4_enabled        = var.cloudsql_ipv4_enabled
+  cloudsql_availability_type   = var.cloudsql_availability_type
+  cloudsql_backup_enabled      = var.cloudsql_backup_enabled
+  cloudsql_backup_start_time   = var.cloudsql_backup_start_time
+  private_service_connection   = module.psc.private_service_connection
+  db_name                      = var.db_name
+  # master_username = var.master_username
+  # master_user_password = var.master_username
+}
 
 module "kafka" {
   source             = "../modules/kafka"

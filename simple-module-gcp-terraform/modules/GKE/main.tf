@@ -2,8 +2,8 @@
 data "google_client_config" "default" {}
 
 provider "kubernetes" {
-  # host                   = "https://${module.gke.endpoint}"
-  config_path = "~/.kube/config"
+  host                   = "https://${module.gke.endpoint}"
+  # config_path = "~/.kube/config"
   token                  = data.google_client_config.default.access_token
   cluster_ca_certificate = base64decode(module.gke.ca_certificate)
 }
@@ -22,9 +22,10 @@ module "gke" {
   network_policy             = false
   horizontal_pod_autoscaling = true
   filestore_csi_driver       = false
-  enable_private_endpoint    = false
-  enable_private_nodes       = true
+  enable_private_endpoint    = true
+  enable_private_nodes       = false
   dns_cache                  = false
+  deletion_protection = false
   master_authorized_networks = [
                                   {
                                     cidr_block   = "105.246.173.109/32"
