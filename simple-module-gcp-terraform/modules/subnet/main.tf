@@ -11,6 +11,7 @@ resource "google_compute_subnetwork" "subnet_01" {
   region        = var.region
   network       = var.vpc_id
   ip_cidr_range = var.subnet_01_cidr
+  private_ip_google_access = true
 
   # purpose          = "PRIVATE_NAT"
   # subnet_private_access = var.gke_network_subnet_private_access 
@@ -42,6 +43,7 @@ resource "google_compute_subnetwork" "subnet_02" {
   region        = var.region
   network       = var.vpc_id
   ip_cidr_range = var.subnet_02_cidr
+  private_ip_google_access = true
 
   secondary_ip_range {
     range_name    = local.gke_pods_range_name
@@ -55,15 +57,15 @@ resource "google_compute_subnetwork" "subnet_02" {
   depends_on = [var.vpc_id]
 }
 
-# Create an egress route for internet traffic
-resource "google_compute_route" "egress_internet" {
-  project    = var.project_id
-  name       = "${var.vpc_name}-egress-internet"
-  network    = var.vpc_id
-  dest_range = "0.0.0.0/0"
-  # next_hop_internet = true
-  next_hop_gateway = "default-internet-gateway"
-  priority         = 1000
-  tags             = ["egress-inet"]
-  depends_on       = [var.vpc_id]
-}
+# # Create an egress route for internet traffic
+# resource "google_compute_route" "egress_internet" {
+#   project    = var.project_id
+#   name       = "${var.vpc_name}-egress-internet"
+#   network    = var.vpc_id
+#   dest_range = "0.0.0.0/0"
+#   # next_hop_internet = true
+#   next_hop_gateway = "default-internet-gateway"
+#   priority         = 1000
+#   tags             = ["egress-inet"]
+#   depends_on       = [var.vpc_id]
+# }
