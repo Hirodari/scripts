@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tools-547fb989db-26lfs
+  namespace: odi-dev
+spec:  # specification of the pod's contents
+  restartPolicy: Never
+  containers:
+  - name: hello
+    image: "jijeesh/network-utils"
+    command: ["/bin/bash", "-ec", "while :; do echo '.'; sleep 5 ; done"]
+    imagePullPolicy: Always
