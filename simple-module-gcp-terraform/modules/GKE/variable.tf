@@ -17,13 +17,13 @@ locals {
   gke_svc_range_name  = "ip-range-svc"
 
 }
-# variable "vpc_id" {}
-# variable "subnet_01_id" {}
+variable "network_name" {}
+variable "subnet_name" {}
 variable "subnet_01_pods_cidr" {}
 variable "subnet_01_svc_cidr" {}
 
 # nodes attributes
-variable "node_pools_name" {}
+variable "node_locations" {}
 variable "cluster_node_pool_machine_type" {}
 variable "cluster_node_pool_min_count" {}
 variable "cluster_node_pool_max_count" {}
@@ -31,6 +31,7 @@ variable "cluster_node_pool_disk_size_gb" {}
 variable "cluster_node_pool_disk_type" {}
 variable "image_type" {}
 variable "logging_variant" {}
+# variable "k8s_svc_account" {}
 variable "cluster_pool_node_initial_count" {}
 variable "accelerator_count" {}
 # variable "accelerator_type" {}

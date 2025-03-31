@@ -6,6 +6,8 @@ variable "environment" {}
 
 # vpc attributes
 variable "vpc_name" {}
+variable "network_name" {}
+variable "subnet_name" {}
 
 # subnetwork attributes
 variable "subnet_01_cidr" {}
@@ -21,7 +23,7 @@ variable "cluster_name" {}
 variable "cluster_description" {}
 variable "kubernetes_version" {}
 variable "infrastructure_environment" {}
-variable "node_pools_name" {}
+variable "node_locations" {}
 variable "master_authorized_networks_cidr" {}
 # Default node pool attributes
 variable "cluster_node_pool_machine_type" {}
@@ -33,6 +35,7 @@ variable "cluster_node_pool_disk_type" {}
 variable "image_type" {}
 variable "logging_variant" {}
 variable "accelerator_count" {}
+# variable "k8s_svc_account" {}
 # variable "accelerator_type" {}
 variable "gpu_driver_version" {}
 variable "gpu_sharing_strategy" {}

@@ -20,12 +20,12 @@ module "subnet" {
 
 }
 
-# module "cloud_nat" {
-#   source              = "../modules/cloud_nat"
-#   project_id          = var.project_id
-#   region              = var.region
-#   vpc_id              = module.vpc.vpc_id
-# }
+module "cloud_nat" {
+  source              = "../modules/cloud_nat"
+  project_id          = var.project_id
+  region              = var.region
+  vpc_id              = module.vpc.vpc_id
+}
 
 module "firewall" {
   source = "../modules/firewall"
@@ -69,13 +69,12 @@ module "gke" {
   source                          = "../modules/GKE"
   project_id                      = var.project_id
   region                          = var.region
-  # zones                           = var.zones
   cluster_name                    = var.cluster_name
-  # vpc_id                          = module.vpc.vpc_id
-  # subnet_01_id                    = module.subnet.subnet_01_id
+  network_name = var.network_name
+  subnet_name = var.subnet_name
   subnet_01_pods_cidr             = var.subnet_01_pods_cidr
   subnet_01_svc_cidr              = var.subnet_01_svc_cidr
-  node_pools_name = var.node_pools_name
+  node_locations = var.node_locations
   cluster_node_pool_machine_type  = var.cluster_node_pool_machine_type
   cluster_node_pool_min_count     = var.cluster_node_pool_min_count
   cluster_node_pool_max_count     = var.cluster_node_pool_max_count
@@ -85,7 +84,7 @@ module "gke" {
   logging_variant                 = var.logging_variant
   cluster_pool_node_initial_count = var.cluster_pool_node_initial_count
   accelerator_count               = var.accelerator_count
-  # accelerator_type                = var.accelerator_type
+  # accelerator_type                = var.accelerator_type # non existent in africa region
   gpu_driver_version              = var.gpu_driver_version
   gpu_sharing_strategy            = var.gpu_sharing_strategy
   max_shared_clients_per_gpu      = var.max_shared_clients_per_gpu
@@ -96,17 +95,20 @@ module "project-api" {
   project_id = var.project_id
 }
 
-module "service-accounts" {
-  source       = "../modules/service-accounts"
-  project_id   = var.project_id
-  cluster_name = module.gke.cluster_name
-
-}
-
 module "namespace" {
-  source     = "../modules/namespace"
-  depends_on = [module.gke]
-}
+    source     = "../modules/namespace"
+    depends_on = [module.gke]
+  }
+
+module "service-accounts" {
+    source       = "../modules/service-accounts"
+    project_id   = var.project_id
+    cluster_name = module.gke.cluster_name
+    depends_on = [module.namespace]
+
+  }
+
+  
 
 module "psc" {
   source                      = "../modules/psc-cloudsql"
@@ -136,7 +138,7 @@ module "cloudsql" {
   private_service_connection   = module.psc.private_service_connection
   db_name                      = var.db_name
   # master_username = var.master_username
-  # master_user_password = var.master_username
+  # master_user_password = var.master_username # can set only with pipeline
 }
 
 module "kafka" {

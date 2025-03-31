@@ -13,6 +13,7 @@ spec:
       labels:
         app: cloudsql-debug
     spec:
+      serviceAccountName: odi-dev-cloudsql-ksa
       containers:
         - name: cloud-sql-proxy
           # restartPolicy: Always

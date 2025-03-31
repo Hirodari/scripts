@@ -105,3 +105,47 @@ gcloud compute addresses create default-private-service-access \
   --prefix-length=16 \
   --network=default \
   --project=techplain-hub
+
+
+
+
+################### access private cluster through bastion host ###############
+1. Create the Bastion Host VM
+
+gcloud compute instances create bastion-host \
+  --zone=africa-south1-a \
+  --machine-type=e2-medium \
+  --subnet=odi-dev-vpc-subnet-01 \
+  --no-address \
+  --tags=bastion \
+  --image-family=debian-11 \
+  --image-project=debian-cloud
+
+2. Connect to the Bastion Host Using IAP
+
+gcloud compute ssh bastion-host --zone=africa-south1-a --tunnel-through-iap
+
+3. Set Up an IAP Tunnel for kubectl Access
+Option A: Run kubectl from the Bastion Host
+gcloud container clusters get-credentials YOUR_CLUSTER_NAME \
+  --zone=africa-south1-a \
+  --project=techplain-hub \
+  --internal-ip
+Option B: Tunnel the Cluster’s API Server Port to Your Local Machine
+gcloud compute start-iap-tunnel bastion-host 443 \
+  --local-host-port=localhost:8443 \
+  --zone=us-central1-a
+Next, update your kubeconfig to use the tunnel endpoint. 
+You can either edit your kubeconfig manually or run:
+kubectl config set-cluster odi-dev-cluster-tf  \
+  --server=https://localhost:8443 \
+  --insecure-skip-tls-verify=true
+
+
+#### Readiness ####
+gcloud projects add-iam-policy-binding techplain-hub \
+  --member="user:fred.bitenyo@cloudsmiths.ai" \
+  --role="roles/iap.tunnelResourceAccessor"
+
+gcloud services enable iap.googleapis.com --project=techplain-hub
+
