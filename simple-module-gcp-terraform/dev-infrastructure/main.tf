@@ -32,43 +32,24 @@ module "firewall" {
   vpc_id = module.vpc.vpc_id
 }
 
+module "vm" {
+  source = "../modules/VM"
+  instance_name = var.instance_name
+  instance_machine_type = var.instance_machine_type
+  instance_zone = var.instance_zone
+  instance_image = var.instance_image
+  subnet_01_name = module.subnet.subnet_01_name
+}
 
-
-# module "cluster" {
-#   source                          = "../modules/cluster"
-#   project_id                      = var.project_id
-#   cluster_name                    = var.cluster_name
-#   region                          = var.region
-#   vpc_id                          = module.vpc.vpc_id
-#   subnet_01_id                    = module.subnet.subnet_01_id
-#   cluster_description             = var.cluster_description
-#   enable_private_nodes            = var.enable_private_nodes
-#   enable_private_endpoint         = var.enable_private_endpoint
-#   kubernetes_version              = var.kubernetes_version
-#   kubernetes_monitoring_service   = var.kubernetes_monitoring_service
-#   kubernetes_logging_service      = var.kubernetes_logging_service
-#   vertical_pod_autoscaling        = var.vertical_pod_autoscaling
-#   cluster_load_balancer           = var.cluster_load_balancer
-#   cluster_autoscaling_cpu_min     = var.cluster_autoscaling_cpu_min
-#   cluster_autoscaling_cpu_max     = var.cluster_autoscaling_cpu_max
-#   master_authorized_networks_cidr = var.master_authorized_networks_cidr
-#   cluster_autoscaling_memory_min  = var.cluster_autoscaling_memory_min
-#   cluster_autoscaling_memory_max  = var.cluster_autoscaling_memory_min
-#   infrastructure_environment      = var.infrastructure_environment
-#   horizontal_pod_autoscaling      = var.horizontal_pod_autoscaling
-#   cluster_pool_node_count         = var.cluster_pool_node_initial_count
-#   cluster_node_pool_min_count     = var.cluster_node_pool_min_count
-#   cluster_node_pool_max_count     = var.cluster_node_pool_max_count
-#   cluster_node_pool_machine_type  = var.cluster_node_pool_machine_type
-#   cluster_node_pool_disk_size_gb  = var.cluster_node_pool_disk_size_gb
-#   cluster_node_pool_disk_type     = var.cluster_node_pool_disk_type
-#   k8s_svc_account                 = module.service-accounts.k8s_svc_account
-# }
 
 module "gke" {
   source                          = "../modules/GKE"
   project_id                      = var.project_id
   region                          = var.region
+  environment = var.environment
+  domain_name = var.domain_name
+  static_ip_name = module.vpc.static_ip_name
+  load_balancer_url = module.public_lb.load_balancer_url
   cluster_name                    = var.cluster_name
   network_name = var.network_name
   subnet_name = var.subnet_name
@@ -108,8 +89,6 @@ module "service-accounts" {
 
   }
 
-  
-
 module "psc" {
   source                      = "../modules/psc-cloudsql"
   cloudsql_allocated_ip_range = var.cloudsql_allocated_ip_range
@@ -141,18 +120,18 @@ module "cloudsql" {
   # master_user_password = var.master_username # can set only with pipeline
 }
 
-module "kafka" {
-  source             = "../modules/kafka"
-  project_id         = var.project_id
-  region             = var.region
-  subnet_01_name     = module.subnet.subnet_01_name
-  kafka_cluster_name = var.kafka_cluster_name
-  kafka_vcpu_count   = var.kafka_vcpu_count
-  kafka_memory       = var.kafka_memory
-  kafka_rebalance    = var.kafka_rebalance
-  environment        = var.environment
+# module "kafka" {
+#   source             = "../modules/kafka"
+#   project_id         = var.project_id
+#   region             = var.region
+#   subnet_01_name     = module.subnet.subnet_01_name
+#   kafka_cluster_name = var.kafka_cluster_name
+#   kafka_vcpu_count   = var.kafka_vcpu_count
+#   kafka_memory       = var.kafka_memory
+#   kafka_rebalance    = var.kafka_rebalance
+#   environment        = var.environment
 
-}
+# }
 
 module "redis" {
   source                     = "../modules/redis"
@@ -168,4 +147,19 @@ module "redis" {
   redis_version              = var.redis_version
   redis_replica_count        = var.redis_replica_count
   redis_replicas_mode        = var.redis_replicas_mode
+}
+
+module "public_lb" {
+  source             = "../modules/loadbalancer"
+  project_id = var.project_id
+  vpc_name = module.vpc.vpc_name
+  node_pools_instance_group_urls = module.gke.node_pools_instance_group_urls
+}
+
+module "registry_repo" {
+  source             = "../modules/artifact_registry"
+  project_id = var.project_id
+  region = var.region
+  registry_name = var.registry_name
+  registry_format = var.registry_format
 }

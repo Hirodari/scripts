@@ -1,7 +1,7 @@
 # allow http and https traffic from outside
 
 resource "google_compute_firewall" "allow_http_https" {
-  name        = "allow-https-traffic"
+  name        = "odi-kareco-dev-allow-https"
   description = "Allow http/s traffic from internet"
   network     = var.vpc_id
 
@@ -22,7 +22,7 @@ resource "google_compute_firewall" "allow_http_https" {
 # allow internal traffic to reach mysql and redis ports
 resource "google_compute_firewall" "allow_internal_traffic" {
   #   count       = var.create_new_network ? 1 : 0
-  name        = "allow-internal-traffic-odi"
+  name        = "odi-dev-allow-internal-traffic"
   description = <<EOF
                   This rule allows only internal required ports:
                   - MySQL: 3306
@@ -54,6 +54,27 @@ resource "google_compute_firewall" "allow_internal_traffic" {
   #   target_tags   = ["gke-${var.gke_name}"]
   depends_on = [var.vpc_id]
 }
+
+# allow external ssh traffic from a specific list of allows Public IPs
+resource "google_compute_firewall" "allow_ssh_traffic" {
+  #   count       = var.create_new_network ? 1 : 0
+  name        = "odi-dev-ssh-traffic"
+  description = "allow ssh traffic from external IP"
+  network     = var.vpc_id
+
+  direction = "INGRESS"
+  priority  = 650
+
+  allow {
+    protocol = "tcp"
+    ports    = ["22"]
+  }
+
+  source_ranges = ["35.235.243.226/32"] # Include both node and pod CIDRs
+  #   target_tags   = ["gke-${var.gke_name}"]
+  depends_on = [var.vpc_id]
+}
+
 
 # Firewall rule to deny all incoming traffic (default deny-all rule)
 resource "google_compute_firewall" "deny_all_incoming" {

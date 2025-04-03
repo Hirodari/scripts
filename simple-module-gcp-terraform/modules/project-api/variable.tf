@@ -2,6 +2,7 @@ variable "project_id" {}
 variable "gcp_apis" {
   type = list(string)
   default = [
+    "admin.googleapis.com",
     "sqladmin.googleapis.com",
     "compute.googleapis.com",
     "servicenetworking.googleapis.com",
@@ -11,7 +12,10 @@ variable "gcp_apis" {
     "containersecurity.googleapis.com",
     "redis.googleapis.com",
     "datamigration.googleapis.com",
-    "admin.googleapis.com"
+    "dns.googleapis.com",
+    "networkservices.googleapis.com",
+    "certificatemanager.googleapis.com",
+    "cloudresourcemanager.googleapis.com"
   ]
   description = "GCP apis needed"
 }
