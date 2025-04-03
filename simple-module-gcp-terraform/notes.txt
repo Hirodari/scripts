@@ -122,19 +122,18 @@ gcloud compute instances create bastion-host \
   --image-project=debian-cloud
 
 2. Connect to the Bastion Host Using IAP
-
-gcloud compute ssh bastion-host --zone=africa-south1-a --tunnel-through-iap
+gcloud compute ssh odi-dev-bastion-host --zone=africa-south1-a --tunnel-through-iap
 
 3. Set Up an IAP Tunnel for kubectl Access
 Option A: Run kubectl from the Bastion Host
-gcloud container clusters get-credentials YOUR_CLUSTER_NAME \
+gcloud container clusters get-credentials odi-dev-cluster-tf \
   --zone=africa-south1-a \
   --project=techplain-hub \
   --internal-ip
 Option B: Tunnel the Cluster’s API Server Port to Your Local Machine
 gcloud compute start-iap-tunnel bastion-host 443 \
   --local-host-port=localhost:8443 \
-  --zone=us-central1-a
+  --zone=frica-south1-a
 Next, update your kubeconfig to use the tunnel endpoint. 
 You can either edit your kubeconfig manually or run:
 kubectl config set-cluster odi-dev-cluster-tf  \
@@ -149,3 +148,23 @@ gcloud projects add-iam-policy-binding techplain-hub \
 
 gcloud services enable iap.googleapis.com --project=techplain-hub
 
+
+Input for Kojo from wessels:
+
+- How teams and projects, we will need to consider:
+teams: wallet team , ...
+projects: are they going to create different projects 
+are we going to deploy all services in the same cluster, any organisation structure will help
+
+
+terraform init -backend-config="bucket=odi-kareco-dev-backend-bucket" -reconfigure
+terraform plan -var-file=kareco-dev.tfvars
+terraform apply -var-file=kareco-dev.tfvars
+
+find Managed Service for Apache Kafka API equivalent way to enable from terraform
+
+each project with its own namespace
+odi-dev -> kareco-dev -> odi
+odi-prod -> kareco -> odi
+
+artifact registry creation: odi-dev-registry 

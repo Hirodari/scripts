@@ -12,9 +12,14 @@ provider "google-beta" {
   #   zone    = var.gcp_zone       # The default zone for resources.
 }
 
+# provider "cloudflare" {
+#   api_token = var.cloudflare_api_token
+# }
+
 # Kubernetes Provider
 # This provider is used to manage resources within a Kubernetes cluster.
 provider "kubernetes" {
+  # config_path = "~/.kube/config"
   host                   = "https://${module.gke.endpoint}"                # The API server URL of the Kubernetes cluster. 
   token                  = data.google_client_config.config.access_token       # OAuth2 token used for authentication.
   cluster_ca_certificate = base64decode(module.gke.cluster_ca_certificate) # CA certificate of the cluster, base64 encoded.

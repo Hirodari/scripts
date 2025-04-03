@@ -97,22 +97,22 @@ resource "google_project_iam_member" "cloudsql_client" {
 
 ############### Kubernetes Service Accounts ##############
 
-data "kubernetes_namespace" "odi_dev" {
+data "kubernetes_namespace" "odi" {
   metadata {
-    name = "odi-dev"
+    name = "odi"
   }
 }
 
 resource "kubernetes_service_account" "cloudsql_ksa" {
   metadata {
     name      = "odi-dev-cloudsql-ksa"
-    namespace = "odi-dev"
+    namespace = "odi"
     annotations = {
       # Annotate the KSA with the email of the GSA
       "iam.gke.io/gcp-service-account" = google_service_account.cloudsql.email
     }
   }
-  depends_on = [data.kubernetes_namespace.odi_dev]
+  depends_on = [data.kubernetes_namespace.odi]
 }
 
 # Bind the GSA to the KSA for Workload Identity (allow the KSA to impersonate the GSA)

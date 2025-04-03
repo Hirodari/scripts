@@ -36,5 +36,9 @@ terraform {
       source  = "hashicorp/google-beta"
       version = ">= 6.14.0, < 7.0.0"
     }
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "~> 4.0"
+    }
   }
 }

@@ -3,6 +3,8 @@ variable "project_id" {}
 variable "region" {}
 # variable "zones" {}
 variable "environment" {}
+variable "domain_name" {}
+
 
 # vpc attributes
 variable "vpc_name" {}
@@ -92,3 +94,13 @@ variable "redis_version" {}
 variable "redis_replica_count" {}
 variable "redis_replicas_mode" {}
 
+# virtual machine instance attributes
+variable "instance_name" {}
+variable "instance_zone" {}
+variable "instance_image" {}
+# variable "subnet_01_name" {}
+variable "instance_machine_type" {}
+
+# variable registry
+variable "registry_name" {}
+variable "registry_format" {}

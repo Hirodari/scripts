@@ -6,6 +6,7 @@ resource "google_managed_kafka_cluster" "wallet_kafka" {
   location   = var.region
   provider   = google-beta
 
+
   capacity_config {
     vcpu_count   = var.kafka_vcpu_count
     memory_bytes = var.kafka_memory

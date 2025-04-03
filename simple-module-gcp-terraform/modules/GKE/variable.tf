@@ -1,6 +1,10 @@
 # cluster attributes
 variable "project_id" {}
+variable "environment" {}
+variable "domain_name" {}
 variable "cluster_name" {}
+variable "static_ip_name" {}
+variable "load_balancer_url" {}
 variable "region" {}
 variable "zones" {
   type = list(string)
@@ -38,3 +42,5 @@ variable "accelerator_count" {}
 variable "gpu_driver_version" {}
 variable "gpu_sharing_strategy" {}
 variable "max_shared_clients_per_gpu" {}
+
+# variable for ingress

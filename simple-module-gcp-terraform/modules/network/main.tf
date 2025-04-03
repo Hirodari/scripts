@@ -20,5 +20,19 @@ resource "google_compute_route" "egress_internet" {
   depends_on       = [ google_compute_network.vpc_network]
 }
 
+# static public IP
+resource "google_compute_global_address" "odi-wallet-app-global-ip" {
+  depends_on = [
+    google_compute_network.vpc_network
+  ]
+  provider     = google-beta
+  name         = "odi-wallet-app-global-ip"
+  ip_version   = "IPV4"
+  address_type = "EXTERNAL"
+  project      = var.project_id
+  labels = {
+    origin = "terraform"
+  }
+}
 
 

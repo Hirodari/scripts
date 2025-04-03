@@ -17,18 +17,20 @@ module "gke" {
   network                    = var.network_name  
   subnetwork                 = var.subnet_name 
   ip_range_pods              = local.gke_pods_range_name 
-  ip_range_services          = local.gke_svc_range_name  
-  http_load_balancing        = false
+  ip_range_services          = local.gke_svc_range_name
+  create_service_account      =  true  
+  service_account_name = "cluster-svc"
+  http_load_balancing        = true # false
   network_policy             = false
   horizontal_pod_autoscaling = true
   filestore_csi_driver       = false
-  enable_private_endpoint    = true
+  enable_private_endpoint    = false
   enable_private_nodes       = true
   dns_cache                  = false
   deletion_protection = false
   master_authorized_networks = [
                                   {
-                                    cidr_block   = "105.246.173.109/32"
+                                    cidr_block   = "105.244.164.33/32"
                                     display_name = "management"
                                   }
                               ]
@@ -51,7 +53,7 @@ module "gke" {
       logging_variant             = var.logging_variant 
       auto_repair                 = true
       auto_upgrade                = true
-      service_account             = "odi-dev-cluster-gke-svc@${var.project_id}.iam.gserviceaccount.com"
+      # service_account             = "cluster-svc@${var.project_id}.iam.gserviceaccount.com"
       preemptible                 = false
       initial_node_count          = var.cluster_pool_node_initial_count #80
       accelerator_count           = var.accelerator_count # 1
