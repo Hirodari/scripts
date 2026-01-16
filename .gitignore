@@ -40,3 +40,6 @@ debug-scripts/odi-dev-cloudsql-keys.json
 # Ignore .key file
 ./key
 **/key
+*.json
+service-account-*.json
+debug-scripts/*-key.json
