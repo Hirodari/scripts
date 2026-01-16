@@ -2,11 +2,15 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: tools-547fb989db-26lfs
-  namespace: odi-dev
+  namespace: odi
 spec:  # specification of the pod's contents
   restartPolicy: Never
   containers:
   - name: hello
     image: "jijeesh/network-utils"
     command: ["/bin/bash", "-ec", "while :; do echo '.'; sleep 5 ; done"]
+    args:
+      - |
+        # install the MySQL client 
+        apt update && apt install -y mysql-client
     imagePullPolicy: Always

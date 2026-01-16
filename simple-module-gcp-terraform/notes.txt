@@ -168,3 +168,280 @@ odi-dev -> kareco-dev -> odi
 odi-prod -> kareco -> odi
 
 artifact registry creation: odi-dev-registry 
+
+# fundamentals attributes
+variable "project_id" {
+  default = "kareco-dev"
+}
+variable "region" {
+  default = "africa-south1"
+}
+variable "zones" {
+  default = ["africa-south1-a", "africa-south1-b", "africa-south1-c"]
+}
+variable "environment" {
+  default = "dev"
+}
+variable "domain_name" {
+  default = "kareco-iac.dev"
+}
+
+# vpc attributes
+variable "vpc_name" {
+  default = "odi-dev-vpc"
+}
+variable "network_name" {
+  default = "odi-dev-vpc"
+}
+variable "subnet_name" {
+  default = "odi-dev-vpc-subnet-01"
+}
+
+
+# subnetwork attributes
+variable "subnet_01_cidr" {
+  default = "10.10.0.0/24"
+}
+
+variable "subnet_02_cidr" {
+  default = "10.10.1.0/24"
+}
+
+variable "subnet_01_pods_cidr" {
+  default = "10.10.16.0/20"
+}
+
+variable "subnet_01_svc_cidr" {
+  default = "10.10.32.0/20"
+}
+
+variable "subnet_02_pods_cidr" {
+  default = "10.10.48.0/20"
+}
+
+variable "subnet_02_svc_cidr" {
+  default = "10.10.64.0/20"
+}
+
+# variable "create_subnetworks" {
+#   default = false
+# }
+
+# variable k8s GKE cluster
+variable "cluster_name" {
+  default = "odi-dev-cluster-tf"
+}
+variable "cluster_description" {
+  default = "cluster for odi dev wallet"
+}
+variable "kubernetes_version" {
+  default = "1.31.6-gke.1020000"
+}
+variable "infrastructure_environment" {
+  default = "dev"
+}
+variable "node_locations" {
+  default = ["africa-south1-b", "africa-south1-c"]
+}
+variable "master_authorized_networks_cidr" {
+  default = "105.244.164.33/32"
+}
+
+# Default node pool attributes
+variable "cluster_node_pool_machine_type" {
+  default = "e2-medium"
+}
+variable "cluster_pool_node_initial_count" {
+  default = 2
+}
+variable "cluster_node_pool_min_count" {
+  default = 1
+}
+variable "cluster_node_pool_max_count" {
+  default = 100
+}
+variable "cluster_node_pool_disk_size_gb" {
+  default = 100
+}
+variable "cluster_node_pool_disk_type" {
+  default = "pd-standard"
+}
+variable "image_type" {
+  default = "COS_CONTAINERD"
+}
+variable "logging_variant" {
+  default = "DEFAULT"
+}
+variable "accelerator_count" {
+  default = 0
+}
+
+# variable "k8s_svc_account" {}
+# variable "accelerator_type" {
+#   default = "nvidia-l4"
+# }
+variable "gpu_driver_version" {
+  default = "LATEST"
+}
+variable "gpu_sharing_strategy" {
+  default = "TIME_SHARING"
+}
+variable "max_shared_clients_per_gpu" {
+  default = 2
+}
+
+# Kubernetes Monitoring 
+variable "kubernetes_monitoring_service" {
+  default = "monitoring.googleapis.com/kubernetes"
+}
+variable "kubernetes_logging_service" {
+  default = "logging.googleapis.com/kubernetes"
+}
+
+# private cluster
+variable "enable_private_nodes" {
+  default = false
+}
+variable "enable_private_endpoint" {
+  default = false
+}
+# cluster load balancer
+variable "cluster_load_balancer" {
+  default = true
+}
+
+# Autoscaling
+variable "vertical_pod_autoscaling" {
+  default = false
+}
+variable "horizontal_pod_autoscaling" {
+  default = true
+}
+variable "cluster_autoscaling_cpu_min" {
+  default = 2
+}
+variable "cluster_autoscaling_cpu_max" {
+  default = 16
+}
+variable "cluster_autoscaling_memory_min" {
+  default = 4
+}
+variable "cluster_autoscaling_memory_max" {
+  default = 64
+}
+
+# Cloudsql attributes
+variable "cloudsql_allocated_ip_range" {
+  default = "odi-dev-psa-iprange-cloudsql-terraform"
+}
+variable "cloudsql_purpose" {
+  default = "VPC_PEERING"
+}
+variable "cloudsql_prefix" {
+  default = 16
+}
+variable "cloudsql_name" {
+  default = "odi-dev-mysql-terraform"
+}
+variable "cloudsql_version" {
+  default = "MYSQL_8_0"
+}
+variable "cloudsql_deletion_protection" {
+  default = false
+}
+variable "cloudsql_tier" {
+  default = "db-custom-2-7680"
+}
+variable "cloudsql_disk_autoresize" {
+  default = true
+}
+variable "cloudsql_ipv4_enabled" {
+  default = false
+}
+variable "cloudsql_backup_enabled" {
+  default = true
+}
+variable "cloudsql_backup_start_time" {
+  default = "00:00"
+}
+variable "cloudsql_availability_type" {
+  default = "ZONAL"
+}
+variable "db_name" {
+  default = "odi-test-db"
+}
+# variable "master_username" {}
+# variable "master_user_password" {}
+
+# virtual machine instance attributes
+variable "instance_name" {
+  default = "odi-dev-bastion-host"
+}
+variable "instance_zone" {
+  default = "africa-south1-a"
+}
+variable "instance_image" {
+  default = "debian-cloud/debian-11"
+}
+variable "instance_machine_type" {
+  default = "e2-medium"
+}
+
+# kafka attributes
+variable "kafka_cluster_name" {
+  default = "odi-dev-kafka-terraform"
+}
+variable "kafka_vcpu_count" {
+  default = 3
+}
+variable "kafka_memory" {
+  default = 3221225472
+}
+variable "kafka_rebalance" {
+  default = "AUTO_REBALANCE_ON_SCALE_UP"
+}
+
+# redis attributes
+variable "redis_instance" {
+  default = "odi-dev-redis-terraform"
+}
+variable "redis_tier" {
+  default = "STANDARD_HA"
+}
+variable "redis_memory" {
+  default = 16
+}
+variable "redis_location" {
+  default = "africa-south1-a"
+}
+variable "redis_alternative_location" {
+  default = "africa-south1-b"
+}
+variable "redis_transit_encryption" {
+  default = "DISABLED"
+}
+variable "redis_connect" {
+  default = "DIRECT_PEERING"
+}
+variable "redis_version" {
+  default = "REDIS_7_0"
+}
+variable "redis_replica_count" {
+  default = 5
+}
+variable "redis_replicas_mode" {
+  default = "READ_REPLICAS_ENABLED"
+}
+
+
+
+# variable registry
+variable "registry_name" {
+  default = "odi-registry"
+}
+
+variable "registry_format" {
+  default = "DOCKER"
+}
+
+# # variable "subnet_01_name" {}

@@ -31,10 +31,12 @@ terraform {
     google = {
       source  = "hashicorp/google"
       version = ">= 6.14.0, < 7.0.0"
+      credentials = "./key"
     }
     google-beta = {
       source  = "hashicorp/google-beta"
       version = ">= 6.14.0, < 7.0.0"
+      credentials = "./key"
     }
     cloudflare = {
       source  = "cloudflare/cloudflare"

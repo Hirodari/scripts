@@ -4,7 +4,7 @@ resource "kubernetes_ingress_v1" "kareco-app-ingress" {
     name = "kareco-app-ingress"
     annotations = {
       "kubernetes.io/ingress.global-static-ip-name" = var.static_ip_name
-      "networking.gke.io/managed-certificates"      = "kareco-${var.environment}-certificate"
+      "networking.gke.io/managed-certificates"      = "odibers-wildcard-cert"
       "kubernetes.io/ingress.allow-http"            = false
       "kubernetes.io/ingress.class"                 = "gce"
     }
@@ -25,7 +25,26 @@ resource "kubernetes_ingress_v1" "kareco-app-ingress" {
         }
       }
     }
+    rule {
+      host = "*.wallet.odibets.com"
+      http {
+        path {
+          path      = "/"  # Route traffic on the root path.
+          path_type = "Prefix"
+          backend {
+            service {
+              name = "wallet-service"  # Service name for the kuma service.
+              port {
+                number = 80  # Route traffic to port 80.
+              }
+            }
+          }
+        }
+      }
+    }
   }
+
+  
 }
 
 

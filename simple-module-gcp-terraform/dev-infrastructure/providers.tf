@@ -1,6 +1,7 @@
 provider "google" {
   project = var.project_id # The project ID in GCP where resources will be managed.
   region  = var.region     # The default region for resources.
+  credentials = "./key"
   #   zone    = var.gcp_zone       # The default zone for resources.
 }
 
@@ -9,6 +10,7 @@ provider "google" {
 provider "google-beta" {
   project = var.project_id # The project ID in GCP where resources will be managed.
   region  = var.region     # The default region for resources.
+  credentials = "./key"
   #   zone    = var.gcp_zone       # The default zone for resources.
 }
 
